@@ -8,3 +8,6 @@ class Profile(models.Model):
          related_name="followed_by",
          symmetrical=False,
          blank=True)
+
+    def __str__(self):
+        return self.user.username
