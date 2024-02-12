@@ -11,6 +11,7 @@ class ProfileInline(admin.StackedInline):
 # Extend user model
 class UserAdmin(admin.ModelAdmin):
         model = User
+        # Just display username fields on admin page
         fields = ["username"]
         inlines = [ProfileInline]
 
@@ -18,4 +19,4 @@ class UserAdmin(admin.ModelAdmin):
 admin.site.unregister(User)
 # Reregister user/profile
 admin.site.register(User, UserAdmin)
-#admin.site.register(Profile)
+admin.site.register(Profile)
