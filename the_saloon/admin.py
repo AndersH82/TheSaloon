@@ -6,13 +6,13 @@ admin.site.unregister(Group)
 
 # User and profile in same place
 class ProfileInline(admin.StackedInline):
-	model = Profile
+	    model = Profile
 
 # Extend user model
 class UserAdmin(admin.ModelAdmin):
-	model = User
-	fields = ["username"]
-	inlines = [ProfileInline]
+        model = User
+        fields = ["username"]
+        inlines = [ProfileInline]
 
 # Unregister initial user
 admin.site.unregister(User)
