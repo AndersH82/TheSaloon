@@ -4,22 +4,24 @@ from django.db.models.signals import post_save
 
 # Creat a user profile model
 class Profile(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
-    follows = models.ManyToManyField("self",
-         related_name="followed_by",
-         symmetrical=False,
-         blank=True)
+        user = models.OneToOneField(User, on_delete=models.CASCADE)
+        follows = models.ManyToManyField("self", 
+            related_name="followed_by",
+            symmetrical=False,
+            blank=True)	
 
-    def __str__(self):
-        return self.user.username
+        date_modified = models.DateTimeField(User, auto_now=True)
+
+        def __str__(self):
+            return self.user.username
 
 # Creat profile new user sign up
-def class_profile(sender, instance, created, **kwargs):
-    if created:
-        user_profile = Profile(user=instance)
-        user_profile.save()
-        # Make user follow themselves
-        user_profile.follows.set([instance.profile.id])
-        user_profile.save()
+def create_profile(sender, instance, created, **kwargs):
+	if created:
+		user_profile = Profile(user=instance)
+		user_profile.save()
+		# Have the user follow themselves
+		user_profile.follows.set([instance.profile.id])
+		user_profile.save()
 
-    post_save.connect(create_profile, sender=User)
+post_save.connect(create_profile, sender=User)
