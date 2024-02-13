@@ -11,7 +11,11 @@
             {% if shouts%}
               {% for shout in shouts %}
               <div class="alert alert-info" role="alert">
-                 {{ shout }}
+                <small class="text-muted">
+                  [{{ shout.created_at }}]
+                  
+  
+                </small>
               </div><br/></br/>
               {% endfor %}
             {% endif %}

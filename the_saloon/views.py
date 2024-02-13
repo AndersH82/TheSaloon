@@ -1,12 +1,23 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from .models import Profile, Shout
-
+from .forms import ShoutForm
 
 def home(request):
     if request.user.is_authenticated:
-        shouts = Shout.objects.all().order_by("-created_at")
+        form = ShoutForm(request.POST or None)
+        if request.method == "POST":
+            if form.is_valid():
+                shout = form.save(commit=False)
+                shout.user = request.user
+                shout.save()
+                messages.success(request, ("You posted a Shout!"))
+                return redirect('home')
 
+        shouts = Shout.objects.all().order_by("-created_at")
+        return render(request, 'home.html', {"shouts":shouts, "form":form})
+    else:
+        shouts = Shout.objects.all().order_by("-created_at")
         return render(request, 'home.html', {"shouts":shouts})
 
 
