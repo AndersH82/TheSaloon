@@ -26,6 +26,10 @@
          
          <div class="col-4">
           <br/><br/><br/>
+
+          {% if profile.profile_image %}
+          <img src="{{ profile.profile_image.url }}" class="img-thumbnail" alt="Cinque Terre" .img-fluid . max-width: 100%;>
+          {% endif %}
             <div class="card">
                 <h5 class="card-header">Follows</h5>
                 <div class="card-body">
