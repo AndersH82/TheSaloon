@@ -10,13 +10,16 @@
             <br/>
             {% if shouts%}
               {% for shout in shouts %}
-              <div class="alert alert-info" role="alert">
-                <small class="text-muted">
-                  [{{ shout.created_at }}]
+
+                <div class="alert alert-info" role="alert">
+                  {{ shout.body }}<br/><br/>
+                  <small class="text-muted">
+                      
+                    [{{ shout.created_at }}]
                   
   
-                </small>
-              </div><br/></br/>
+                  </small>
+                </div><br/></br/>
               {% endfor %}
             {% endif %}
           </div>
