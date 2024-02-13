@@ -7,18 +7,18 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
-          <a class="nav-link" href="{% url 'profile_list' %}">Profile List</a>
+          <a class="nav-link" href="{% url 'profile_list' %}"><i class="fa-solid fa-list"></i></a>
         </li>
         {% if user.is_authenticated %}
         <li class="nav-item">
-          <a class="nav-link" href="{% url 'profile' request.user.id %}">My Profile</a>
+          <a class="nav-link" href="{% url 'profile' request.user.id %}"><i class="fa-regular fa-address-card"></i></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+          <a class="nav-link" href="{% url 'logout' %}"><i class="fa-solid fa-right-from-bracket"></i></a>
         </li>
         {% else %}
         <li class="nav-item">
-          <a class="nav-link" href="{% url 'login' %}">Login</a>
+          <a class="nav-link" href="{% url 'login' %}"><i class="fa-solid fa-right-to-bracket"></i></a>
         </li>
         {% endif %}
       </ul>
@@ -28,3 +28,5 @@
       </form>
     </div>
   </nav>
+
+  <script src="https://kit.fontawesome.com/1c9e9f31ac.js" crossorigin="anonymous"></script>
