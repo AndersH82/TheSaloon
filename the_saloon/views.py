@@ -126,5 +126,5 @@ def shout_like(request, pk):
 
 
     else:
-        messages.success(request, ("You must be logged in!"))
+        messages.success(request, ("You must be logged in to like/unlike!"))
         return redirect('home')   
