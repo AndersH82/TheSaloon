@@ -11,6 +11,7 @@ class ProfilePicForm(forms.ModelForm):
     class Meta:
         model = Profile
         fields = ('profile_image',)
+
 # Shout form
 
 class ShoutForm(forms.ModelForm):
@@ -26,7 +27,7 @@ class ShoutForm(forms.ModelForm):
     
     class Meta:
         model = Shout
-        exclude = ("user",)
+        exclude = ("user", "likes",)
 
 # Sign up form
 

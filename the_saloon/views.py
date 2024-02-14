@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
 from .models import Profile, Shout
 from .forms import ShoutForm, SignUpForm, ProfilePicForm
@@ -114,3 +114,17 @@ def update_user(request):
         messages.success(request, ("You must be logged in!"))
         return redirect('home')    
     
+def shout_like(request, pk):
+    if request.user.is_authenticated:
+        shout = get_object_or_404(Shout, id=pk)
+        if shout.likes.filter(id=request.user.id):
+            shout.likes.remove(request.user)
+        else:
+            shout.likes.add(request.user)
+
+        return redirect('home')
+
+
+    else:
+        messages.success(request, ("You must be logged in!"))
+        return redirect('home')   

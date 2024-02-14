@@ -13,24 +13,7 @@
       {% for shout in shouts %}
 
       <div class="alert alert-info" role="alert">
-        <div class="container">
-          <div class="row">
-            <div class="col-1">
-              {% if profile.profile_image %}
-              <img src="{{ profile.profile_image.url }}" width=300 height=300 class="img-fluid rounded-start"
-                alt="{{ profile.user.username}}">
-
-              {% else %}
-              <img src="{% static 'images/default.jpg' %}" width=300 height=300 class="img-fluid rounded-start"
-                alt="{{ profile.user.username}}">
-              {% endif %}
-
-
-              <div class="col-11">
-              </div>
-            </div>
-          </div>
-        </div>
+        
         {{ shout.body }}<br /><br />
         <small class="text-muted">
 
