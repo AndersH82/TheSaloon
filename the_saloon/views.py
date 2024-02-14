@@ -122,7 +122,7 @@ def shout_like(request, pk):
         else:
             shout.likes.add(request.user)
 
-        return redirect('home')
+        return redirect(request.META.get("HTTP_REFERER"))
 
 
     else:

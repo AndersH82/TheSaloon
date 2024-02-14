@@ -18,7 +18,13 @@
         <small class="text-muted">
 
           [{{ shout.created_at }}]
+          - {{ shout.number_of_likes }} Likes
 
+                    {% if user in shout.likes.all %}
+                    <a href="{% url 'shout_like' shout.id %}"><i class="fa-regular fa-thumbs-down"></i></a>
+                    {% else %}
+                    <a href="{% url 'shout_like' shout.id %}"><i class="fa-regular fa-thumbs-up"></i></a>
+                    {% endif %}
 
         </small>
       </div><br /></br />
