@@ -86,35 +86,21 @@
                     {% endif %}
                     <br/><br/>
                     <button class="btn btn-outline-info"><a href="{% url 'update_user' %}">Edit Profile</a></button>
+                    <br/><br/>
+                    <h5> Follows </h5>
+                    <p class="card-text">{% for following in profile.follows.all %}
+                      <a href="{% url 'profile' following.user.id %}">{{ following }}</a><br />
+                      {% endfor %}
+                      <h5> Followers </h5>
+                      <p class="card-text">{% for following in profile.followed_by.all %}
+                        <a href="{% url 'profile' following.user.id %}">{{ following }}</a><br />
+                        {% endfor %}
                 </div> </div> 
       </div>
       {% endif %}  
-      <div class="card">
-        <h5 class="card-header">Follows</h5>
-        <div class="card-body">
+      
 
-          <p class="card-text">{% for following in profile.follows.all %}
-            <a href="{% url 'profile' following.user.id %}">{{ following }}</a><br />
-
-            {% endfor %}
-          </p>
-
-        </div>
-      </div>
-      <br /><br />
-
-      <div class="card">
-        <h5 class="card-header">Followed By</h5>
-        <div class="card-body">
-
-          <p class="card-text">{% for following in profile.followed_by.all %}
-            <a href="{% url 'profile' following.user.id %}">{{ following }}</a><br />
-            {% endfor %}
-          </p>
-
-        </div>
-      </div>
-      <br />
+      
 
       
       
