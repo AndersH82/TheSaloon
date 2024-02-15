@@ -127,4 +127,19 @@ def shout_like(request, pk):
 
     else:
         messages.success(request, ("You must be logged in to like/unlike!"))
-        return redirect('home')   
+        return redirect('home')
+
+def delete_shout(request, pk):
+    if request.user.is_authenticated:
+        shout = get_object_or_404(Shout, id=pk)
+        if request.user.username == shout.user.username:
+            shout.delete()
+            messages.success(request, ("the Shout has been deleted"))
+            return redirect(request.META.get("HTTP_REFERER"))
+        else:
+            messages.success(request, ("This is not your Shout"))
+            return redirect('home')
+
+    else:
+        messages.success(request, ("Please log in to continue..."))
+        return redirect(request.META.get("HTTP_REFERER"))
