@@ -143,3 +143,4 @@ def delete_shout(request, pk):
     else:
         messages.success(request, ("Please log in to continue..."))
         return redirect(request.META.get("HTTP_REFERER"))
+
