@@ -3,11 +3,11 @@
 {% block content %}
 
 <div class="col-md-6 offset-md-3"></div>
-<h1>Update your profile</h1>
+<h1 style="font-family: Rye, serif;">Update your profile</h1>
 <br/>
 
 
-<form method="POST" action="" enctype="multipart/form-data">
+<form method="POST" action="" enctype="multipart/form-data" style="font-family: Rye, serif;">
     {% csrf_token %}
     {{ user_form.as_p }}
     {{ profile_form.as_p}}
