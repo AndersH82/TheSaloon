@@ -11,7 +11,7 @@
             <h1>Shouts!</h1>
             <br />
             {% for shout in shouts %}
-            <div class="alert alert-warning" role="alert">
+            <div class="alert alert-warning border border-warning" role="alert">
 
                 {{ shout.body }}<br /><br />
                 <small class="text-muted">
@@ -40,7 +40,7 @@
                 {{ form.as_p }}
 
 
-                <button type="submit" class="btn btn-info">Shout</button>
+                <button type="submit" class="btn btn-warning">Shout</button>
             </form>
             {% endif %}
         </div>
