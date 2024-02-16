@@ -40,7 +40,7 @@ class Profile(models.Model):
         linedin_link = models.CharField(null=True, blank=True, max_length=100)
         
         def __str__(self):
-            return self.user.username
+                return self.user.username
 
 # Creat profile new user sign up
 @receiver(post_save, sender=User)
