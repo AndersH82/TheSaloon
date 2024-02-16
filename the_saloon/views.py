@@ -32,6 +32,7 @@ def profile_list(request):
         else:
             messages.success(request, ("You must login to see this page..."))
             return redirect('home')
+    
 
 def profile(request, pk):
     if request.user.is_authenticated:

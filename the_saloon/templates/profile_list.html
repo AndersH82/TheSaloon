@@ -6,14 +6,14 @@
 <br />
 {% if profiles %}
 {% for profile in profiles %}
-<div class="card mb-3" style="max-width: 540px;">
+<div class="card mb-3" style="max-width: 540px; background-color: #FFF3CD">
   <div class="row no-gutters border border-warning">
     <div class="col-md-4">
       {% if profile.profile_image %}
-      <img src="{{ profile.profile_image.url }}" width=200 height=200 class="img-fluid rounded-start"
+      <img src="{{ profile.profile_image.url }}" width=200 height=200 class="img rounded-circle" 
         alt="{{ profile.user.username}}">
       {% else %}
-      <img src="{% static 'images/default.jpg' %}" class="img-fluid rounded-start" alt="Profile img">
+      <img src="{% static 'images/default.jpg' %}" class="img-fluid rounded-circle" alt="Profile img">
       {% endif %}
 
     </div>

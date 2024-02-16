@@ -43,24 +43,28 @@
 
       {% if profile.profile_image %}
       <div class="container mt-4 mb-4 p-3 d-flex justify-content-center"> 
-        <div class="card p-4 border-0"> 
+        <div class="card p-4 border-0" style="background-color:#FFF3CD"> 
           <div class=" image d-flex flex-column justify-content-center align-items-center"> 
-              <img src="{{ profile.profile_image.url }}" height="100" width="100" />
-            </button> <span class="name mt-3" style="font-family: Rye, serif;">{{ profile.user.username }}'s Profile</span> 
+              <img src="{{ profile.profile_image.url }}" height="100" width="100" class="img rounded-circle" height: auto;>
+             <span class="name mt-3" style="font-family: Rye, serif;">
+              {{ profile.user.username }}'s Profile</span> 
             <div class="d-flex flex-row justify-content-center align-items-center gap-2">
-              </i></span> </div> <div class="d-flex flex-row justify-content-center align-items-center mt-3">
+              </i></span> </div> 
+              <div class="d-flex flex-row justify-content-center align-items-center mt-3">
                  </div> 
-                 <div class=" d-flex mt-2">
+                 <div class="d-flex mt-2">
                 
                 </div> 
-                <div class="text mt-3"> <span>{% if profile.profile_bio %}
-                  <p align="justify" style="font-family: Rye, serif;">{{ profile.profile_bio}}</p>
-                  </span>
+                {% if profile.profile_bio %}
+                <div class="text mt-3"> 
+                  <span><p align="justify" style="font-family: Rye, serif;">
+                    {{ profile.profile_bio}}</p></span>
                   {% endif %} 
                 </div>
                 <div class="gap-3 mt-3 icons d-flex flex-row justify-content-center align-items-center">
                   {% if profile.facebook_link %}
-                  <a href="{{ profile.facebook_link }}" style="color:gray" target="new"><i class="fa-2x fa-brands fa-facebook"></i></a>
+                  <a href="{{ profile.facebook_link }}" style="color:gray" target="new">
+                    <i class="fa-2x fa-brands fa-facebook"></i></a>
                   {% endif %}
                   &nbsp;&nbsp;
                   {% if profile.instagram_link %}
