@@ -19,7 +19,7 @@ class UserAdmin(admin.ModelAdmin):
 admin.site.unregister(User)
 # Reregister user/profile
 admin.site.register(User, UserAdmin)
-admin.site.register(Profile)
+#admin.site.register(Profile)
 
 # Register shouts
 admin.site.register(Shout)
