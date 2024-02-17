@@ -116,6 +116,12 @@
               <button class="btn btn-outline-warning"><a href="{% url 'update_user' %}" class="text-muted"
                   style="font-family: Rye, serif;">Edit Profile</a></button>
               {% endif %}
+              <br/><br/>
+              {% if request.user.id == profile.user.id %}
+              <button class="btn btn-outline-warning">
+              <a href="{% url 'delete_user' user.id %}" class="text-muted"
+                style="font-family: Rye, serif;">Delete Profile</a></button>
+              {% endif %}
               
              
           </div>

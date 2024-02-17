@@ -7,6 +7,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django import forms
 from django.contrib.auth.models import User
 
+
 def home(request):
     if request.user.is_authenticated:
         form = ShoutForm(request.POST or None)
@@ -48,7 +49,6 @@ def profile(request, pk):
                 current_user_profile.follows.add(profile)
             current_user_profile.save()
 
-
         return render(request, "profile.html", {"profile":profile, "shouts":shouts})
     else:
         messages.success(request, ("You must login to see this page..."))
@@ -68,7 +68,6 @@ def login_user(request):
         else:
             messages.success(request, ("WROOOONG! Try again!"))
             return redirect('login')
-
     else:    
         return render(request, "login.html", {})
 
@@ -76,6 +75,7 @@ def logout_user(request):
     logout(request)
     messages.success(request, ("You are now logged out!"))
     return redirect('home')
+
 
 def register_user(request):
     form = SignUpForm()
@@ -86,13 +86,13 @@ def register_user(request):
                 username = form.cleaned_data['username']
                 password = form.cleaned_data['password1']
             
-
                 user = authenticate(username=username, password=password)
                 login(request,user)
                 messages.success(request, ("You are now registered!"))
                 return redirect('home')
 
     return render(request, "register.html", {'form':form})
+
 
 def update_user(request):
     if request.user.is_authenticated:
@@ -112,8 +112,19 @@ def update_user(request):
         return render(request, "update_user.html", {'user_form':user_form, 'profile_form':profile_form})
     else:
         messages.success(request, ("You must be logged in!"))
-        return redirect('home')    
+        return redirect('home') 
+
+
+def delete_user(request, id):
+    user = get_object_or_404(User, id=pk)
+    if request.method == 'POST':
+        user.delete()
+        messages.success(request, 'The user has been deleted successfully.')
+        return redirect('home')
+    else:
+        return render(request, 'delete_user.html', {'user': user})   
     
+
 def shout_like(request, pk):
     if request.user.is_authenticated:
         shout = get_object_or_404(Shout, id=pk)
@@ -123,11 +134,10 @@ def shout_like(request, pk):
             shout.likes.add(request.user)
 
         return redirect(request.META.get("HTTP_REFERER"))
-
-
     else:
         messages.success(request, ("You must be logged in to like/unlike!"))
         return redirect('home')
+
 
 def delete_shout(request, pk):
     if request.user.is_authenticated:
@@ -139,18 +149,9 @@ def delete_shout(request, pk):
         else:
             messages.success(request, ("This is not your Shout"))
             return redirect('home')
-
     else:
         messages.success(request, ("Please log in to continue..."))
         return redirect(request.META.get("HTTP_REFERER"))
 
 
-def delete_profile(request, pk):
-    try:
-        user = User.objects.get(user_id=pk)
-        user.delete()
-        messages.success(request, "User has been deleted successfully.")
-    except User.DoesNotExist:
-        messages.error(request, "User does not exist.")
 
-    return redirect('home')
