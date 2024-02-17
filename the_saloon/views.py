@@ -144,4 +144,23 @@ def delete_shout(request, pk):
         return redirect(request.META.get("HTTP_REFERER"))
 
 
-
+def edit_shout(request, pk):
+    if request.user.is_authenticated:
+        shout = get_object_or_404(Shout, id=pk)
+        if request.user.username == shout.user.username:
+            form = ShoutForm(request.POST or None, instance=shout)
+            if request.method == "POST":
+                if form.is_valid():
+                    shout = form.save(commit=False)
+                    shout.user = request.user
+                    shout.save()
+                    messages.success(request, ("Your Shout has been updated!"))
+                    return redirect('home')
+            else:  
+                return render(request, "edit_shout.html", {'form':form, 'shout':shout})
+        else:
+            messages.success(request, ("This is not your SHout!"))
+            return redirect('home')
+    else:
+        messages.success(request, ("Please log in to continue..."))
+        return redirect('home')

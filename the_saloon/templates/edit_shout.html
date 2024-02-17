@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+
+	<div class="container text-center" style="font-family: Rye, serif;">
+		<div class="row">
+			<div class="col-8">
+                <h1 style="font-family: Rye, serif;">{{ profile.user.username }}'s Profile</h1>
+
+	
+<br/>
+	
+		<div class="alert alert-dark border-0" role="alert" style="background-color:#FFF3CD">
+<div class="container">
+	<div class="row">
+		
+		
+		<div class="col-11">
+		  {{ shout.body }}<br/>
+		  <small class="text-muted">
+            {{ shout.created_at }}
+            <br/>
+            {{ shout.number_of_likes }} Likes
+            &nbsp;&nbsp;
+
+		  	{% if user in shout.likes.all %}
+            <a href="{% url 'shout_like' shout.id %}"><i class="fa-lg fa-regular fa-thumbs-down" style="color:gray"></i></a>
+            {% else %}
+            <a href="{% url 'shout_like' shout.id %}"><i class="fa-lg fa-regular fa-thumbs-up" style="color:gray"></i></a>
+            {% endif %}
+
+		  </small>
+		</div><br/><br/>
+	
+			</div>
+		</div>
+	</div>
+	
+
+
+
+
+				<br/><br/><br/>
+{% if form %}
+<form method=POST>
+	{% csrf_token %}
+  	{{ form.as_p }}
+
+
+  <button type="submit" class="btn btn-outline-warning">Update Your Shout!</button>
+</form>
+
+{% endif %}
+</div>
+
+{% endblock %}
