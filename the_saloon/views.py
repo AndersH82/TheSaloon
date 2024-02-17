@@ -113,16 +113,6 @@ def update_user(request):
     else:
         messages.success(request, ("You must be logged in!"))
         return redirect('home') 
-
-
-def delete_user(request, id):
-    user = get_object_or_404(User, id=pk)
-    if request.method == 'POST':
-        user.delete()
-        messages.success(request, 'The user has been deleted successfully.')
-        return redirect('home')
-    else:
-        return render(request, 'delete_user.html', {'user': user})   
     
 
 def shout_like(request, pk):

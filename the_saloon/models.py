@@ -54,9 +54,3 @@ def create_profile(sender, instance, created, **kwargs):
 		# Have the user follow themselves
 		user_profile.follows.set([instance.profile.id])
 		user_profile.save()
-
-
-@receiver(post_delete, sender=User)
-def delete_user(sender, instance, **kwargs):
-    user = instance.user
-    user.delete()
