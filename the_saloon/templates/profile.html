@@ -8,9 +8,9 @@
 <div class="container text-center">
   <div class="row">
     <div class="col-md-8">
+      <h1 style="font-family: Rye, serif;">{{ profile.user.username }}'s Profile</h1>
       
-      
-      <br/><br/><br/>
+      <br/>
       {% if shouts%}
       {% for shout in shouts %}
 
@@ -88,6 +88,14 @@
               <a href="{{ profile.linkedin_link }}" style="color:gray" target="new"><i
                   class="fa-2x fa-brands fa-linkedin"></i></a>
               {% endif %}
+              {% if profile.linkedin_link %}
+              <a href="{{ profile.youtube_link }}" style="color:gray" target="new"><i
+                  class="fa-2x fa-brands fa-youtube"></i></a>
+              {% endif %}
+              {% if profile.linkedin_link %}
+              <a href="{{ profile.x_link }}" style="color:gray" target="new"><i
+                 class="fa-2x fa-brands fa-x-twitter"></i></a>
+              {% endif %}
             </div>
         
             <br />
@@ -114,10 +122,10 @@
                 Follow {{ profile.user.username|lower}}
               </button>
               {% endif %}
-              <br /><br />
+              <br/><br/>
               {% if request.user.id == profile.user.id %}
               <button class="btn btn-outline-warning"><a href="{% url 'update_user' %}" class="text-muted"
-                  style="font-family: Rye, serif;">Edit Profile</a></button>
+              style="font-family: Rye, serif;">Edit Profile</a></button>
               {% endif %}
               
              
