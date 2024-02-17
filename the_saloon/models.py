@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.db.models.signals import post_save
 from django.dispatch import receiver
+from django.db.models.signals import post_delete
 
 # Shout Model
 class Shout(models.Model):
@@ -30,7 +31,8 @@ class Profile(models.Model):
         follows = models.ManyToManyField("self", 
             related_name="followed_by",
             symmetrical=False,
-            blank=True)	
+            blank=True)
+
 
         date_modified = models.DateTimeField(User, auto_now=True)
         profile_image = models.ImageField(null=True, blank=True, upload_to="images/")
@@ -41,6 +43,7 @@ class Profile(models.Model):
         
         def __str__(self):
                 return self.user.username
+       
 
 # Creat profile new user sign up
 @receiver(post_save, sender=User)
@@ -52,4 +55,8 @@ def create_profile(sender, instance, created, **kwargs):
 		user_profile.follows.set([instance.profile.id])
 		user_profile.save()
 
-#post_save.connect(create_profile, sender=User)
+
+@receiver(post_delete, sender=User)
+def profile_delete(sender, instance, **kwargs):
+    if instance.user:  
+        instance.user.delete()

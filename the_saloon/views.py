@@ -82,31 +82,32 @@ def register_user(request):
     if request.method == "POST":
         form = SignUpForm(request.POST)
         if form.is_valid():
-            form.save()
-            username = form.cleaned_data['username']
-            password = form.cleaned_data['password1']
+                form.save()
+                username = form.cleaned_data['username']
+                password = form.cleaned_data['password1']
             
 
-            user = authenticate(username=username, password=password)
-            login(request,user)
-            messages.success(request, ("You are now registered!"))
-            return redirect('home')
+                user = authenticate(username=username, password=password)
+                login(request,user)
+                messages.success(request, ("You are now registered!"))
+                return redirect('home')
 
     return render(request, "register.html", {'form':form})
 
 def update_user(request):
     if request.user.is_authenticated:
         current_user = User.objects.get(id=request.user.id)
-        profile_user = Profile.objects.get(user_id=request.user.id)
+        profile_user = Profile.objects.get(user__id=request.user.id)
 
         user_form = SignUpForm(request.POST or None, request.FILES or None, instance=current_user)
         profile_form = ProfilePicForm(request.POST or None, request.FILES or None, instance=profile_user)
         if user_form.is_valid() and profile_form.is_valid():
-            user_form.save()
-            profile_form.save()
-            login(request, current_user)
-            messages.success(request, ("Your information is now updated!"))
-            return redirect('home')
+                user_form.save()
+                profile_form.save()
+
+                login(request, current_user)
+                messages.success(request, ("Your information is now updated!"))
+                return redirect('home')
 
         return render(request, "update_user.html", {'user_form':user_form, 'profile_form':profile_form})
     else:
@@ -142,4 +143,5 @@ def delete_shout(request, pk):
     else:
         messages.success(request, ("Please log in to continue..."))
         return redirect(request.META.get("HTTP_REFERER"))
+
 

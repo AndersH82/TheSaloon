@@ -1,4 +1,4 @@
-{% extends 'index.html' %}
+{% extends 'base.html' %}
 
 {% block content %}
 
@@ -7,11 +7,13 @@
 <br/>
 
 
-<form method="POST" action="" enctype="multipart/form-data" style="font-family: Rye, serif;">
+<form method="POST" action="" enctype="multipart/form-data"  style="font-family: Rye, serif;">
     {% csrf_token %}
     {{ user_form.as_p }}
-    {{ profile_form.as_p }}
     <br/>
+    {{ profile_form.as_p }}
+    
+    <br/><br/>
     <button type="submit" class="btn btn-primary">Update Profile</button>
 </form>
 
