@@ -145,3 +145,12 @@ def delete_shout(request, pk):
         return redirect(request.META.get("HTTP_REFERER"))
 
 
+def delete_profile(request, pk):
+    try:
+        user = User.objects.get(user_id=pk)
+        user.delete()
+        messages.success(request, "User has been deleted successfully.")
+    except User.DoesNotExist:
+        messages.error(request, "User does not exist.")
+
+    return redirect('home')
