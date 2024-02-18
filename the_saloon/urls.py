@@ -12,4 +12,5 @@ urlpatterns = [
     path('shout_like/<int:pk>', views.shout_like, name="shout_like"),
     path('delete_shout/<int:pk>', views.delete_shout, name="delete_shout"),
     path('edit_shout/<int:pk>', views.edit_shout, name="edit_shout"),
+    path('image_list', views.image_list, name='image_list')
 ]

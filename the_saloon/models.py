@@ -56,3 +56,7 @@ def create_profile(sender, instance, created, **kwargs):
 		# Have the user follow themselves
 		user_profile.follows.set([instance.profile.id])
 		user_profile.save()
+
+# Gallary for users images
+class ImageModel(models.Model):
+    image = models.ImageField(upload_to='images/')

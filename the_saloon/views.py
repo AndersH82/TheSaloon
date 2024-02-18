@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
 from .models import Profile, Shout
-from .forms import ShoutForm, SignUpForm, ProfilePicForm
+from .forms import ShoutForm, SignUpForm, ProfilePicForm, ImageForm
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.forms import UserCreationForm
 from django import forms
@@ -42,7 +42,7 @@ def profile(request, pk):
 
         if request.method == "POST":
             current_user_profile = request.user.profile
-            action = request.POST ['follow']
+            action = request.POST['follow']
             if action == "unfollow":
                 current_user_profile.follows.remove(profile)
             elif action == "follow":
@@ -164,3 +164,14 @@ def edit_shout(request, pk):
     else:
         messages.success(request, ("Please log in to continue..."))
         return redirect('home')
+
+
+def image_list(request):
+    if request.method == 'POST':
+        form = ImageForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return render(request, 'image_list.html')
+    else:
+        form = ImageForm()
+    return render(request, 'image_list.html', {'form':form})

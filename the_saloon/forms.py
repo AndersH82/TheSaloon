@@ -2,6 +2,7 @@ from django import forms
 from .models import Shout, Profile
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
+from .models import ImageModel
 
 # Profile picture form
 
@@ -11,6 +12,8 @@ class ProfilePicForm(forms.ModelForm):
     facebook_link = forms.CharField(label="", widget=forms.TextInput(attrs={'class':'form-control', 'placeholder':'Facebook Link'}))
     instagram_link = forms.CharField(label="", widget=forms.TextInput(attrs={'class':'form-control', 'placeholder':'Instagram Link'}))
     linkedin_link = forms.CharField(label="", widget=forms.TextInput(attrs={'class':'form-control', 'placeholder':'Linkedin Link'}))
+    youtube_link = forms.CharField(label="", widget=forms.TextInput(attrs={'class':'form-control', 'placeholder':'Youtube Link'}))
+    x_link = forms.CharField(label="", widget=forms.TextInput(attrs={'class':'form-control', 'placeholder':'X Link'}))
 
     class Meta:
         model = Profile
@@ -61,3 +64,9 @@ class SignUpForm(UserCreationForm):
         self.fields['password2'].widget.attrs['placeholder'] = 'Confirm Password'
         self.fields['password2'].label = 'Enter your password again:'
         self.fields['password2'].help_text = '<span class="form-text text-muted"><small></small></span>'
+
+
+class ImageForm(forms.ModelForm):
+    class Meta:
+        model = ImageModel
+        fields = ('image',)
