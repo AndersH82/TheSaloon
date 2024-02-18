@@ -1,5 +1,6 @@
 from django.urls import path
 from . import views
+from .views import image_upload, success
 
 urlpatterns = [
     path('', views.home, name="home"),
@@ -12,5 +13,6 @@ urlpatterns = [
     path('shout_like/<int:pk>', views.shout_like, name="shout_like"),
     path('delete_shout/<int:pk>', views.delete_shout, name="delete_shout"),
     path('edit_shout/<int:pk>', views.edit_shout, name="edit_shout"),
-    path('image_list', views.image_list, name='image_list')
+    path('image_upload/', views.image_upload, name='image_upload'),
+    path('success/', success, name='success'),
 ]
