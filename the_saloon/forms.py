@@ -9,15 +9,15 @@ from .models import Hotel
 class ProfilePicForm(forms.ModelForm):
     profile_image = forms.ImageField(label="Profile Picture")
     profile_bio =  forms.CharField(label="Profile Info", widget=forms.Textarea(attrs={'class':'form-control', 'placeholder':'Profile Info'}))
-    facebook_link = forms.CharField(label="", widget=forms.TextInput(attrs={'class':'form-control', 'placeholder':'Facebook Link'}))
-    instagram_link = forms.CharField(label="", widget=forms.TextInput(attrs={'class':'form-control', 'placeholder':'Instagram Link'}))
-    linkedin_link = forms.CharField(label="", widget=forms.TextInput(attrs={'class':'form-control', 'placeholder':'Linkedin Link'}))
-    youtube_link = forms.CharField(label="", widget=forms.TextInput(attrs={'class':'form-control', 'placeholder':'Youtube Link'}))
-    x_link = forms.CharField(label="", widget=forms.TextInput(attrs={'class':'form-control', 'placeholder':'X Link'}))
+    facebook_link = forms.CharField(label="Facebook Link", widget=forms.TextInput(attrs={'class':'form-control', 'placeholder':'Facebook Link'}))
+    instagram_link = forms.CharField(label="Instagram Link", widget=forms.TextInput(attrs={'class':'form-control', 'placeholder':'Instagram Link'}))
+    linkedin_link = forms.CharField(label="Linkedin Link", widget=forms.TextInput(attrs={'class':'form-control', 'placeholder':'Linkedin Link'}))
+    youtube_link = forms.CharField(label="Youtube Link", widget=forms.TextInput(attrs={'class':'form-control', 'placeholder':'Youtube Link'}))
+    x_link = forms.CharField(label="X Link", widget=forms.TextInput(attrs={'class':'form-control', 'placeholder':'X Link'}))
 
     class Meta:
         model = Profile
-        fields = ('profile_image', 'profile_bio', 'facebook_link', 'instagram_link', 'linkedin_link',)
+        fields = ('profile_image', 'profile_bio', 'facebook_link', 'instagram_link', 'linkedin_link', 'youtube_link', 'x_link',)
 
 # Shout form
 
