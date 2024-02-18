@@ -69,4 +69,4 @@ class SignUpForm(UserCreationForm):
 class HotelForm(forms.ModelForm):
     class Meta:
         model = Hotel
-        fields = ['name', 'hotel_main_img']
+        fields = ['name', 'Upload_image_here']

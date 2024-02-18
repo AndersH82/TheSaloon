@@ -60,4 +60,4 @@ def create_profile(sender, instance, created, **kwargs):
 # Gallary for users images
 class Hotel(models.Model):
     name = models.CharField(max_length=50)
-    hotel_main_img = models.ImageField(upload_to='images/')
+    Upload_image_here = models.ImageField(upload_to='images/')
