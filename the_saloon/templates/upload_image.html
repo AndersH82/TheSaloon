@@ -1,24 +1,31 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
+<div class="container text-center">
+    <div class="row">
+        <div class="col-md-8">
+            <h2 style="font-family: Rye, serif;">{{ user.username }}'s Gallery</h2>
+            <br/>
 
-<h2 style="font-family: Rye, serif;">Upload Images</h2>
+            <form method="post" style="font-family: Rye, serif;" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit">Upload</button>
+            </form>
+        </div>
+    </div>
+</div>
 
-    <form method="post" style="font-family: Rye, serif;" enctype="multipart/form-data">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Upload</button>
-    </form>
 <div class="container text-center">
     <div class="row">
         <div class="col-md-8">
         <h3 style="font-family: Rye, serif;">Uploaded Images:</h3>
-        <ul>
+        <ul style="list-style-type: none;">
          {% for image in images %}
-             <li><img src="{{ image.image.url }}" style="width:  200px; height:  200px"  alt="Uploaded Image"></li>
+             <li><img src="{{ image.image.url }}" style="width:200px; height:200px" class="img-fluid mb-3" alt="Uploaded Image"></li>
          {% empty %}
               <li>No images uploaded yet.</li>
-          {% endfor %}
+         {% endfor %}
         </ul>
         </div>
     </div>
