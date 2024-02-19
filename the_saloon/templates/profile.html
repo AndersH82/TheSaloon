@@ -14,7 +14,7 @@
       {% if shouts%}
       {% for shout in shouts %}
 
-      <div class="alert alert-warning border border-warning" role="alert" style="font-family: Rye, serif;">
+      <div class="alert alert-warning" role="alert" style="font-family: Rye, serif;">
 
         {{ shout.body }}<br /><br />
         <small class="text-muted" style="font-family: Rye, serif;">
@@ -45,9 +45,9 @@
       {% endif %}
     </div>
     
+    
     <div class="col-md-4">
       <br/>
-   
 
       <div class="container mt-4 mb-4 p-3 d-flex justify-content-center">
         <div class="card p-4 border-0" style="background-color:#FFF3CD">
@@ -56,22 +56,17 @@
             <img src="{{ profile.profile_image.url }}" height="100" width="100" class="rounded-circle" height:
               auto;>	
         {% endif %}          
-            <span class="name mt-3" style="font-family: Rye, serif;">
-              {{ profile.user.username }}'s Profile</span>
-            <div class="d-flex flex-row justify-content-center align-items-center gap-2">
-            </div>
-            <div class="d-flex flex-row justify-content-center align-items-center mt-3">
-            </div>
-            <div class="d-flex mt-2">
-              
-            </div>
+            <span class="name mb-4" style="font-family: Rye, serif;">
+              {{ profile.user.username }}'s Profile
+            </span>
+            
             {% if profile.profile_bio %}
-            <div class="text mt-3">
+            <div class="text mb-3">
               <span><p align="justify" style="font-family: Rye, serif;">
                   {{ profile.profile_bio}}</p></span>
             </div>
             {% endif %}
-            <div class="gap-3 mt-3 icons d-flex flex-row justify-content-center align-items-center">
+            <div class="gap-3 mb-3 icons d-flex flex-row justify-content-center align-items-center">
               
               {% if profile.facebook_link %}
               <a href="{{ profile.facebook_link }}" style="color:gray" target="new">
@@ -134,8 +129,8 @@
         </div>
       </div>
     </div>  
-
-
+  </div>
+</div>
 
 
 
