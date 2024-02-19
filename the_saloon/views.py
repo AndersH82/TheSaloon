@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
-from .models import Profile, Shout
-from .forms import ShoutForm, SignUpForm, ProfilePicForm, HotelForm
+from .models import Profile, Shout, UploadedImage
+from .forms import ShoutForm, SignUpForm, ProfilePicForm, UploadImageForm
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.forms import UserCreationForm
 from django import forms
@@ -167,15 +167,12 @@ def edit_shout(request, pk):
         return redirect('home')
 
 
-def image_upload(request):
+def upload_image(request):
     if request.method == 'POST':
-        form = HotelForm(request.POST, request.FILES)
+        form = UploadImageForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
-            return redirect('success')
     else:
-        form = HotelForm()
-    return render(request, 'image_upload.html', {'form': form})
-
-def success(request):
-    return HttpResponse('successfully uploaded')
+        form = UploadImageForm()
+    images = UploadedImage.objects.all()
+    return render(request, 'upload_image.html', {'form': form, 'images': images})

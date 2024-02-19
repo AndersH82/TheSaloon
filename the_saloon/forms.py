@@ -2,7 +2,7 @@ from django import forms
 from .models import Shout, Profile
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
-from .models import Hotel
+from .models import UploadedImage
 
 # Profile picture form
 
@@ -66,7 +66,7 @@ class SignUpForm(UserCreationForm):
         self.fields['password2'].help_text = '<span class="form-text text-muted"><small></small></span>'
 
 
-class HotelForm(forms.ModelForm):
+class UploadImageForm(forms.ModelForm):
     class Meta:
-        model = Hotel
-        fields = ['name', 'Upload_image_here']
+        model = UploadedImage
+        fields = ('image',)

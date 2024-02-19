@@ -58,6 +58,6 @@ def create_profile(sender, instance, created, **kwargs):
 		user_profile.save()
 
 # Gallary for users images
-class Hotel(models.Model):
-    name = models.CharField(max_length=50)
-    Upload_image_here = models.ImageField(upload_to='images/')
+class UploadedImage(models.Model):
+    image = models.ImageField(upload_to='uploads/')
+    uploaded_at = models.DateTimeField(auto_now_add=True)
