@@ -61,3 +61,4 @@ def create_profile(sender, instance, created, **kwargs):
 class UploadedImage(models.Model):
     image = models.ImageField(upload_to='uploads/')
     uploaded_at = models.DateTimeField(auto_now_add=True)
+
