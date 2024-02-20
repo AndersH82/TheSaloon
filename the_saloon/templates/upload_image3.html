@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+
+<div class="container text-center" style="font-family: Rye, serif;">
+    <div class="row">
+        <div class="col-md-8 mx-auto">
+            <h3>{{ user.username }}'s Gallery</h3>
+            <br/><br/>
+                <ul style="list-style-type: none;">
+                    
+                {% for image in images %}
+                <div class="card-body">   
+                <li><img src="{{ image.image.url }}" style="width:200px; height:200px" 
+                    class="rounded mx-auto d-block p-3" alt="Uploaded Image">
+                </li>
+                </div>
+                {% empty %}            
+                    <li>No images uploaded yet.</li>
+                {% endfor %}
+                </ul>
+                
+                
+        </div>
+            <div class="col-md-4 mx-auto">
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body" style="background-color:#FFF3CD">
+                        <h5 class="card-title">Upload Images</h5>
+                        <form method="post" enctype="multipart/form-data" class="text-center">
+                        <p class="card-text">
+                            {% csrf_token %}
+                            {{ form.as_p }}</p>
+                        <button type="submit">Upload</button>
+                      </form>
+                    </div>
+                  </div>
+            </div>
+    </div>      
+</div> 
+
+{% endblock %}
+
+

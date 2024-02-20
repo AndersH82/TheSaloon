@@ -4,26 +4,35 @@
 
 
 <div class="container text-center" style="font-family: Rye, serif;">
-    <div class="row">
-        <div class="col-md-8">
-            <h3>{{ user.username }}'s Gallery</h3>
-            <br/><br/>
-                <ul style="list-style-type: none;">
-                {% for image in images %}
-                    <li><img src="{{ image.image.url }}" style="width:200px; height:200px" class="rounded mx-auto d-block p-3" alt="Uploaded Image"></li>
-                {% empty %}
-                    <li>No images uploaded yet.</li>
-                {% endfor %}
-                </ul>
+  <div class="row">
+    <div class="col-md-8">
+        <h3>{{ user.username }}'s Gallery</h3>
+        <br/><br/>
+            <ul style="list-style-type: none;">
                 
-                
-        </div>
-            <div class="col-md-4">
-                <div class="card" style="width: 18rem;">
-                    <div class="card-body" style="background-color:#FFF3CD">
+            {% for image in images %}
+            <div class="card-body">   
+            <li><img src="{{ image.image.url }}" style="width:200px; height:200px" 
+                class="rounded mx-auto d-block p-3" alt="Uploaded Image">
+            </li>
+            </div>
+            {% empty %}            
+                <li>No images uploaded yet.</li>
+            {% endfor %}
+            </ul>
+      
+      
+      
+    </div>
+    
+    
+    <div class="col-md-4">
+      <div class="container mt-4 mb-4 p-3 d-flex justify-content-center">
+        <div class="card p-4 border-0" style="background-color:#FFF3CD">
+          <div class=" image d-flex flex-column justify-content-center align-items-center">
                         <h5 class="card-title">Upload Images</h5>
                         <form method="post" enctype="multipart/form-data" class="text-center">
-                        <p class="card-text">
+                        <p class="card-text d-none d-md-block">
                             {% csrf_token %}
                             {{ form.as_p }}</p>
                         <button type="submit">Upload</button>
@@ -31,8 +40,14 @@
                     </div>
                   </div>
             </div>
-    </div>      
-</div>    
+              
+             
+          </div>
+        </div>
+      </div>
+    </div>  
+  </div>
+</div>
+
+
 {% endblock %}
-
-
