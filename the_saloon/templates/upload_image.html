@@ -13,7 +13,7 @@
             {% for image in images %}
             <div class="card-body">   
             <li><img src="{{ image.image.url }}" style="width:200px; height:200px" 
-                class="rounded mx-auto d-block p-3" alt="Uploaded Image">
+                class="rounded mx-auto d-block p-3 img-thumbnail" alt="Uploaded Image">
             </li>
             </div>
             {% empty %}            
@@ -27,11 +27,11 @@
     
     
     <div class="col-md-4">
-      <div class="container mt-4 mb-4 p-3 d-flex justify-content-center">
+      <div class="container mt-4 mb-4 p-3 d-flex justify-content-center img-thumbnail">
         <div class="card p-4 border-0" style="background-color:#FFF3CD">
-          <div class=" image d-flex flex-column justify-content-center align-items-center">
+          <div class=" image  flex-column justify-content-center ">
                         <h5 class="card-title">Upload Images</h5>
-                        <form method="post" enctype="multipart/form-data" class="text-center">
+                        <form method="post" enctype="multipart/form-data" class="text-center img-fluid">
                         <p class="card-text d-none d-md-block">
                             {% csrf_token %}
                             {{ form.as_p }}</p>
