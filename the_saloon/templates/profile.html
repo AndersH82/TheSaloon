@@ -6,9 +6,10 @@
 {% if profile %}
 
 <div class="container text-center">
+  <h1>{{ profile.user.username }}'s Profile</h1>
   <div class="row">
     <div class="col-md-8">
-      <h1 style="font-family: Rye, serif;">{{ profile.user.username }}'s Profile</h1>
+      
       
       <br/>
       {% if shouts%}
@@ -46,10 +47,9 @@
     </div>
     
     
-    <div class="col-md-4">
-      <br/>
 
-      <div class="container mt-4 mb-4 p-3 d-flex justify-content-center">
+
+      <div class="profile-bio">
         <div class="card p-4 border-0" style="background-color:#FFF3CD">
           <div class=" image d-flex flex-column justify-content-center align-items-center">
             {% if profile.profile_image %}

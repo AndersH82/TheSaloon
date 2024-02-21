@@ -8,12 +8,12 @@
         <div class="col-md-8">
 
 
-            <h1>Shouts!</h1>
+            <h1 class="home">Shouts!</h1>
             <br />
             {% for shout in shouts %}
             <div class="alert" role="alert">
 
-                {{ shout.body }}<br /><br />
+                {{ shout.body }}<br/><br/>
                 <small class="text-muted">
                     {{ shout.created_at }}
                     <br/>
@@ -29,12 +29,12 @@
 
                 </small>
             </div>
-            <br/><br/>
+            
             {% endfor %}
         </div>
 
-        <div class="col-md-4">
-            <br/><br/><br/>
+        <div class="home col-md-4">
+            
             {% if form %}
             <form method=POST style="font-family: Rye, serif;">
                 {% csrf_token %}

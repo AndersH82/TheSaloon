@@ -1,4 +1,4 @@
-/* base */
+ /* base */
 
 body {
     background-color: #A07445;
@@ -8,11 +8,17 @@ body {
     background-color: #A07445;
   }
 
-  h1 {
+  h1.home {
     color: black;
     margin-left:20px;
     font-family: Rye, serif;
     text-shadow: 1px 1px 1px gray;
+    font-family: Rye, serif;
+    margin-top: 70px;
+    
+  }
+  div.home {
+    margin-top: 150px;
   }
 
   div.alert {
@@ -20,6 +26,7 @@ body {
     box-shadow: 0 4px 6px 0 rgba(0,0,0,.2);
     font-family: Rye, serif;"
     text-shadow: 1px 1px 1px gray;
+    border-radius:  2rem;
   }
 
   button.btn {
@@ -27,6 +34,7 @@ body {
     font-family: Rye, serif;
     border: none;
     box-shadow: 0 6px 8px 0 rgba(0,0,0,.2);
+    border-radius:  2rem;
   }
   
   button.btn:hover {
@@ -36,7 +44,7 @@ body {
 
  
  
-/* navbar*/
+ /* navbar*/
 
  a.navbar-brand {
   background-color: #B3874E;
@@ -110,6 +118,23 @@ button.upload:hover {
     background-color: #A07445;
     transition: background-color  0.4s ease;
 }
+
+ /* profile */
+
+ div.profile-bio {
+  text-align: center;
+  margin-top: 70px;
+  background-repeat: no-repeat;
+  background-position:  50%  50%;
+  background-size: cover;
+  width:  300px;
+  height:  200px;
+  font-family: Rye, serif;
+  background-color: #FFF3CD;
+  box-shadow: 0 6px 8px 0 rgba(0,0,0,.2);
+  border-radius:  2rem;
+  margin-top: 70px;
+ }
 
 
 
