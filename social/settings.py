@@ -107,9 +107,10 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
+STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 STATICFILES_DIRS = [
-    "staticfiles/"
+    os.path.join(str(BASE_DIR.joinpath('social/static/')),)
 ] 
 
 MEDIA_URL = 'media/'
