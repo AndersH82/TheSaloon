@@ -15,14 +15,14 @@
 
 
     <div class="upload-img col-md-4">
-      <div class="card" style="width: 18rem;">
+      <div class="card-gallery" style="width: 18rem;">
         <div class="card-body">
           <h5 class="card-title">Upload Images</h5>
           <form method="post" enctype="multipart/form-data" class="text-center img-fluid">
             <p class="card-text d-none d-md-block">
                 {% csrf_token %}
                 {{ form.as_p }}</p>
-                <button type="submit">Upload</button>
+                <button class="upload" type="submit">Upload</button>
         </div>
       </div>
     </div>

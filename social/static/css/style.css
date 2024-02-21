@@ -33,10 +33,7 @@ body {
     background-color: #A07445;
     transition: background-color  0.4s ease;
   }
-  
-  input {
-    
-  }
+
  
  
 /* navbar*/
@@ -61,6 +58,7 @@ body {
   color:black;
   font-family: Rye, serif;
   text-shadow: 1px 1px 1px gray;
+  box-shadow:  0 -3px  10px  3px rgba(0,  0,  0,  0.2);
  }
 
  /* gallery */
@@ -72,6 +70,7 @@ body {
 }
 
 .gallery-item {
+  margin-top: 60px;
   flex:  1  0 calc(33.333% -  10px);
   margin-bottom:  10px;
 }
@@ -80,10 +79,46 @@ body {
   width:  200px;
   height: 200px;
   padding: 10px;
+  border-radius:  2rem;
+  box-shadow: 0 6px 8px 0 rgba(0,0,0,.2);
 }
-.gallery-item img:hover {
-  box-shadow:  5px  4px  10px #B3874E;
+
+
+div.card-gallery{
+  text-align: center;
+  margin-top: 70px;
+  background-repeat: no-repeat;
+  background-position:  50%  50%;
+  background-size: cover;
+  width:  300px;
+  height:  200px;
+  font-family: Rye, serif;
+  background-color: #FFF3CD;
+  box-shadow: 0 6px 8px 0 rgba(0,0,0,.2);
+  border-radius:  2rem;
 }
+
+button.upload {
+  background-color:#B3874E;
+  font-family: Rye, serif;
+  border: none;
+  box-shadow: 0 6px 8px 0 rgba(0,0,0,.2);
+}
+
+button.upload:hover {
+    background-color: #A07445;
+    transition: background-color  0.4s ease;
+}
+
+
+
+
+
+
+
+
+
+
 @media (max-width:  600px) {
   .gallery-item {
       flex:  1  0 calc(50% -  10px);
