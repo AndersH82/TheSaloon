@@ -35,7 +35,7 @@ body {
   }
   
   input {
-    box-shadow: 0 6px 8px 0 rgba(0,0,0,.2);
+    
   }
  
  
@@ -62,3 +62,32 @@ body {
   font-family: Rye, serif;
   text-shadow: 1px 1px 1px gray;
  }
+
+ /* gallery */
+
+ .gallery-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.gallery-item {
+  flex:  1  0 calc(33.333% -  10px);
+  margin-bottom:  10px;
+}
+
+.gallery-item img {
+  width:  200px;
+  height: 200px;
+  padding: 10px;
+}
+.gallery-item img:hover {
+  box-shadow:  5px  4px  10px #B3874E;
+}
+@media (max-width:  600px) {
+  .gallery-item {
+      flex:  1  0 calc(50% -  10px);
+  }
+}
+
+
