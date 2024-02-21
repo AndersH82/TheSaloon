@@ -1,0 +1,64 @@
+/* base */
+
+body {
+    background-color: #A07445;
+  }
+
+  div.container {
+    background-color: #A07445;
+  }
+
+  h1 {
+    color: black;
+    margin-left:20px;
+    font-family: Rye, serif;
+    text-shadow: 1px 1px 1px gray;
+  }
+
+  div.alert {
+    background-color: #FFF3CD;
+    box-shadow: 0 4px 6px 0 rgba(0,0,0,.2);
+    font-family: Rye, serif;"
+    text-shadow: 1px 1px 1px gray;
+  }
+
+  button.btn {
+    background-color:#B3874E;
+    font-family: Rye, serif;
+    border: none;
+    box-shadow: 0 6px 8px 0 rgba(0,0,0,.2);
+  }
+  
+  button.btn:hover {
+    background-color: #A07445;
+    transition: background-color  0.4s ease;
+  }
+  
+  input {
+    box-shadow: 0 6px 8px 0 rgba(0,0,0,.2);
+  }
+ 
+ 
+/* navbar*/
+
+ a.navbar-brand {
+  background-color: #B3874E;
+  color: black;
+  font-family: Rye, serif;
+  text-shadow: 1px 1px 1px gray;
+ }
+ nav.navbar {
+  background-color: #B3874E;
+  box-shadow: 0 6px 8px 0 rgba(0,0,0,.2);
+ }
+
+ 
+ /* footer */
+
+ footer.bg-body-tertiary {
+
+  background-color: #B3874E;
+  color:black;
+  font-family: Rye, serif;
+  text-shadow: 1px 1px 1px gray;
+ }

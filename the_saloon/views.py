@@ -177,3 +177,10 @@ def upload_image(request):
     images = UploadedImage.objects.all()
     return render(request, 'upload_image.html', {'form': form, 'images': images})
 
+
+
+
+    
+                
+
+   

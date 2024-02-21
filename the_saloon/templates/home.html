@@ -8,10 +8,10 @@
         <div class="col-md-8">
 
 
-            <h1 style="font-family: Rye, serif;">Shouts!</h1>
+            <h1>Shouts!</h1>
             <br />
             {% for shout in shouts %}
-            <div class="alert alert-warning border border-warning" role="alert" style="font-family: Rye, serif;">
+            <div class="alert" role="alert">
 
                 {{ shout.body }}<br /><br />
                 <small class="text-muted">
@@ -41,7 +41,7 @@
                 {{ form.as_p }}
 
 
-                <button type="submit" class="btn btn-warning" style="font-family: Rye, serif;">Shout</button>
+                <button type="submit" class="btn btn-warning">Shout</button>
             </form>
             {% endif %}
         </div>
