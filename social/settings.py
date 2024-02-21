@@ -20,12 +20,13 @@ ALLOWED_HOSTS = ['8000-andersh82-thesaloon-vokdu2y0x5e.ws-eu108.gitpod.io','.her
 # Application definition
 
 INSTALLED_APPS = [
+    'django.contrib.staticfiles',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'django.contrib.staticfiles',
+    
     'the_saloon',
 ]
 
@@ -37,6 +38,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'social.urls'
@@ -109,9 +111,9 @@ STATIC_URL = 'static/'
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-STATICFILES_DIRS = [
-    os.path.join(str(BASE_DIR.joinpath('social/static')),)
-] 
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'social/static'),
+) 
 
 MEDIA_URL = 'media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
