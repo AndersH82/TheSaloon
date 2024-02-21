@@ -20,12 +20,12 @@ ALLOWED_HOSTS = ['8000-andersh82-thesaloon-vokdu2y0x5e.ws-eu108.gitpod.io','.her
 # Application definition
 
 INSTALLED_APPS = [
-    'django.contrib.staticfiles',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'django.contrib.staticfiles',
     'the_saloon',
 ]
 
@@ -107,10 +107,10 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
-
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 STATICFILES_DIRS = [
-    os.path.join(str(BASE_DIR.joinpath('staticfiles')),)
+    os.path.join(str(BASE_DIR.joinpath('social/static')),)
 ] 
 
 MEDIA_URL = 'media/'
