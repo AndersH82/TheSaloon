@@ -56,7 +56,10 @@
             {% if profile.profile_image %}
             <img src="{{ profile.profile_image.url }}" height="100" 
             width="100" class="profile rounded-circle" height: auto;>	
-        {% endif %}          
+            {% else %}   
+            <img src="{% static 'images/cowboy.png' %}" height="100"
+            width="100" class="profile rounded-circle" height: auto;>
+            {% endif %}       
             <span class="name mb-4">
               {{ profile.user.username }}'s Profile
             </span>
