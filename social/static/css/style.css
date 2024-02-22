@@ -312,9 +312,42 @@ h1.update, h1.register {
   box-shadow: 0 6px 8px 0 rgba(0,0,0,.2);
 }
 
+h1.login {
+  color: black;
+  text-shadow: 1px 1px 1px gray;
+  font-family: Rye, serif;
+  margin-top: 70px;
+  text-align:center
+}
 
+input.form-control {
+  background-color: #FFF3CD;
+  border: none;
+  border-radius: 2rem;
+  max-width: 400px;
+  display: block;
+  margin: auto;
+  color: black;
+  font-family: Rye, serif;
+  box-shadow: 0 6px 8px 0 rgba(0,0,0,.2);
+}
 
+button.btn-login {
+  background-color:#B3874E;
+  font-family: Rye, serif;
+  border: none;
+  box-shadow: 0 6px 8px 0 rgba(0,0,0,.2);
+  border-radius:  2rem;
+  font-family: Rye, serif;
+  color: black;
+  display: block;
+  margin: auto;
+}
 
+button.btn-login:hover {
+  background-color: #A07445;
+  transition: background-color  0.4s ease;
+}
 
 
 @media (max-width:  600px) {

@@ -7,9 +7,9 @@
 
 {% else %}
 <div class="col-md-6 offset-md-3">
-<h1 style="font-family: Rye, serif;">Login</h1>
+<h1 class="login">Login</h1>
 <br/>
-<form method="POST" action="{% url 'login' %}" style="font-family: Rye, serif;">
+<form method="POST" action="{% url 'login' %}">
     {% csrf_token %}
 
     <div class="form-group">
@@ -24,8 +24,8 @@
       <input type="password" class="form-control" name="password"
       placeholder="Enter your password">
     </div>
-    <br/>
-    <button type="submit" class="btn btn-warning">Submit</button>
+    
+    <button type="submit" class="btn-login">Submit</button>
   </form>
 </div>
 
