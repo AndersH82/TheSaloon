@@ -371,6 +371,55 @@ div.card-login {
   border-radius:  2rem;
 }
 
+ /* edit shout */
+
+ h1.edit-shout {
+  font-family: Rye, serif;
+  color: black;
+  text-align: center;
+  margin-top: 70px;
+ }
+
+ div.cont-edit-shout {
+  justify-content: center;
+  display: flex;
+ }
+
+ div.text-edit {
+  background-color:#FFF3CD;
+  color: black;
+  background-color: #FFF3CD;
+  box-shadow: 0 4px 6px 0 rgba(0,0,0,.2);
+  font-family: Rye, serif;
+  border-radius:  2rem;
+  margin-top: 30px;
+  text-align: center;
+ }
+
+ button.btn-edit-shout {
+  background-color:#B3874E;
+  font-family: Rye, serif;
+  border: none;
+  box-shadow: 0 6px 8px 0 rgba(0,0,0,.2);
+  border-radius:  2rem;
+  font-family: Rye, serif;
+  color: black;
+  display: block;
+  margin: auto;
+  margin-top: 30px;
+ }
+
+ button.btn-edit-shout:hover {
+  background-color: #A07445;
+  transition: background-color  0.4s ease;
+ }
+
+ #id_body.form-control {
+  background-color: #FFF3CD;
+  border: none;
+  border-radius: 2rem;
+  box-shadow: 0 6px 8px 0 rgba(0,0,0,.2);
+ }
 
 @media (max-width:  600px) {
   .gallery-item {
