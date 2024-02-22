@@ -115,6 +115,15 @@ button.upload:hover {
     transition: background-color  0.4s ease;
 }
 
+#id_image {
+  background-color: #FFF3CD;
+  font-family: Rye, serif;
+  border: none;
+  width: 110px;
+  
+}
+
+
  /* profile */
 
  h1.profile {
