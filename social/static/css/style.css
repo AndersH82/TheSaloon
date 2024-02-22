@@ -12,9 +12,9 @@ body {
     color: black;
     font-family: Rye, serif;
     text-shadow: 1px 1px 1px gray;
-    margin-top: 70px;
-    
+    margin-top: 70px; 
   }
+
   div.home {
     margin-top: 150px;
   }
@@ -58,7 +58,6 @@ body {
  /* footer */
 
  footer.bg-body-tertiary {
-
   background-color: #B3874E;
   color:black;
   font-family: Rye, serif;
@@ -118,6 +117,14 @@ button.upload:hover {
 
  /* profile */
 
+ h1.profile {
+  color: black;
+  font-family: Rye, serif;
+  text-shadow: 1px 1px 1px gray;
+  margin-top: 70px;
+  margin-bottom: 20px; 
+}
+
  div.profile-bio {
   text-align: center;
   background-repeat: no-repeat;
@@ -129,7 +136,7 @@ button.upload:hover {
   background-color: #FFF3CD;
   box-shadow: 0 6px 8px 0 rgba(0,0,0,.2);
   border-radius:  2rem;
-  margin-top: 90px;
+  margin-top: 135px;
   margin-left: 50px;
  }
 
@@ -160,10 +167,8 @@ span.name {
   text-decoration: underline;
 }
 
-div.shout-profile {
-  font-family: Rye, serif;
-  color: black;
-  margin-top: 70px;
+small.text-muted {
+  margin-top: 20px;
 }
 
 h5.follow {

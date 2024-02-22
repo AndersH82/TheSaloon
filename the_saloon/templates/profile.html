@@ -9,14 +9,14 @@
   <div class="row">
     <div class="col-md-8">
       
-      
-      <br/>
+      <h1 class="profile">{{ profile.user.username }}'s Profile</h1>
+
       {% if shouts%}
       {% for shout in shouts %}
 
-      <div class="shout-profile alert alert-warning" role="alert">
+      <div class="alert" role="alert">
 
-        {{ shout.body }}<br /><br />
+        {{ shout.body }}<br/><br/>
         <small class="text-muted" style="font-family: Rye, serif;">
 
           {{ shout.created_at }}
@@ -40,14 +40,10 @@
           {% endif %}
 
         </small>
-      </div><br /></br />
+      </div>
       {% endfor %}
       {% endif %}
     </div>
-    
-    
-
-
       <div class="profile-bio">
         
           <div class=" image d-flex flex-column 
