@@ -52,7 +52,7 @@
             <img src="{{ profile.profile_image.url }}" height="100" 
             width="100" class="profile rounded-circle" height: auto;>	
             {% else %}   
-            <img src="{% static 'images/cowboy.png' %}" height="100"
+            <img src="{% static 'images/cowboy.png' %}" height="100" 
             width="100" class="profile rounded-circle" height: auto;>
             {% endif %}       
             <span class="name mb-4">
@@ -69,28 +69,28 @@
             justify-content-center align-items-center">
               
               {% if profile.facebook_link %}
-              <a href="{{ profile.facebook_link }} target="new">
-                <i class="fa-2x fa-brands fa-facebook"></i></a>
+              <a href="{{ profile.facebook_link }}" target="new">
+                <i class="face fa-2x fa-brands fa-facebook"></i></a>
               {% endif %}   
               &nbsp;&nbsp;
               {% if profile.instagram_link %}
               <a href="{{ profile.instagram_link }}" target="new"><i
-                  class="fa-2x fa-brands fa-instagram"></i></a>
+                  class="inst fa-2x fa-brands fa-instagram"></i></a>
               {% endif %}
               &nbsp;&nbsp;
               {% if profile.linkedin_link %}
               <a href="{{ profile.linkedin_link }}" target="new"><i
-                  class="fa-2x fa-brands fa-linkedin"></i></a>
+                  class="link fa-2x fa-brands fa-linkedin"></i></a>
               {% endif %}
               &nbsp;&nbsp;
               {% if profile.youtube_link %}
               <a href="{{ profile.youtube_link }}" target="new"><i
-                  class="fa-2x fa-brands fa-youtube"></i></a>
+                  class="you fa-2x fa-brands fa-youtube"></i></a>
               {% endif %}
               &nbsp;&nbsp;
               {% if profile.x_link %}
               <a href="{{ profile.x_link }}" target="new"><i
-                 class="fa-2x fa-brands fa-x-twitter"></i></a>
+                 class="x fa-2x fa-brands fa-x-twitter"></i></a>
               {% endif %}
             </div>
             <h5 class="follow"> Follows </h5>
