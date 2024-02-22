@@ -22,8 +22,7 @@ body {
   div.alert {
     background-color: #FFF3CD;
     box-shadow: 0 4px 6px 0 rgba(0,0,0,.2);
-    font-family: Rye, serif;"
-    text-shadow: 1px 1px 1px gray;
+    font-family: Rye, serif;
     border-radius:  2rem;
   }
 
@@ -246,7 +245,7 @@ p.list {
 
 /*edit profile */
 
-button.btn-update {
+button.btn-update, button.btn-register {
   background-color:#B3874E;
   font-family: Rye, serif;
   border: none;
@@ -258,13 +257,15 @@ button.btn-update {
   margin: auto;
 }
 
-button.btn-update:hover {
+button.btn-update:hover, button.btn-register:hover {
   background-color: #A07445;
   transition: background-color  0.4s ease;
 }
- /* update form */
-h1.update {
+
+ /* update,register form */
+h1.update, h1.register {
   color: black;
+  text-shadow: 1px 1px 1px gray;
   font-family: Rye, serif;
   margin-top: 70px;
   text-align:center
@@ -294,6 +295,7 @@ h1.update {
   margin: auto;
   color: black;
   font-family: Rye, serif;
+  box-shadow: 0 6px 8px 0 rgba(0,0,0,.2);
 } 
 
 #id_facebook_link.form-control, #id_instagram_link.form-control, 
@@ -307,6 +309,7 @@ h1.update {
   margin: auto;
   color: black;
   font-family: Rye, serif;
+  box-shadow: 0 6px 8px 0 rgba(0,0,0,.2);
 }
 
 

@@ -2,8 +2,8 @@
 
 {% block content %}
 
+<h1 class="register">Register</h1>
 <div class="col-md-6 offset-md-3"></div>
-<h1 style="font-family: Rye, serif;">Register</h1>
 <br/>
 
 
@@ -11,7 +11,7 @@
     {% csrf_token %}
     {{ form.as_p }}
     <br/>
-    <button type="submit" class="btn btn-primary">Register</button>
+    <button type="submit" class="btn-register">Register</button>
 </form>
 
 
