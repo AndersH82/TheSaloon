@@ -7,9 +7,9 @@
 
 {% else %}
 <div class="col-md-6 offset-md-3">
-<h1 class="login">Login</h1>
-<br/>
-<form method="POST" action="{% url 'login' %}">
+  <h1 class="login">Login</h1>
+  <br/>
+    <form method="POST" action="{% url 'login' %}">
     {% csrf_token %}
 
     <div class="form-group">
@@ -17,17 +17,31 @@
       <input type="text" class="form-control" name="username"
       placeholder="Enter your username">
       
-    </div>
-    <br/>
-    <div class="form-group">
+      </div>
+      <br/>
+      <div class="form-group">
       
       <input type="password" class="form-control" name="password"
       placeholder="Enter your password">
-    </div>
+      </div>
     
-    <button type="submit" class="btn-login">Submit</button>
-  </form>
+      <button type="submit" class="btn-login">Submit</button>
+    </form>
 </div>
+<div class="card-login">
+  <div class="card-header">
+    The Saloon
+  </div>
+  <div class="card-body">
+    <blockquote class="blockquote mb-0">
+      <p>Welcome to a social page The Saloon, 
+        in here you can write posts that other users can see and create your own gallery on your page.
+        There will be more features in the future like liking profiles,
+        talking with others, liking/disliking photos in other's gallery and much much more...</p>
+    </blockquote>
+  </div>
+</div>
+
 
 {% endif %}
 {% endblock %}

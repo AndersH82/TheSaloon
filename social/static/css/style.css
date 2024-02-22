@@ -342,11 +342,24 @@ button.btn-login {
   color: black;
   display: block;
   margin: auto;
+  margin-top: 30px;
 }
 
 button.btn-login:hover {
   background-color: #A07445;
   transition: background-color  0.4s ease;
+}
+
+div.card-login {
+  width: 500px;
+  display: block;
+  margin: auto;
+  margin-top: 100px;
+  background-color: #FFF3CD;
+  font-family: Rye, serif;
+  color: black;
+  box-shadow: 0 6px 8px 0 rgba(0,0,0,.2);
+  border-radius:  2rem;
 }
 
 
