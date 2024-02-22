@@ -8,7 +8,7 @@
 <div class="container text-center">
   <div class="row">
     <div class="col-md-8">
-      
+
       <h1 class="profile">{{ profile.user.username }}'s Profile</h1>
 
       {% if shouts%}
@@ -36,7 +36,7 @@
               style="color:gray"></i></a>
           &nbsp;&nbsp;
           <a href="{% url 'edit_shout' shout.id %}"><i class="fa-lg fa-regular fa-pen-to-square"
-          style="color:gray"></i></a>
+              style="color:gray"></i></a>
           {% endif %}
 
         </small>
@@ -44,91 +44,87 @@
       {% endfor %}
       {% endif %}
     </div>
-      <div class="profile-bio">
-        
-          <div class=" image d-flex flex-column 
+    <div class="profile-bio">
+
+      <div class=" image d-flex flex-column 
                 justify-content-center align-items-center">
-            {% if profile.profile_image %}
-            <img src="{{ profile.profile_image.url }}" height="100" 
-            width="100" class="profile rounded-circle" height: auto;>	
-            {% else %}   
-            <img src="{% static 'images/cowboy.png' %}" height="100" 
-            width="100" class="profile rounded-circle" height: auto;>
-            {% endif %}       
-            <span class="name mb-4">
-              {{ profile.user.username }}'s Profile
-            </span>
-            
-            {% if profile.profile_bio %}
-            <div class="bio">
-              <span><p>
-                  {{ profile.profile_bio}}</p></span>
-            </div>
-            {% endif %}
-            <div class="gap-3 mb-3 icons d-flex flex-row 
-            justify-content-center align-items-center">
-              
-              {% if profile.facebook_link %}
-              <a href="{{ profile.facebook_link }}" target="new">
-                <i class="face fa-2x fa-brands fa-facebook"></i></a>
-              {% endif %}   
-              &nbsp;&nbsp;
-              {% if profile.instagram_link %}
-              <a href="{{ profile.instagram_link }}" target="new"><i
-                  class="inst fa-2x fa-brands fa-instagram"></i></a>
-              {% endif %}
-              &nbsp;&nbsp;
-              {% if profile.linkedin_link %}
-              <a href="{{ profile.linkedin_link }}" target="new"><i
-                  class="link fa-2x fa-brands fa-linkedin"></i></a>
-              {% endif %}
-              &nbsp;&nbsp;
-              {% if profile.youtube_link %}
-              <a href="{{ profile.youtube_link }}" target="new"><i
-                  class="you fa-2x fa-brands fa-youtube"></i></a>
-              {% endif %}
-              &nbsp;&nbsp;
-              {% if profile.x_link %}
-              <a href="{{ profile.x_link }}" target="new"><i
-                 class="x fa-2x fa-brands fa-x-twitter"></i></a>
-              {% endif %}
-            </div>
-            <h5 class="follow"> Follows </h5>
-            <p class="card-text">{% for following in profile.follows.all %}
-              <a href="{% url 'profile' following.user.id %}">{{ following }}</a><br />
-              {% endfor %}
-            <h5 class="follow"> Followers </h5>
-            <p class="card-text">{% for following in profile.followed_by.all %}
-              <a href="{% url 'profile' following.user.id %}">{{ following }}</a><br />
-              {% endfor %}
-              
-            <form method=POST>
-              {% csrf_token %}
-              {% if profile in user.profile.follows.all %}
-              <button class="btn-profile btn-outline" name="follow"
-               value="unfollow" type="submit">
-                Unfollow {{ profile.user.username|lower}}
-              </button>
-              
-              {% else %}
-              <button class="btn-profile btn-outline" name="follow"
-               value="follow" type="submit">
-                Follow {{ profile.user.username|lower}}
-              </button>
-              {% endif %}
-              <br/><br/>
-              {% if request.user.id == profile.user.id %}
-              <button class="btn-profile btn-outline">
-                <a class="edit" href="{% url 'update_user' %}">Edit Profile</a>
-              </button>
-              {% endif %}
-              
-             
-          </div>
+        {% if profile.profile_image %}
+        <img src="{{ profile.profile_image.url }}" height="100" 
+        width="100" class="profile rounded-circle" height:auto; alt="profile_image">
+        {% else %}
+        <img src="{% static 'images/cowboy.png' %}" height="100" 
+        width="100" class="profile rounded-circle" height:auto; alt="profile_image">
+        {% endif %}
+        <span class="name mb-4">
+          {{ profile.user.username }}'s Profile
+        </span>
+
+        {% if profile.profile_bio %}
+        <div class="bio">
+          <span>
+            <p>
+              {{ profile.profile_bio}}</p>
+          </span>
         </div>
+        {% endif %}
+        <div class="gap-3 mb-3 icons d-flex flex-row 
+            justify-content-center align-items-center">
+
+          {% if profile.facebook_link %}
+          <a href="{{ profile.facebook_link }}" target="new">
+            <i class="face fa-2x fa-brands fa-facebook"></i></a>
+          {% endif %}
+          &nbsp;&nbsp;
+          {% if profile.instagram_link %}
+          <a href="{{ profile.instagram_link }}" target="new"><i class="inst fa-2x fa-brands fa-instagram"></i></a>
+          {% endif %}
+          &nbsp;&nbsp;
+          {% if profile.linkedin_link %}
+          <a href="{{ profile.linkedin_link }}" target="new"><i class="link fa-2x fa-brands fa-linkedin"></i></a>
+          {% endif %}
+          &nbsp;&nbsp;
+          {% if profile.youtube_link %}
+          <a href="{{ profile.youtube_link }}" target="new"><i class="you fa-2x fa-brands fa-youtube"></i></a>
+          {% endif %}
+          &nbsp;&nbsp;
+          {% if profile.x_link %}
+          <a href="{{ profile.x_link }}" target="new"><i class="x fa-2x fa-brands fa-x-twitter"></i></a>
+          {% endif %}
+        </div>
+        <h5 class="follow"> Follows </h5>
+        <p class="card-text">{% for following in profile.follows.all %}
+          <a href="{% url 'profile' following.user.id %}">{{ following }}</a><br />
+          {% endfor %}
+        <h5 class="follow"> Followers </h5>
+        <p class="card-text">{% for following in profile.followed_by.all %}
+          <a href="{% url 'profile' following.user.id %}">{{ following }}</a><br />
+          {% endfor %}
+
+        <form method=POST>
+          {% csrf_token %}
+          {% if profile in user.profile.follows.all %}
+          <button class="btn-profile btn-outline" name="follow" value="unfollow" type="submit">
+            Unfollow {{ profile.user.username|lower}}
+          </button>
+
+          {% else %}
+          <button class="btn-profile btn-outline" name="follow" value="follow" type="submit">
+            Follow {{ profile.user.username|lower}}
+          </button>
+          {% endif %}
+          <br /><br />
+          {% if request.user.id == profile.user.id %}
+          <button class="btn-profile btn-outline">
+            <a class="edit" href="{% url 'update_user' %}">Edit Profile</a>
+          </button>
+          {% endif %}
+
+
       </div>
-    </div>  
+    </div>
   </div>
+</div>
+</div>
 </div>
 
 
