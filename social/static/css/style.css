@@ -244,6 +244,76 @@ p.list {
   margin-top: 10px;
 }
 
+/*edit profile */
+
+button.btn-update {
+  background-color:#B3874E;
+  font-family: Rye, serif;
+  border: none;
+  box-shadow: 0 6px 8px 0 rgba(0,0,0,.2);
+  border-radius:  2rem;
+  font-family: Rye, serif;
+  color: black;
+  display: block;
+  margin: auto;
+}
+
+button.btn-update:hover {
+  background-color: #A07445;
+  transition: background-color  0.4s ease;
+}
+ /* update form */
+h1.update {
+  color: black;
+  font-family: Rye, serif;
+  margin-top: 70px;
+  text-align:center
+  
+}
+#id_username.form-control {
+  background-color: #FFF3CD;
+  border: none;
+  border-radius: 2rem;
+  max-width: 400px;
+  display: block;
+  margin: auto;
+  color: black;
+  font-family: Rye, serif;
+  margin-top: 30px;
+}
+
+#id_first_name.form-control, #id_last_name.form-control,
+#id_email.form-control, #id_email.form-control,
+#id_password1.form-control, #id_password2.form-control,
+#id_profile_bio.form-control {
+  background-color: #FFF3CD;
+  border: none;
+  border-radius: 2rem;
+  max-width: 400px;
+  display: block;
+  margin: auto;
+  color: black;
+  font-family: Rye, serif;
+} 
+
+#id_facebook_link.form-control, #id_instagram_link.form-control, 
+#id_linkedin_link.form-control, #id_youtube_link.form-control,
+#id_x_link.form-control {
+  background-color: #FFF3CD;
+  border: none;
+  border-radius: 2rem;
+  max-width: 400px;
+  display: block;
+  margin: auto;
+  color: black;
+  font-family: Rye, serif;
+}
+
+
+
+
+
+
 @media (max-width:  600px) {
   .gallery-item {
       flex:  1  0 calc(50% -  10px);

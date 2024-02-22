@@ -1,20 +1,20 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
-<div class="col-md-6 offset-md-3"></div>
-<h1 style="font-family: Rye, serif;">Update your profile</h1>
-<br/>
+<h1 class="update">Update profile</h1>
+<div class="update"></div>
 
 
-<form method="POST" action="" enctype="multipart/form-data" style="font-family: Rye, serif;">
+
+
+<form method="POST" class="edit" action="" enctype="multipart/form-data">
     {% csrf_token %}
     {{ user_form.as_p }}
     <br/>
     {{ profile_form.as_p }}
     
-    <br/><br/>
-    <button type="submit" class="btn btn-primary">Update Profile</button>
+    
+    <button type="submit" class="btn-update">Update Profile</button>
 </form>
 
 

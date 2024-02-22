@@ -52,17 +52,17 @@ class SignUpForm(UserCreationForm):
 
         self.fields['username'].widget.attrs['class'] = 'form-control'
         self.fields['username'].widget.attrs['placeholder'] = 'User Name'
-        self.fields['username'].label = 'Enter your personal information:'
+        self.fields['username'].label = ''
         self.fields['username'].help_text = '<span class="form-text text-muted"><small></small></span>'
 
         self.fields['password1'].widget.attrs['class'] = 'form-control'
         self.fields['password1'].widget.attrs['placeholder'] = 'Password'
-        self.fields['password1'].label = 'Enter your password:'
+        self.fields['password1'].label = ''
         self.fields['password1'].help_text = '<span class="form-text text-muted"><small></small></span>'
 
         self.fields['password2'].widget.attrs['class'] = 'form-control'
         self.fields['password2'].widget.attrs['placeholder'] = 'Confirm Password'
-        self.fields['password2'].label = 'Enter your password again:'
+        self.fields['password2'].label = ''
         self.fields['password2'].help_text = '<span class="form-text text-muted"><small></small></span>'
 
 
