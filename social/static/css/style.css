@@ -213,6 +213,8 @@ h1.list {
   font-family: Rye, serif;
   text-align: center;
   margin-top: 70px;
+  color: black;
+  text-shadow: 1px 1px 1px gray;
 }
 
 
