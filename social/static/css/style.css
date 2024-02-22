@@ -129,15 +129,8 @@ button.upload:hover {
   background-color: #FFF3CD;
   box-shadow: 0 6px 8px 0 rgba(0,0,0,.2);
   border-radius:  2rem;
-  margin-top: 20px;
+  margin-top: 90px;
   margin-left: 50px;
- }
-
- h1.profile {
-  color: black;
-  font-family: Rye, serif;
-  text-shadow: 1px 1px 1px gray;
-  margin-top: 70px;
  }
 
  div.bio {
@@ -170,6 +163,7 @@ span.name {
 div.shout-profile {
   font-family: Rye, serif;
   color: black;
+  margin-top: 70px;
 }
 
 h5.follow {
