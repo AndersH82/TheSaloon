@@ -1,7 +1,10 @@
 from django.test import TestCase, Client
 from django.urls import reverse, resolve
+from django.contrib.auth.models import User
 from the_saloon.views import home, profile_list, login_user, update_user, upload_image
-from the_saloon.models import Profile, User
+from the_saloon.models import Profile, Shout
+from django.contrib.auth.models import User
+from .forms import ProfilePicForm, ShoutForm, SignUpForm
 
 # Test Urls
 
@@ -38,7 +41,6 @@ class TestUrls(TestCase):
 
 # Test Views
 
-
 class ProfileViewTest(TestCase):
     def setUp(self):
         self.client = Client()
@@ -72,4 +74,75 @@ class LoginUserTest(TestCase):
 
 # Test Models
 
-class 
+class ShoutModelTest(TestCase):
+    
+    def setUpTestData():
+        test_user = User.objects.create_user(username="User", password='password')
+        Shout.objects.create(user=test_user, body='Test shout body')
+
+    def test_number_of_likes(self):
+        shout = Shout.objects.get(id=1)
+        self.assertEqual(shout.number_of_likes(), 0)
+
+    def test_number_of_likes_after_liking(self):
+        shout = Shout.objects.get(id=1)
+        test_user = User.objects.create_user(username='user', password='password')
+        self.assertEqual(shout.number_of_likes(), 0)
+
+# Test Forms
+
+
+class ProfilePicFormTest(TestCase):
+
+    def test_form_fields(self):
+        form = ProfilePicForm()
+        self.assertSequenceEqual(list(form.fields.keys()), ['profile_image', 'profile_bio', 'facebook_link', 'instagram_link', 'linkedin_link', 'youtube_link', 'x_link'])
+
+    
+    def test_form_rendering(self):
+    
+        form = ProfilePicForm()
+        rendered = form.as_p()
+        self.assertIn('Profile Picture', rendered)
+        self.assertIn('Profile Info', rendered)
+        self.assertIn('Facebook Link', rendered)
+        self.assertIn('Instagram Link', rendered)
+        self.assertIn('Linkedin Link', rendered)
+        self.assertIn('Youtube Link', rendered)
+        self.assertIn('X Link', rendered)
+
+class ShoutFormTest(TestCase):
+
+    def setUp(self):
+        self.shout = Shout.objects.create(body="This is a test shout")
+
+    def tearDown(self):
+        Shout.objects.all().delete()
+
+class SignUpFormTest(TestCase):
+    def setUp(self):
+        self.client = Client()
+        self.signup_url = reverse('register')
+
+    def test_form_initialization(self):
+        form = SignUpForm()
+        self.assertEqual(len(form.fields),  6)
+        self.assertTrue('username' in form.fields)
+        self.assertTrue('first_name' in form.fields)
+        self.assertTrue('last_name' in form.fields)
+        self.assertTrue('email' in form.fields)
+        self.assertTrue('password1' in form.fields)
+        self.assertTrue('password2' in form.fields)
+
+    def test_form_validation(self):
+        form = SignUpForm(data={
+            'username': 'testuser',
+            'first_name': 'Test',
+            'last_name': 'User',
+            'email': 'invalid_email',
+            'password1': 'testpassword',
+            'password2': 'testpassword',
+        })
+        self.assertFalse(form.is_valid())
+
+    
