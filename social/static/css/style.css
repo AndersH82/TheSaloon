@@ -2,10 +2,13 @@
 
 body {
   background-color: #A07445;
+  margin-bottom:  80px;
 }
 
 div.container {
   background-color: #A07445;
+  display: flex;
+  width: 100%;
 }
 
 h1.home {
@@ -58,17 +61,19 @@ nav.navbar {
 
 /* footer */
 
-footer.bg-body-tertiary {
+footer.footer {
+  width: 100%;
   background-color: #B3874E;
   color:black;
   font-family: Rye, serif;
   text-shadow: 1px 1px 1px gray;
   box-shadow:  0 -3px  10px  3px rgba(0,  0,  0,  0.2);
-  text-align: center;
-  position: sticky;
+  position: fixed;
   bottom: 0;
-  margin-top: 20px;
+  flex:  0  0  50px;
 }
+
+
 
 /* gallery */
 
@@ -456,10 +461,6 @@ button.btn-edit-shout:hover {
   font-family: Rye, serif;
 }
 
-small.text-muted::before {
-  content: "\A";
-  white-space: pre;
-  display: block;			
 
 
 @media (max-width:  600px) {
