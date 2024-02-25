@@ -64,6 +64,10 @@ footer.bg-body-tertiary {
   font-family: Rye, serif;
   text-shadow: 1px 1px 1px gray;
   box-shadow:  0 -3px  10px  3px rgba(0,  0,  0,  0.2);
+  text-align: center;
+  position: sticky;
+  bottom: 0;
+  margin-top: 20px;
 }
 
 /* gallery */
@@ -421,7 +425,8 @@ div.text-edit {
   box-shadow: 0 4px 6px 0 rgba(0,0,0,.2);
   font-family: Rye, serif;
   border-radius:  2rem;
-  margin-top: 30px;
+  margin-top: 20px;
+  margin-bottom: 30px;
   text-align: center;
 }
 
@@ -448,7 +453,14 @@ button.btn-edit-shout:hover {
   border: none;
   border-radius: 2rem;
   box-shadow: 0 6px 8px 0 rgba(0,0,0,.2);
+  font-family: Rye, serif;
 }
+
+small.text-muted::before {
+  content: "\A";
+  white-space: pre;
+  display: block;			
+
 
 @media (max-width:  600px) {
   .gallery-item {

@@ -10,10 +10,10 @@
 			<div class="text-edit" role="alert">
 				<div class="row">
 					<div class="col-11">
-						{{ shout.body }}<br />
+						{{ shout.body }}
 						<small class="text-muted">
 							{{ shout.created_at }}
-							<br />
+							
 							{{ shout.number_of_likes }} Likes
 							&nbsp;&nbsp;
 							{% if user in shout.likes.all %}
@@ -30,7 +30,7 @@
 			</div>
 		</div>
 
-					<br /><br /><br />
+					
 					{% if form %}
 					<form method=POST>
 					{% csrf_token %}
