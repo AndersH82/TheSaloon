@@ -21,20 +21,20 @@ def home(request):
                 return redirect('home')
 
         shouts = Shout.objects.all().order_by("-created_at")
-        return render(request, 'home.html', {"shouts":shouts, "form":form})
+        return render(request, 'home.html', {"shouts": shouts, "form": form})
     else:
         shouts = Shout.objects.all().order_by("-created_at")
-        return render(request, 'home.html', {"shouts":shouts})
+        return render(request, 'home.html', {"shouts": shouts})
 
 
 def profile_list(request):
-        if request.user.is_authenticated:
-            profiles = Profile.objects.exclude(user=request.user)
-            return render(request, 'profile_list.html', {"profiles":profiles})
-        else:
-            messages.success(request, ("You must login to see this page..."))
-            return redirect('home')
-    
+    if request.user.is_authenticated:
+        profiles = Profile.objects.exclude(user=request.user)
+        return render(request, 'profile_list.html', {"profiles": profiles})
+    else:
+        messages.success(request, ("You must login to see this page..."))
+        return redirect('home')
+
 
 def profile(request, pk):
     if request.user.is_authenticated:
@@ -50,11 +50,10 @@ def profile(request, pk):
                 current_user_profile.follows.add(profile)
             current_user_profile.save()
 
-        return render(request, "profile.html", {"profile":profile, "shouts":shouts})
+        return render(request, "profile.html", {"profile": profile, "shouts": shouts})
     else:
         messages.success(request, ("You must login to see this page..."))
         return redirect('home')
-
 
 
 def login_user(request):
@@ -69,8 +68,9 @@ def login_user(request):
         else:
             messages.success(request, ("WROOOONG! Try again!"))
             return redirect('login')
-    else:    
+    else:
         return render(request, "login.html", {})
+
 
 def logout_user(request):
     logout(request)
@@ -83,16 +83,16 @@ def register_user(request):
     if request.method == "POST":
         form = SignUpForm(request.POST)
         if form.is_valid():
-                form.save()
-                username = form.cleaned_data['username']
-                password = form.cleaned_data['password1']
-            
-                user = authenticate(username=username, password=password)
-                login(request,user)
-                messages.success(request, ("You are now registered!"))
-                return redirect('home')
+            form.save()
+            username = form.cleaned_data['username']
+            password = form.cleaned_data['password1']
 
-    return render(request, "register.html", {'form':form})
+            user = authenticate(username=username, password=password)
+            login(request, user)
+            messages.success(request, ("You are now registered!"))
+            return redirect('home')
+
+    return render(request, "register.html", {'form': form})
 
 
 def update_user(request):
@@ -100,21 +100,23 @@ def update_user(request):
         current_user = User.objects.get(id=request.user.id)
         profile_user = Profile.objects.get(user__id=request.user.id)
 
-        user_form = SignUpForm(request.POST or None, request.FILES or None, instance=current_user)
-        profile_form = ProfilePicForm(request.POST or None, request.FILES or None, instance=profile_user)
+        user_form = SignUpForm(request.POST or None,
+                               request.FILES or None, instance=current_user)
+        profile_form = ProfilePicForm(
+            request.POST or None, request.FILES or None, instance=profile_user)
         if user_form.is_valid() and profile_form.is_valid():
-                user_form.save()
-                profile_form.save()
+            user_form.save()
+            profile_form.save()
 
-                login(request, current_user)
-                messages.success(request, ("Your information is now updated!"))
-                return redirect('home')
+            login(request, current_user)
+            messages.success(request, ("Your information is now updated!"))
+            return redirect('home')
 
-        return render(request, "update_user.html", {'user_form':user_form, 'profile_form':profile_form})
+        return render(request, "update_user.html", {'user_form': user_form, 'profile_form': profile_form})
     else:
         messages.success(request, ("You must be logged in!"))
-        return redirect('home') 
-    
+        return redirect('home')
+
 
 def shout_like(request, pk):
     if request.user.is_authenticated:
@@ -157,8 +159,8 @@ def edit_shout(request, pk):
                     shout.save()
                     messages.success(request, ("Your Shout has been updated!"))
                     return redirect('home')
-            else:  
-                return render(request, "edit_shout.html", {'form':form, 'shout':shout})
+            else:
+                return render(request, "edit_shout.html", {'form': form, 'shout': shout})
         else:
             messages.success(request, ("This is not your SHout!"))
             return redirect('home')
@@ -176,11 +178,3 @@ def upload_image(request):
         form = UploadImageForm()
     images = UploadedImage.objects.all()
     return render(request, 'upload_image.html', {'form': form, 'images': images})
-
-
-
-
-    
-                
-
-   
