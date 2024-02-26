@@ -3,10 +3,7 @@ from django.contrib import messages
 from .models import Profile, Shout, UploadedImage
 from .forms import ShoutForm, SignUpForm, ProfilePicForm, UploadImageForm
 from django.contrib.auth import authenticate, login, logout
-from django.contrib.auth.forms import UserCreationForm
-from django import forms
 from django.contrib.auth.models import User
-from django.http import HttpResponse
 
 
 def home(request):
@@ -50,7 +47,8 @@ def profile(request, pk):
                 current_user_profile.follows.add(profile)
             current_user_profile.save()
 
-        return render(request, "profile.html", {"profile": profile, "shouts": shouts})
+        return render(request, "profile.html", {"profile": profile,
+                                                "shouts": shouts})
     else:
         messages.success(request, ("You must login to see this page..."))
         return redirect('home')
@@ -112,7 +110,9 @@ def update_user(request):
             messages.success(request, ("Your information is now updated!"))
             return redirect('home')
 
-        return render(request, "update_user.html", {'user_form': user_form, 'profile_form': profile_form})
+        return render(request, "update_user.html",
+                               {'user_form': user_form,
+                                'profile_form': profile_form})
     else:
         messages.success(request, ("You must be logged in!"))
         return redirect('home')
@@ -160,7 +160,8 @@ def edit_shout(request, pk):
                     messages.success(request, ("Your Shout has been updated!"))
                     return redirect('home')
             else:
-                return render(request, "edit_shout.html", {'form': form, 'shout': shout})
+                return render(request, "edit_shout.html", {'form': form,
+                                                           'shout': shout})
         else:
             messages.success(request, ("This is not your SHout!"))
             return redirect('home')
@@ -177,4 +178,5 @@ def upload_image(request):
     else:
         form = UploadImageForm()
     images = UploadedImage.objects.all()
-    return render(request, 'upload_image.html', {'form': form, 'images': images})
+    return render(request, 'upload_image.html', {'form': form,
+                                                 'images': images})

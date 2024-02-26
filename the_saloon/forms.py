@@ -4,6 +4,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from .models import UploadedImage
 
+
 # Profile picture form
 
 
@@ -40,15 +41,13 @@ class ProfilePicForm(forms.ModelForm):
 
 
 class ShoutForm(forms.ModelForm):
-    body = forms.CharField(
-        required=True, widget=forms.widgets.Textarea(
-         attrs={
-                "placeholder": "Enter your Shouts in The Saloon! ",
-                "class": "form-control",
-                }
-                ),
-        label="",
-        )
+    class Meta:
+        model = Shout
+        fields = ['body']
+        widgets = {
+            'body': forms.Textarea(attrs={'placeholder': 'Enter your Shouts!',
+                                          'class': 'form-control'})
+        }
 
 
 class Meta:
