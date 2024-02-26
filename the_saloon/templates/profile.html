@@ -5,22 +5,21 @@
 
 {% if profile %}
 
-<div class="container text-center">
+<div class="conta text-center">
+  <h1 class="profile">{{ profile.user.username }}'s Profile</h1>
   <div class="row">
     <div class="col-md-8">
-
-      <h1 class="profile">{{ profile.user.username }}'s Profile</h1>
 
       {% if shouts%}
       {% for shout in shouts %}
 
-      <div class="alert" role="alert">
+      <div class="alerted" role="alert">
 
-        {{ shout.body }}<br/><br/>
+        {{ shout.body }}<br /><br />
         <small class="text-muted" style="font-family: Rye, serif;">
 
           {{ shout.created_at }}
-          <br/>
+          <br />
           {{ shout.number_of_likes }} Likes
           &nbsp;&nbsp;
           {% if user in shout.likes.all %}
@@ -49,11 +48,11 @@
       <div class=" image d-flex flex-column 
                 justify-content-center align-items-center">
         {% if profile.profile_image %}
-        <img src="{{ profile.profile_image.url }}" height="100" 
-        width="100" class="profile rounded-circle" height:auto; alt="profile_image">
+        <img src="{{ profile.profile_image.url }}" height="100" width="100" class="profile rounded-circle" height:auto;
+          alt="profile_image">
         {% else %}
-        <img src="{% static 'images/cowboy.png' %}" height="100" 
-        width="100" class="profile rounded-circle" height:auto; alt="profile_image">
+        <img src="{% static 'images/cowboy.png' %}" height="100" width="100" class="profile rounded-circle" height:auto;
+          alt="profile_image">
         {% endif %}
         <span class="name mb-4">
           {{ profile.user.username }}'s Profile

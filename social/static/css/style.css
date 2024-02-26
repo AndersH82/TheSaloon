@@ -5,10 +5,8 @@ body {
   margin-bottom:  80px;
 }
 
-div.container {
-  background-color: #A07445;
+div.container {  
   display: flex;
-  width: 100%;
 }
 
 h1.home {
@@ -19,7 +17,7 @@ h1.home {
 }
 
 div.home {
-  margin-top: 150px;
+  margin-top: 125px;
 }
 
 div.alert {
@@ -136,13 +134,35 @@ button.upload:hover {
 
 
 /* profile */
+div.col-md-8 {
+ display:grid;
+ align-items: center;
+ justify-content: center;
+}
 
 h1.profile {
   color: black;
   font-family: Rye, serif;
-  text-shadow: 1px 1px 1px gray;
-  margin-top: 70px;
   margin-bottom: 20px; 
+  margin-top: 70px;
+}
+
+div.profile-col {
+  text-align: center;
+  display: flex;
+}
+
+div.alerted {
+  display: flex;
+  background-color: #FFF3CD;
+  box-shadow: 0 4px 6px 0 rgba(0,0,0,.2);
+  font-family: Rye, serif;
+  border-radius: 2rem;
+  width: 500px;
+  height: 200px;
+  margin-bottom: 20px;
+  padding-top: 20px;
+  flex-direction: column;
 }
 
 div.profile-bio {
@@ -156,8 +176,7 @@ div.profile-bio {
   background-color: #FFF3CD;
   box-shadow: 0 6px 8px 0 rgba(0,0,0,.2);
   border-radius:  2rem;
-  margin-top: 135px;
-  margin-left: 50px;
+  margin-top: 0px;
 }
 
 div.bio {
