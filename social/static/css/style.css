@@ -74,6 +74,13 @@ footer.footer {
 
 
 /* gallery */
+h1.gallery {
+  color: black;
+  font-family: Rye, serif;
+  margin-bottom: 20px; 
+  margin-top: 70px;
+  text-shadow: 1px 1px 1px gray;
+}
 
 .gallery-container {
   display: flex;
@@ -107,8 +114,6 @@ div.card-gallery{
   margin-top: 70px;
   width: 200px;
   height: 200px;
-  
-  
 }
 
 button.upload {
@@ -120,8 +125,8 @@ button.upload {
 }
 
 button.upload:hover {
-    background-color: #A07445;
-    transition: background-color  0.4s ease;
+  background-color: #A07445;
+  transition: background-color  0.4s ease;
 }
 
 #id_image {
@@ -132,8 +137,8 @@ button.upload:hover {
   
 }
 
-
 /* profile */
+
 div.col-md-8 {
  display:grid;
  align-items: center;
@@ -145,6 +150,7 @@ h1.profile {
   font-family: Rye, serif;
   margin-bottom: 20px; 
   margin-top: 70px;
+  text-shadow: 1px 1px 1px gray;
 }
 
 div.profile-col {
@@ -176,7 +182,10 @@ div.profile-bio {
   background-color: #FFF3CD;
   box-shadow: 0 6px 8px 0 rgba(0,0,0,.2);
   border-radius:  2rem;
-  margin-top: 0px;
+}
+
+.row {
+  margin-right:  0 !important;
 }
 
 div.bio {
@@ -272,7 +281,6 @@ h1.list {
   text-shadow: 1px 1px 1px gray;
 }
 
-
 div.cont {
   display: flex;
   width: 400px;
@@ -305,6 +313,7 @@ img.list {
   width: 150px;
   height: 150px;
 }
+
 p.list {
   margin-top: 10px;
 }
@@ -329,6 +338,7 @@ button.btn-update:hover, button.btn-register:hover {
 }
 
 /* update,register form */
+
 h1.update, h1.register {
   color: black;
   text-shadow: 1px 1px 1px gray;
