@@ -273,7 +273,7 @@ Log in or sign up to Github. Go to respository for this project The Saloon. Clic
  - Default image - flaticon.com
  - Code search - Phind
  - Toutorials - youtube
- - Codemy on youtube - The basis of the page
+ - Codemy - youtube
  - Bootstrap
  - W3 school
  - Google
