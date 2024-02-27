@@ -124,6 +124,14 @@ Here you can see the navigation bar when you are logged in.
 
   - A page where you get to edit Shouts via the profile if you press edit.
 
+- __Social media links__
+
+
+![Social](readme_media/socialmedialinks.png)
+
+When the user enters a link in one of the fields, an icon of it appears in the profile, which then sends the user to that page and when hovering over it changes color.
+
+![Social](readme_media/socialmedia.png)
 
 ### Some other features ideas for the page
 
