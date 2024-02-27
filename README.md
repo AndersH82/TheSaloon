@@ -5,20 +5,26 @@
 
 Welcome to The Saloon
 
-- [The Saloon](#The-Saloon)
+# Table of contents
+
+- [The Saloon](#the-Saloon)
 - [Table of contents](#table-of-contents)
-    - [Features](#Features)
-        - [Existing Features](#Existing-Features)
-        - [Future Features](#Some-other-features-ideas-for-the-page)
-    - [Wireframe](#Wireframe)
-    - [Testing ](#Testing)
-        - [Validator Testing](#Validator-Testing )
-        - [Lighthouse Testing](#Lighthouse-Testing)
-        - [Unfixed Bugs](#Unfixed-Bugs)
-  - [Color Scheme](#Color-Scheme)
-  - [Deployment](#Deployment)
-  - [Credits](#Credits)
-    - [Other Notes](Other_Notes)
+    - [Features](#features)
+        - [Existing Features](#existing-features)
+        - [Future Features](#some-other-features-ideas-for-the-page)
+    - [Wireframe](#wireframe)
+    - [Testing ](#testing)
+        - [Validator Testing](#validator-testing )
+        - [Lighthouse Testing](#lighthouse-testing)
+        - [Unfixed Bugs](#unfixed-bugs)
+  - [Typography](typography)
+  - [Languages Used](#languages-used)
+  - [Color Scheme](#color-Scheme)
+  - [Clone](#clone)
+  - [Forking](#forking)
+  - [Deployment](#deployment)
+  - [Credits](#credits)
+    - [Other Notes](#other-Notes)
  
 ## Features 
 
@@ -195,6 +201,14 @@ Registration page          |  Edit shout page
     - You must fill in the entire form and add a picture, otherwise you will not progress.
     - Link label, text when uploading image and the button are not styled with css.
 
+## Typography
+I've integrated [Google Fonts](https://fonts.google.com/) to find a typeface that compliments the website's aesthetic. For the main text, I've chosen Lato due to its optimization for readability on screens across a wide variety of devices and reading environments.
+
+## Languages Used
+
+- HTML
+- CSS
+
 ## Color Scheme
 
 The base colors          |  Color for social media
@@ -227,6 +241,25 @@ Link : https://andersh82.github.io/thesaloon/
 
 Link : https://github.com/AndersH82/thesaloon
 
+## Clone
+To clone follow this steps:
+
+Go to the GitHub repository
+
+Locate the Code button above the list of files and click it.
+
+Select GitHub CLI and click the copy button to copy the URL to your clipboard.
+
+Open Terminal.
+
+Change the current working directory to the one where you want the cloned directory
+
+In your terminal, type the following command to clone my repository: git clone https://github.com/AndersH82/thesaloon.git Press Enter to create your local clone.
+
+## Forking
+
+Log in or sign up to Github. Go to respository for this project The Saloon. Click the fork button in the top right corner.
+
 ## Credits 
 
  - Default image - flaticon.com
@@ -241,7 +274,11 @@ Link : https://github.com/AndersH82/thesaloon
  - Google fonts
  - My mentor on CI - Rory
  - Coolors.co for colors to the page
-
+ - Wireframe
+ - Github
+ - Heroku
+ - Gitpod
+ - Django
 
 ## Other Notes
 
