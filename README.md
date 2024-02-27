@@ -5,6 +5,21 @@
 
 Welcome to The Saloon
 
+- [The Saloon](#The-Saloon)
+- [Table of contents](#table-of-contents)
+    - [Features](#Features)
+        - [Existing Features](#Existing-Features)
+        - [Future Features](#Some-other-features-ideas-for-the-page)
+    - [Wireframe](#Wireframe)
+    - [Testing ](#Testing)
+        - [Validator Testing](#Validator-Testing )
+        - [Lighthouse Testing](#Lighthouse-Testing)
+        - [Unfixed Bugs](#Unfixed-Bugs)
+  - [Color Scheme](#Color-Scheme)
+  - [Deployment](#Deployment)
+  - [Credits](#Credits)
+    - [Other Notes](Other_Notes)
+ 
 ## Features 
 
 You can register a user on this page. Upon logging in, you will be directed to the start page, where you can read and write Shouts. After writing a Shout, you can visit your profile to view only your Shouts. Additionally, you have the option to upload images to a gallery for all users to see. Navigation is facilitated by the navigation bar located at the top of the page
