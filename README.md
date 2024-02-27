@@ -34,52 +34,55 @@ Here you can see the navigation bar when you are logged in.
 
 - __The landing page image__
 
-  - The landing includes a photograph with text overlay to allow the user to see exactly which location this site would be applicable to. 
-  - This section introduces the user to Love Running with an eye catching animation to grab their attention
+    - Here you can see what has been written before you log in or register.
 
-![Landing Page]()
+![Landing Page](readme_media/landingimg.png)
 
-- __Club Ethos Section__
+ 
+- __Registration page__
 
-  - The club ethos section will allow the user to see the benefits of joining the Love Running meetups, as well as the benefits of running overall. 
-  - This user will see the value of signing up for the Love Running meetups. This should encourage the user to consider running as their form of exercise. 
+ - Here you can enter username, first name, last name, e-mail, password and 
+   then confirm with the same password.
 
-![Club Ethos]()
+![Register](readme_media/register.png)
 
-- __Meetup Times section__
+- __Login page__
 
-  - This section will allow the user to see exactly when the meetups will happen, where they will be located and how long the run will be in kilometers. 
-  - This section will be updated as these times change to keep the user up to date. 
+- Here is the login page where you enter your username and password to enter the 
+  website.
 
-![Meetup Times]()
+![Login](readme_media/login.png)
 
-- __The Footer__ 
+- __Profile page__
 
-  - The footer section includes links to the relevant social media sites for Love Running. The links will open to a new tab to allow easy navigation for the user. 
-  - The footer is valuable to the user as it encourages them to keep connected via social media
+- On your profile page, you can see your profile bio, which includes a profile picture where you can write a brief bio about yourself. You can also add links to your social media, view your followers and the profiles you follow, and use the follow/unfollow button. Additionally, there's an edit profile button.
 
-![Footer]()
+![Profile](readme_media/profile.png)
 
 - __Gallery__
 
-  - The gallery will provide the user with supporting images to see what the meet ups look like. 
-  - This section is valuable to the user as they will be able to easily identify the types of events the organisation puts together. 
+  - This page allows the user to upload images for all to see 
 
-![Gallery]()
+![Gallery](readme_media/gallery.png)
 
-- __The Sign Up Page__
+- __Profile list__
 
-  - This page will allow the user to get signed up to Love Running to start their running journey with the community. The user will be able specify if they would like to take part in road, trail or both types of running. The user will be asked to submit their full name and email address. 
+  - This page shows which users are registered on the page with profile picture and last updated. 
 
-![Sign Up]()
+![profil list](readme_media/profilelist.png)
 
-For some/all of your features, you may choose to reference the specific project files that implement them.
+- __Other pages__
 
-In addition, you may also use this section to discuss plans for additional features to be implemented in the future:
+  - Then there is the edit page that you access via profile.
 
-### Features Left to Implement
+  - A page where you get to edit Shouts via the profile if you press edit.
 
-- Another feature idea
+
+### Some other features ideas for the page
+
+- The user should be able to like or dislike profiles.
+- The user must be able to have their own galleries for their images.
+- The user could write messages to other users.
 
 ## Testing 
 
