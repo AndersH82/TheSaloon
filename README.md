@@ -109,6 +109,23 @@ Here you can see the navigation bar when you are logged in.
 - The user should be able to like or dislike profiles.
 - The user must be able to have their own galleries for their images.
 - The user could write messages to other users.
+## Wireframe
+
+- Here is a framework of what the page would look like when I started planning for this website.
+
+Home page          |  Gallery page
+:-------------------------:|:-------------------------:
+![Home](readme_media/homeframe.png)  |  ![Gallery](readme_media/galleryframe.png)
+
+Profile page          |  Profile list page
+:-------------------------:|:-------------------------:
+![Profile](readme_media/profileframe.png)  |  ![Gallery](readme_media/profilelistframe.png)
+
+Login page          |  Registration page
+:-------------------------:|:-------------------------:
+![Profile](readme_media/loginframe.png)  |  ![Register](readme_media/registerframe.png)
+
+
 
 ## Testing 
 
@@ -148,7 +165,7 @@ Registration page          |  Edit shout page
 ### Unfixed Bugs
 
 - Found the error at the last second before submitting the project 
-    - You must fill in the entire form and add a picture, otherwise you will not progress
+    - You must fill in the entire form and add a picture, otherwise you will not progress.
     - Link label, text when uploading image and the button are not styled with css.
 
 ## Color Scheme
