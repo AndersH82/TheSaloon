@@ -17,12 +17,12 @@
         <h5 class="card-title"><a href="{% url 'profile' profile.user.id  %}">
           {{ profile.user.username }}</a>'s Profile</h5>
                 {% if profile.profile_image %}
-                  <img class="list" src="{{ profile.profile_image.url }}" 
-                  width=200 height=200 class="img rounded-circle" 
+                  <img class="list img rounded-circle" src="{{ profile.profile_image.url }}" 
+                  width=150 height=150
                   alt="{{ profile.user.username}}">
                 {% else %}
-                <img class="list" src="{% static 'images/cowboy.png' %}" height="150"
-                width="150" class="profile rounded-circle" height: auto; alt="profile_image">
+                <img class="list profile rounded-circle" src="{% static 'images/cowboy.png' %}" height="150"
+                width="150" alt="profile_image">
                 {% endif %}
               <p class="list card-text"><small class="text-muted">
               Last Updated: {{ profile.date_modified }}</small></p>

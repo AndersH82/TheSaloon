@@ -15,11 +15,11 @@
 
       <div class="alerted" role="alert">
 
-        {{ shout.body }}<br /><br />
+        {{ shout.body }}<br/><br/>
         <small class="text-muted" style="font-family: Rye, serif;">
 
           {{ shout.created_at }}
-          <br />
+          <br/>
           {{ shout.number_of_likes }} Likes
           &nbsp;&nbsp;
           {% if user in shout.likes.all %}
@@ -48,10 +48,10 @@
       <div class=" image d-flex flex-column 
                 justify-content-center align-items-center">
         {% if profile.profile_image %}
-        <img src="{{ profile.profile_image.url }}" height="100" width="100" class="profile rounded-circle" height:auto;
+        <img src="{{ profile.profile_image.url }}" height="100" width="100" class="profile rounded-circle"
           alt="profile_image">
         {% else %}
-        <img src="{% static 'images/cowboy.png' %}" height="100" width="100" class="profile rounded-circle" height:auto;
+        <img src="{% static 'images/cowboy.png' %}" height="100" width="100" class="profile rounded-circle"
           alt="profile_image">
         {% endif %}
         <span class="name mb-4">
@@ -61,8 +61,7 @@
         {% if profile.profile_bio %}
         <div class="bio">
           <span>
-            <p>
-              {{ profile.profile_bio}}</p>
+          {{ profile.profile_bio}}
           </span>
         </div>
         {% endif %}
@@ -92,11 +91,11 @@
         </div>
         <h5 class="follow"> Follows </h5>
         <p class="card-text">{% for following in profile.follows.all %}
-          <a href="{% url 'profile' following.user.id %}">{{ following }}</a><br />
+          <a href="{% url 'profile' following.user.id %}">{{ following }}</a><br/>
           {% endfor %}
         <h5 class="follow"> Followers </h5>
         <p class="card-text">{% for following in profile.followed_by.all %}
-          <a href="{% url 'profile' following.user.id %}">{{ following }}</a><br />
+          <a href="{% url 'profile' following.user.id %}">{{ following }}</a><br/>
           {% endfor %}
 
         <form method=POST>
@@ -111,20 +110,18 @@
             Follow {{ profile.user.username|lower}}
           </button>
           {% endif %}
-          <br /><br />
+          <br/><br/>
           {% if request.user.id == profile.user.id %}
           <button class="btn-profile btn-outline">
             <a class="edit" href="{% url 'update_user' %}">Edit Profile</a>
           </button>
           {% endif %}
-
-
+        </form>
       </div>
     </div>
   </div>
 </div>
-</div>
-</div>
+
 
 
 

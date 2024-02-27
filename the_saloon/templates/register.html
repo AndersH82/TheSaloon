@@ -3,11 +3,11 @@
 {% block content %}
 
 <h1 class="register">Register</h1>
-<div class="col-md-6 offset-md-3"></div>
+<div class="col-md-6 offset-md-3">
 <br/>
 
 
-<form method="POST" action="" style="font-family: Rye, serif;">
+<form method="POST"  style="font-family: Rye, serif;">
     {% csrf_token %}
     {{ form.as_p }}
     <br/>

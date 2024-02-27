@@ -2,12 +2,12 @@
 
 {% block content %}
 <h1 class="update">Update profile</h1>
-<div class="update"></div>
+<div class="update">
 
 
 
 
-<form method="POST" class="edit" action="" enctype="multipart/form-data">
+<form method="POST" class="edit" enctype="multipart/form-data">
     {% csrf_token %}
     {{ user_form.as_p }}
     <br/>
