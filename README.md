@@ -127,6 +127,18 @@ Login page          |  Registration page
 
 
 
+
+
+<p align="center"> - Mobile frame -</p>
+<p align="center">
+  <img src="readme_media/mobileframe.png" width=200 height=400 alt="Description of image">
+</p>
+
+
+
+
+
+
 ## Testing 
 
 ### Validator Testing 
