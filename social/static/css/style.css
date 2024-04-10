@@ -11,7 +11,6 @@ div.container {
 
 h1.home {
   color: black;
-  font-family: Rye, serif;
   text-shadow: 1px 1px 1px gray;
   margin-top: 70px; 
 }
@@ -23,13 +22,11 @@ div.home {
 div.alert {
   background-color: #FFF3CD;
   box-shadow: 0 4px 6px 0 rgba(0,0,0,.2);
-  font-family: Rye, serif;
   border-radius:  2rem;
 }
 
 button.btn {
   background-color:#B3874E;
-  font-family: Rye, serif;
   border: none;
   box-shadow: 0 6px 8px 0 rgba(0,0,0,.2);
   border-radius:  2rem;
@@ -46,8 +43,6 @@ button.btn:hover {
 a.navbar-brand {
   background-color: #B3874E;
   color: black;
-  font-family: Rye, serif;
-  text-shadow: 1px 1px 1px gray;
 }
 
 nav.navbar {
@@ -63,8 +58,6 @@ footer.footer {
   width: 100%;
   background-color: #B3874E;
   color:black;
-  font-family: Rye, serif;
-  text-shadow: 1px 1px 1px gray;
   box-shadow:  0 -3px  10px  3px rgba(0,  0,  0,  0.2);
   position: fixed;
   bottom: 0;
@@ -76,7 +69,6 @@ footer.footer {
 /* gallery */
 h1.gallery {
   color: black;
-  font-family: Rye, serif;
   margin-bottom: 20px; 
   margin-top: 70px;
   text-shadow: 1px 1px 1px gray;
@@ -107,7 +99,6 @@ h1.gallery {
 div.card-gallery{
   background-color: #FFF3CD;
   box-shadow: 0 4px 6px 0 rgba(0,0,0,.2);
-  font-family: Rye, serif;
   border-radius:  2rem;
   text-align: center;
   margin: auto;
@@ -118,7 +109,6 @@ div.card-gallery{
 
 button.upload {
   background-color:#B3874E;
-  font-family: Rye, serif;
   border: none;
   box-shadow: 0 6px 8px 0 rgba(0,0,0,.2);
   border-radius:  2rem;
@@ -131,7 +121,6 @@ button.upload:hover {
 
 #id_image {
   background-color: #FFF3CD;
-  font-family: Rye, serif;
   border: none;
   width: 110px;
   
@@ -147,7 +136,6 @@ div.col-md-8 {
 
 h1.profile {
   color: black;
-  font-family: Rye, serif;
   margin-bottom: 20px; 
   margin-top: 70px;
   text-shadow: 1px 1px 1px gray;
@@ -162,7 +150,6 @@ div.alerted {
   display: flex;
   background-color: #FFF3CD;
   box-shadow: 0 4px 6px 0 rgba(0,0,0,.2);
-  font-family: Rye, serif;
   border-radius: 2rem;
   width: 500px;
   height: 200px;
@@ -178,7 +165,6 @@ div.profile-bio {
   background-size: cover;
   width: 250px;
   height: 750px;
-  font-family: Rye, serif;
   background-color: #FFF3CD;
   box-shadow: 0 6px 8px 0 rgba(0,0,0,.2);
   border-radius:  2rem;
@@ -189,7 +175,6 @@ div.profile-bio {
 }
 
 div.bio {
-  font-family: Rye, serif;
   text-align: center;
   padding: 10px;
 }
@@ -200,7 +185,7 @@ img.profile {
 }
 
 p.card-text {
-  font-family: Rye, serif;
+
 }
 
 a:hover {
@@ -212,7 +197,6 @@ a {
 }
 
 span.name {
-  font-family: Rye, serif;
   color: black;
   text-decoration: underline;
 }
@@ -222,18 +206,15 @@ small.text-muted {
 }
 
 h5.follow {
-  font-family: Rye, serif;
   color: black;
   text-decoration: underline;
 }
 
 button.btn-profile {
   background-color:#B3874E;
-  font-family: Rye, serif;
   border: none;
   box-shadow: 0 6px 8px 0 rgba(0,0,0,.2);
   border-radius:  2rem;
-  font-family: Rye, serif;
   color: black;
 }
 
@@ -274,7 +255,6 @@ i.x:hover {
 /* profile list */
 
 h1.list {
-  font-family: Rye, serif;
   text-align: center;
   margin-top: 70px;
   color: black;
@@ -298,7 +278,6 @@ div.list-container {
 
 div.list-card {
   text-align: center;
-  font-family: Rye, serif;
   flex:  1;
   width: 280px;
   height: 280px;
@@ -322,11 +301,9 @@ p.list {
 
 button.btn-update, button.btn-register {
   background-color:#B3874E;
-  font-family: Rye, serif;
   border: none;
   box-shadow: 0 6px 8px 0 rgba(0,0,0,.2);
   border-radius:  2rem;
-  font-family: Rye, serif;
   color: black;
   display: block;
   margin: auto;
@@ -342,7 +319,6 @@ button.btn-update:hover, button.btn-register:hover {
 h1.update, h1.register {
   color: black;
   text-shadow: 1px 1px 1px gray;
-  font-family: Rye, serif;
   margin-top: 70px;
   text-align:center
   
@@ -355,7 +331,6 @@ h1.update, h1.register {
   display: block;
   margin: auto;
   color: black;
-  font-family: Rye, serif;
   margin-top: 30px;
 }
 
@@ -370,7 +345,6 @@ h1.update, h1.register {
   display: block;
   margin: auto;
   color: black;
-  font-family: Rye, serif;
   box-shadow: 0 6px 8px 0 rgba(0,0,0,.2);
 } 
 
@@ -384,14 +358,12 @@ h1.update, h1.register {
   display: block;
   margin: auto;
   color: black;
-  font-family: Rye, serif;
   box-shadow: 0 6px 8px 0 rgba(0,0,0,.2);
 }
 
 h1.login {
   color: black;
   text-shadow: 1px 1px 1px gray;
-  font-family: Rye, serif;
   margin-top: 70px;
   text-align:center
 }
@@ -404,17 +376,14 @@ input.form-control {
   display: block;
   margin: auto;
   color: black;
-  font-family: Rye, serif;
   box-shadow: 0 6px 8px 0 rgba(0,0,0,.2);
 }
 
 button.btn-login {
   background-color:#B3874E;
-  font-family: Rye, serif;
   border: none;
   box-shadow: 0 6px 8px 0 rgba(0,0,0,.2);
   border-radius:  2rem;
-  font-family: Rye, serif;
   color: black;
   display: block;
   margin: auto;
@@ -432,7 +401,6 @@ div.card-login {
   margin: auto;
   margin-top: 100px;
   background-color: #FFF3CD;
-  font-family: Rye, serif;
   color: black;
   box-shadow: 0 6px 8px 0 rgba(0,0,0,.2);
   border-radius:  2rem;
@@ -441,7 +409,6 @@ div.card-login {
 /* edit shout */
 
 h1.edit-shout {
-  font-family: Rye, serif;
   color: black;
   text-align: center;
   margin-top: 70px;
@@ -457,7 +424,6 @@ div.text-edit {
   color: black;
   background-color: #FFF3CD;
   box-shadow: 0 4px 6px 0 rgba(0,0,0,.2);
-  font-family: Rye, serif;
   border-radius:  2rem;
   margin-top: 20px;
   margin-bottom: 30px;
@@ -466,11 +432,9 @@ div.text-edit {
 
 button.btn-edit-shout {
   background-color:#B3874E;
-  font-family: Rye, serif;
   border: none;
   box-shadow: 0 6px 8px 0 rgba(0,0,0,.2);
   border-radius:  2rem;
-  font-family: Rye, serif;
   color: black;
   display: block;
   margin: auto;
@@ -487,7 +451,6 @@ button.btn-edit-shout:hover {
   border: none;
   border-radius: 2rem;
   box-shadow: 0 6px 8px 0 rgba(0,0,0,.2);
-  font-family: Rye, serif;
 }
 
 

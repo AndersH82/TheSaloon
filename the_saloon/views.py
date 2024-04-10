@@ -73,7 +73,7 @@ def login_user(request):
 def logout_user(request):
     logout(request)
     messages.success(request, ("You are now logged out!"))
-    return redirect('home')
+    return redirect('login')
 
 
 def register_user(request):
@@ -115,7 +115,7 @@ def update_user(request):
                                 'profile_form': profile_form})
     else:
         messages.success(request, ("You must be logged in!"))
-        return redirect('home')
+        return redirect('login')
 
 
 def shout_like(request, pk):

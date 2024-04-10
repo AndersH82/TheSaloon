@@ -16,7 +16,7 @@ DEBUG = False
 
 ALLOWED_HOSTS = ['8000-andersh82-thesaloon-klm5p7e5my9.ws-eu110.gitpod.io','.herokuapp.com']
 
-LOGIN_REDIRECT_URL = '/home/'
+LOGIN_REDIRECT_URL = '/profile/'
 
 # Application definition
 
