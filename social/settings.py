@@ -14,8 +14,9 @@ SECRET_KEY = 'django-insecure-++6#2knt_e-c3^ju8(1v=x=t$%*vk9_6^b-#$0jo)@!+$#gm#y
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['8000-andersh82-thesaloon-vokdu2y0x5e.ws-eu108.gitpod.io','.herokuapp.com']
+ALLOWED_HOSTS = ['8000-andersh82-thesaloon-klm5p7e5my9.ws-eu110.gitpod.io','.herokuapp.com']
 
+LOGIN_REDIRECT_URL = '/home/'
 
 # Application definition
 
@@ -123,5 +124,5 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CSRF_TRUSTED_ORIGINS = [
-    'https://8000-andersh82-thesaloon-vokdu2y0x5e.ws-eu108.gitpod.io'
+    'https://8000-andersh82-thesaloon-klm5p7e5my9.ws-eu110.gitpod.io'
 ]
