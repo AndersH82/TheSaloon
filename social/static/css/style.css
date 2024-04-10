@@ -11,7 +11,6 @@ div.container {
 
 h1.home {
   color: black;
-  text-shadow: 1px 1px 1px gray;
   margin-top: 70px; 
 }
 
@@ -41,7 +40,6 @@ button.btn:hover {
 /* navbar*/
 
 a.navbar-brand {
-  background-color: #B3874E;
   color: black;
 }
 
@@ -71,7 +69,6 @@ h1.gallery {
   color: black;
   margin-bottom: 20px; 
   margin-top: 70px;
-  text-shadow: 1px 1px 1px gray;
 }
 
 .gallery-container {
@@ -138,7 +135,6 @@ h1.profile {
   color: black;
   margin-bottom: 20px; 
   margin-top: 70px;
-  text-shadow: 1px 1px 1px gray;
 }
 
 div.profile-col {
@@ -186,14 +182,6 @@ img.profile {
 
 p.card-text {
 
-}
-
-a:hover {
-  color: black;
-}
-
-a {
-  color:gray
 }
 
 span.name {
@@ -258,7 +246,6 @@ h1.list {
   text-align: center;
   margin-top: 70px;
   color: black;
-  text-shadow: 1px 1px 1px gray;
 }
 
 div.cont {
@@ -318,7 +305,6 @@ button.btn-update:hover, button.btn-register:hover {
 
 h1.update, h1.register {
   color: black;
-  text-shadow: 1px 1px 1px gray;
   margin-top: 70px;
   text-align:center
   
@@ -363,7 +349,6 @@ h1.update, h1.register {
 
 h1.login {
   color: black;
-  text-shadow: 1px 1px 1px gray;
   margin-top: 70px;
   text-align:center
 }

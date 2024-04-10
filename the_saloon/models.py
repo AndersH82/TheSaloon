@@ -34,7 +34,7 @@ class Profile(models.Model):
 
     date_modified = models.DateTimeField(User, auto_now=True)
     profile_image = models.ImageField(
-        null=True, blank=True, upload_to="images/")
+        null=True, blank=True, upload_to="media/image")
     profile_bio = models.CharField(null=True, blank=True, max_length=500)
     facebook_link = models.CharField(null=True, blank=True, max_length=100)
     instagram_link = models.CharField(
@@ -62,5 +62,5 @@ def create_profile(sender, instance, created, **kwargs):
 
 
 class UploadedImage(models.Model):
-    image = models.ImageField(upload_to='uploads/')
+    image = models.ImageField(upload_to='media/image')
     uploaded_at = models.DateTimeField(auto_now_add=True)
