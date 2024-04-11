@@ -12,7 +12,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-++6#2knt_e-c3^ju8(1v=x=t$%*vk9_6^b-#$0jo)@!+$#gm#y'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = [
     '8000-andersh82-thesaloon-klm5p7e5my9.ws-eu110.gitpod.io',
@@ -116,8 +116,8 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'social/static'),
 ]
 
-MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
 
 
 # Default primary key field type

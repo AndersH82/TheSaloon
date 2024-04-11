@@ -1,7 +1,7 @@
  /* base */
 
 body {
-  background-color: #A07445;
+ 
   margin-bottom:  80px;
 }
 
@@ -26,12 +26,9 @@ div.alert {
 
 button.btn {
   background-color:#B3874E;
+  border: none;
   box-shadow: 0 6px 8px 0 rgba(0,0,0,.2);
   border-radius:  2rem;
-  color: black;
-  display: block;
-  margin: auto;
-  border: 1px solid transparent;
 }
 
 button.btn:hover {
@@ -40,7 +37,11 @@ button.btn:hover {
 }
 
 
-/* navbar*/
+
+/* login */
+
+
+/* navbar */
 
 a.navbar-brand {
   color: black;
@@ -109,9 +110,9 @@ div.card-gallery{
 
 button.upload {
   background-color:#B3874E;
+  border: none;
   box-shadow: 0 6px 8px 0 rgba(0,0,0,.2);
   border-radius:  2rem;
-  border: 1px solid transparent;
 }
 
 button.upload:hover {
@@ -121,6 +122,7 @@ button.upload:hover {
 
 #id_image {
   background-color: #FFF3CD;
+  border: none;
   width: 110px;
   
 }
@@ -183,7 +185,7 @@ img.profile {
 }
 
 p.card-text {
-  color: #000000;
+
 }
 
 span.name {
@@ -192,7 +194,7 @@ span.name {
 }
 
 small.text-muted {
-  -tomarginp: 20px;
+  margin-top: 20px;
 }
 
 h5.follow {
@@ -202,10 +204,10 @@ h5.follow {
 
 button.btn-profile {
   background-color:#B3874E;
+  border: none;
   box-shadow: 0 6px 8px 0 rgba(0,0,0,.2);
   border-radius:  2rem;
   color: black;
-  border: 1px solid transparent;
 }
 
 button.btn-profile:hover {
@@ -215,7 +217,6 @@ button.btn-profile:hover {
 
 a.edit {
   color: black;
-  text-decoration: none;
 }
 
 i.face:hover {
@@ -291,12 +292,12 @@ p.list {
 
 button.btn-update, button.btn-register {
   background-color:#B3874E;
+  border: none;
   box-shadow: 0 6px 8px 0 rgba(0,0,0,.2);
   border-radius:  2rem;
   color: black;
   display: block;
   margin: auto;
-  border: 1px solid transparent;
 }
 
 button.btn-update:hover, button.btn-register:hover {
@@ -314,6 +315,7 @@ h1.update, h1.register {
 }
 #id_username.form-control {
   background-color: #FFF3CD;
+  border: none;
   border-radius: 2rem;
   max-width: 400px;
   display: block;
@@ -327,6 +329,7 @@ h1.update, h1.register {
 #id_password1.form-control, #id_password2.form-control,
 #id_profile_bio.form-control {
   background-color: #FFF3CD;
+  border: none;
   border-radius: 2rem;
   max-width: 400px;
   display: block;
@@ -339,6 +342,7 @@ h1.update, h1.register {
 #id_linkedin_link.form-control, #id_youtube_link.form-control,
 #id_x_link.form-control {
   background-color: #FFF3CD;
+  border: none;
   border-radius: 2rem;
   max-width: 400px;
   display: block;
@@ -355,6 +359,7 @@ h1.login {
 
 input.form-control {
   background-color: #FFF3CD;
+  border: none;
   border-radius: 2rem;
   max-width: 400px;
   display: block;
@@ -365,13 +370,13 @@ input.form-control {
 
 button.btn-login {
   background-color:#B3874E;
+  border: none;
   box-shadow: 0 6px 8px 0 rgba(0,0,0,.2);
   border-radius:  2rem;
   color: black;
   display: block;
   margin: auto;
   margin-top: 30px;
-  border: 1px solid transparent;
 }
 
 button.btn-login:hover {
@@ -416,13 +421,13 @@ div.text-edit {
 
 button.btn-edit-shout {
   background-color:#B3874E;
+  border: none;
   box-shadow: 0 6px 8px 0 rgba(0,0,0,.2);
   border-radius:  2rem;
   color: black;
   display: block;
   margin: auto;
   margin-top: 30px;
-  border: 1px solid transparent;
 }
 
 button.btn-edit-shout:hover {
@@ -432,6 +437,7 @@ button.btn-edit-shout:hover {
 
 #id_body.form-control {
   background-color: #FFF3CD;
+  border: none;
   border-radius: 2rem;
   box-shadow: 0 6px 8px 0 rgba(0,0,0,.2);
 }

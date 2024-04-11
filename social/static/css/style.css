@@ -62,6 +62,17 @@ footer.footer {
   flex:  0  0  50px;
 }
 
+/* login */
+
+.image-container {
+  position: fixed;
+  margin-top: 0px; /* Height of the navbar */
+  margin-bottom: 0px; /* Height of the footer */
+  height: 720px;
+  overflow: hidden;
+  margin: auto;
+  width: 720px
+}
 
 
 /* gallery */
