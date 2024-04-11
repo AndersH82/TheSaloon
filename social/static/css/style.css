@@ -1,5 +1,7 @@
  /* base */
-
+* {
+  color: #000000;
+}
 body {
   background-color: #E2D4A6;
   margin-bottom:  80px;
@@ -55,11 +57,14 @@ button.btn:hover {
 
 a.navbar-brand {
   color: black;
+  font-weight: bold;
 }
 
 nav.navbar {
   background-color: #714B3C;
   box-shadow: 0 10px 15px 0 rgba(0,0,0,.2);
+  font-weight: bold;
+  color: #000000;
 }
 
 
@@ -74,6 +79,7 @@ footer.footer {
   position: fixed;
   bottom: 0;
   flex:  0  0  50px;
+  font-weight: bold;
 }
 
 /* login */
