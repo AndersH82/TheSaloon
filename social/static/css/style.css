@@ -13,7 +13,8 @@ div.container {
 
 h1.home {
   color: black;
-  margin-top: 70px; 
+  margin-top: 70px;
+  font-weight: bold;
 }
 
 div.home {
@@ -109,6 +110,7 @@ h1.gallery {
   color: black;
   margin-bottom: 20px; 
   margin-top: 70px;
+  font-weight: bold;
 }
 
 .gallery-container {
@@ -175,6 +177,7 @@ h1.profile {
   color: black;
   margin-bottom: 20px; 
   margin-top: 70px;
+  font-weight: bold;
 }
 
 div.profile-col {
@@ -286,6 +289,7 @@ h1.list {
   text-align: center;
   margin-top: 70px;
   color: black;
+  font-weight: bold;
 }
 
 div.cont {
@@ -346,9 +350,10 @@ button.btn-update:hover, button.btn-register:hover {
 h1.update, h1.register {
   color: black;
   margin-top: 70px;
-  text-align:center
-  
+  text-align:center;
+  font-weight: bold;
 }
+
 #id_username.form-control {
   background-color: #FFF3CD;
   border: none;
@@ -390,7 +395,8 @@ h1.update, h1.register {
 h1.login {
   color: black;
   margin-top: 70px;
-  text-align:center
+  text-align: center;
+  font-weight: bold;
 }
 
 input.form-control {
@@ -437,6 +443,7 @@ h1.edit-shout {
   color: black;
   text-align: center;
   margin-top: 70px;
+  font-weight: bold;
 }
 
 div.cont-edit-shout {
