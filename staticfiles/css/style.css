@@ -1,5 +1,7 @@
  /* base */
-
+* {
+  color: #000000;
+}
 body {
   background-color: #E2D4A6;
   margin-bottom:  80px;
@@ -11,34 +13,46 @@ div.container {
 
 h1.home {
   color: black;
-  margin-top: 70px; 
+  margin-top: 70px;
+  font-weight: bold;
 }
 
 div.home {
   margin-top: 90px;
 }
 
+/* shout home */
 div.alert {
   background-color: #FFF3CD;
   box-shadow: 0 4px 6px 0 rgba(0,0,0,.2);
-  border-radius:  2rem;
+  border-radius:  10px;
 }
+/* alert message */
 
 div.head-alert {
+  position: static;
   background-color: #FFF3CD;
   box-shadow: 0 4px 6px 0 rgba(0,0,0,.2);
   border-radius:  2rem;
+  height: 40px;
+  width: auto;
+  text-align: center;
+  line-height: 40px;
+  font-weight: bold;
+  font-size: 1.5em;
 }
+ 
 
 button.btn {
-  background-color:#B3874E;
+  background-color: #714b3c;
   border: none;
   box-shadow: 0 6px 8px 0 rgba(0,0,0,.2);
   border-radius:  2rem;
+  color: white;
 }
 
 button.btn:hover {
-  background-color: #A07445;
+  background-color: #5e372e;
   transition: background-color  0.4s ease;
 }
 
@@ -47,11 +61,14 @@ button.btn:hover {
 
 a.navbar-brand {
   color: black;
+  font-weight: bold;
 }
 
 nav.navbar {
   background-color: #714B3C;
   box-shadow: 0 10px 15px 0 rgba(0,0,0,.2);
+  font-weight: bold;
+  color: #000000;
 }
 
 
@@ -66,6 +83,7 @@ footer.footer {
   position: fixed;
   bottom: 0;
   flex:  0  0  50px;
+  font-weight: bold;
 }
 
 /* login */
@@ -79,6 +97,9 @@ footer.footer {
   width: 100%;
   height: 100%;
   filter: drop-shadow(20px 20px 3px rgba(0, 0, 0, 0.5));
+  max-width: 800px;
+  max-height: 800px; 
+  overflow: hidden;
 }
 
 .image-container img {
@@ -92,12 +113,14 @@ h1.gallery {
   color: black;
   margin-bottom: 20px; 
   margin-top: 70px;
+  font-weight: bold;
 }
 
 .gallery-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  filter: drop-shadow(20px 20px 3px rgba(0, 0, 0, 0.5));
 }
 
 .gallery-item {
@@ -110,8 +133,7 @@ h1.gallery {
   width:  200px;
   height: 200px;
   padding: 10px;
-  border-radius:  2rem;
-  box-shadow: 0 6px 8px 0 rgba(0,0,0,.2);
+  border-radius:  10px;
   margin: auto;
 }
 
@@ -119,31 +141,76 @@ h1.gallery {
 div.card-gallery{
   background-color: #FFF3CD;
   box-shadow: 0 4px 6px 0 rgba(0,0,0,.2);
-  border-radius:  2rem;
+  border-radius:  10px;
   text-align: center;
   margin: auto;
   margin-top: 70px;
-  width: 200px;
-  height: 200px;
 }
 
 button.upload {
-  background-color:#B3874E;
+  background-color: #714b3c;
+  color: white;
   border: none;
   box-shadow: 0 6px 8px 0 rgba(0,0,0,.2);
   border-radius:  2rem;
 }
 
 button.upload:hover {
-  background-color: #A07445;
+  background-color: #5e372e;
   transition: background-color  0.4s ease;
+  color: #000000;
 }
 
 #id_image {
   background-color: #FFF3CD;
   border: none;
-  width: 110px;
-  
+  width: 90px;
+}
+
+label[for="id_image"] {
+  display: none;
+}
+
+/* Firefox */
+input[type="file"]::file-selector-button {
+  background-color: #714b3c;
+  color: white;
+  border: none;
+  box-shadow: 0 6px 8px 0 rgba(0,0,0,.2);
+  border-radius:  2rem;
+}
+
+input[type="file"]::file-selector-button:hover {
+  background-color: #5e372e;
+  color: #000000;
+ }
+
+/* Chrome and Edge */
+input[type="file"]::-webkit-file-upload-button {
+  background-color: #714b3c;
+  color: white;
+  border: none;
+  box-shadow: 0 6px 8px 0 rgba(0,0,0,.2);
+  border-radius:  2rem;
+}
+
+input[type="file"]::-webkit-file-upload-button:hover {
+  background-color: #5e372e;
+  color: #000000;
+}
+
+/* Internet Explorer */
+input[type="file"]::-ms-browse {
+  background-color: #714b3c;
+  color: white;
+  border: none;
+  box-shadow: 0 6px 8px 0 rgba(0,0,0,.2);
+  border-radius:  2rem;
+}
+
+input[type="file"]::-ms-browse:hover {
+  background-color: #5e372e;
+  color: #000000;
 }
 
 /* profile */
@@ -158,6 +225,7 @@ h1.profile {
   color: black;
   margin-bottom: 20px; 
   margin-top: 70px;
+  font-weight: bold;
 }
 
 div.profile-col {
@@ -169,7 +237,7 @@ div.alerted {
   display: flex;
   background-color: #FFF3CD;
   box-shadow: 0 4px 6px 0 rgba(0,0,0,.2);
-  border-radius: 2rem;
+  border-radius: 10px;
   width: 500px;
   height: 200px;
   margin-bottom: 20px;
@@ -204,7 +272,7 @@ img.profile {
 }
 
 p.card-text {
-
+  color: #000000;
 }
 
 span.name {
@@ -269,6 +337,7 @@ h1.list {
   text-align: center;
   margin-top: 70px;
   color: black;
+  font-weight: bold;
 }
 
 div.cont {
@@ -329,9 +398,10 @@ button.btn-update:hover, button.btn-register:hover {
 h1.update, h1.register {
   color: black;
   margin-top: 70px;
-  text-align:center
-  
+  text-align:center;
+  font-weight: bold;
 }
+
 #id_username.form-control {
   background-color: #FFF3CD;
   border: none;
@@ -373,7 +443,8 @@ h1.update, h1.register {
 h1.login {
   color: black;
   margin-top: 70px;
-  text-align:center
+  text-align: center;
+  font-weight: bold;
 }
 
 input.form-control {
@@ -420,6 +491,7 @@ h1.edit-shout {
   color: black;
   text-align: center;
   margin-top: 70px;
+  font-weight: bold;
 }
 
 div.cont-edit-shout {
@@ -457,27 +529,59 @@ button.btn-edit-shout:hover {
 #id_body.form-control {
   background-color: #FFF3CD;
   border: none;
-  border-radius: 2rem;
+  border-radius: 10px;
   box-shadow: 0 6px 8px 0 rgba(0,0,0,.2);
+  text-align: center;
+  padding-top: 20px;
 }
 
+label[for="id_body"] {
+  visibility: hidden;
+ }
 
 
-@media (max-width:  600px) {
-  .gallery-item {
-      flex:  1  0 calc(50% -  10px);
-      
+
+
+/* Existing styles for screens wider than 768px */
+@media (min-width: 769px) {
+  .upload-img {
+     position: absolute;
+     top: 0;
+     right: 0;
+     width: 100%; /* Adjust as needed */
+     z-index: 10; /* Ensure it stacks over the gallery */
   }
-}
-
-@media (max-width:  600px) {
-  .container {
-    flex-direction: column;
-  }
-}
-
-@media only screen and (max-width: 480px) {
-  .image-container img {
-     max-width: 80%; /* Make the image full width on smaller screens */
+  .gallery-container {
+     position: relative; /* Ensure the upload-img is positioned relative to this container */
   }
  }
+ 
+ /* New styles for screens between 576px and 768px */
+ @media (min-width: 576px) and (max-width: 768px) {
+  .upload-img, .gallery-container {
+     position: relative;
+     margin: auto;
+     width: 100%;
+     padding-bottom: 120px;
+  }
+ }
+ 
+ /* Existing styles for screens narrower than 576px */
+ @media (max-width: 575px) {
+  .upload-img, .gallery-container {
+     position: relative;
+     margin: auto;
+     width: 100%;
+     padding-bottom: 120px;
+  }
+ }
+ 
+
+ @keyframes fadeOut {
+ from { opacity: 1; }
+ to { opacity: 0; }
+}
+
+.head-alert {
+ animation: fadeOut 4s linear forwards;
+}

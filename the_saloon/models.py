@@ -62,5 +62,6 @@ def create_profile(sender, instance, created, **kwargs):
 
 
 class UploadedImage(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
     image = models.ImageField(upload_to='media/image')
     uploaded_at = models.DateTimeField(auto_now_add=True)

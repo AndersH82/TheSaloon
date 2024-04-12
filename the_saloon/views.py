@@ -174,9 +174,20 @@ def upload_image(request):
     if request.method == 'POST':
         form = UploadImageForm(request.POST, request.FILES)
         if form.is_valid():
-            form.save()
+            image = form.save(commit=False)
+            image.user = request.user
+            image.save()
     else:
         form = UploadImageForm()
-    images = UploadedImage.objects.all()
-    return render(request, 'upload_image.html', {'form': form,
-                                                 'images': images})
+    images = UploadedImage.objects.filter(user=request.user)
+    return render(request, 'upload_image.html', {'form': form, 'images': images})
+
+
+def delete_image(request, pk):
+    if request.method == 'POST':
+        image = get_object_or_404(UploadedImage, pk=pk, user=request.user)
+        image.delete()
+        messages.success(request, "Image deleted successfully.")
+        return redirect('upload_image')
+    else:
+        return redirect('upload_image')
