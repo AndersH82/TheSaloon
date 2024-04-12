@@ -21,10 +21,10 @@
                     &nbsp;&nbsp;
                     {% if user in shout.likes.all %}
                     <a href="{% url 'shout_like' shout.id %}">
-                        <i class="fa-solid fa-heart" style="color: black;"></i></a>
+                        <i class="fa-lg fa-solid fa-heart" style="color: black;"></i></a>
                     {% else %}
                     <a href="{% url 'shout_like' shout.id %}">
-                        <i class="fa-solid fa-heart" style="color: red;"></i></a>
+                        <i class="fa-lg fa-solid fa-heart" style="color: red;"></i></a>
                     {% endif %}
 
                 </small>

@@ -120,6 +120,7 @@ h1.gallery {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  filter: drop-shadow(20px 20px 3px rgba(0, 0, 0, 0.5));
 }
 
 .gallery-item {
@@ -132,8 +133,7 @@ h1.gallery {
   width:  200px;
   height: 200px;
   padding: 10px;
-  border-radius:  2rem;
-  box-shadow: 0 6px 8px 0 rgba(0,0,0,.2);
+  border-radius:  10px;
   margin: auto;
 }
 
@@ -141,31 +141,76 @@ h1.gallery {
 div.card-gallery{
   background-color: #FFF3CD;
   box-shadow: 0 4px 6px 0 rgba(0,0,0,.2);
-  border-radius:  2rem;
+  border-radius:  10px;
   text-align: center;
   margin: auto;
   margin-top: 70px;
-  width: 200px;
-  height: 200px;
 }
 
 button.upload {
-  background-color:#B3874E;
+  background-color: #714b3c;
+  color: white;
   border: none;
   box-shadow: 0 6px 8px 0 rgba(0,0,0,.2);
   border-radius:  2rem;
 }
 
 button.upload:hover {
-  background-color: #A07445;
+  background-color: #5e372e;
   transition: background-color  0.4s ease;
+  color: #000000;
 }
 
 #id_image {
   background-color: #FFF3CD;
   border: none;
-  width: 110px;
-  
+  width: 90px;
+}
+
+label[for="id_image"] {
+  display: none;
+}
+
+/* Firefox */
+input[type="file"]::file-selector-button {
+  background-color: #714b3c;
+  color: white;
+  border: none;
+  box-shadow: 0 6px 8px 0 rgba(0,0,0,.2);
+  border-radius:  2rem;
+}
+
+input[type="file"]::file-selector-button:hover {
+  background-color: #5e372e;
+  color: #000000;
+ }
+
+/* Chrome and Edge */
+input[type="file"]::-webkit-file-upload-button {
+  background-color: #714b3c;
+  color: white;
+  border: none;
+  box-shadow: 0 6px 8px 0 rgba(0,0,0,.2);
+  border-radius:  2rem;
+}
+
+input[type="file"]::-webkit-file-upload-button:hover {
+  background-color: #5e372e;
+  color: #000000;
+}
+
+/* Internet Explorer */
+input[type="file"]::-ms-browse {
+  background-color: #714b3c;
+  color: white;
+  border: none;
+  box-shadow: 0 6px 8px 0 rgba(0,0,0,.2);
+  border-radius:  2rem;
+}
+
+input[type="file"]::-ms-browse:hover {
+  background-color: #5e372e;
+  color: #000000;
 }
 
 /* profile */
@@ -192,7 +237,7 @@ div.alerted {
   display: flex;
   background-color: #FFF3CD;
   box-shadow: 0 4px 6px 0 rgba(0,0,0,.2);
-  border-radius: 2rem;
+  border-radius: 10px;
   width: 500px;
   height: 200px;
   margin-bottom: 20px;
@@ -496,24 +541,41 @@ label[for="id_body"] {
 
 
 
-@media (max-width:  600px) {
-  .gallery-item {
-      flex:  1  0 calc(50% -  10px);
-      
-  }
-}
 
-@media (max-width:  600px) {
-  .container {
-    flex-direction: column;
+/* Existing styles for screens wider than 768px */
+@media (min-width: 769px) {
+  .upload-img {
+     position: absolute;
+     top: 0;
+     right: 0;
+     width: 100%; /* Adjust as needed */
+     z-index: 10; /* Ensure it stacks over the gallery */
   }
-}
-
-@media only screen and (max-width: 480px) {
-  .image-container img {
-     max-width: 80%; /* Make the image full width on smaller screens */
+  .gallery-container {
+     position: relative; /* Ensure the upload-img is positioned relative to this container */
   }
  }
+ 
+ /* New styles for screens between 576px and 768px */
+ @media (min-width: 576px) and (max-width: 768px) {
+  .upload-img, .gallery-container {
+     position: relative;
+     margin: auto;
+     width: 100%;
+     padding-bottom: 120px;
+  }
+ }
+ 
+ /* Existing styles for screens narrower than 576px */
+ @media (max-width: 575px) {
+  .upload-img, .gallery-container {
+     position: relative;
+     margin: auto;
+     width: 100%;
+     padding-bottom: 120px;
+  }
+ }
+ 
 
  @keyframes fadeOut {
  from { opacity: 1; }

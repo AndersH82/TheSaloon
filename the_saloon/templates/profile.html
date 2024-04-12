@@ -23,10 +23,9 @@
           {{ shout.number_of_likes }} Likes
           &nbsp;&nbsp;
           {% if user in shout.likes.all %}
-          <a href="{% url 'shout_like' shout.id %}"><i class="fa-lg fa-regular fa-thumbs-down"
-              style="color:black"></i></a>
+          <a href="{% url 'shout_like' shout.id %}"><i class="fa-lg fa-solid fa-heart" style="color:black"></i></a>
           {% else %}
-          <a href="{% url 'shout_like' shout.id %}"><i class="fa-lg fa-regular fa-thumbs-up" style="color:black"></i></a>
+          <a href="{% url 'shout_like' shout.id %}"><i class="fa-lg fa-solid fa-heart" style="color:red"></i></a>
           {% endif %}
 
           {% if request.user.username == profile.user.username %}

@@ -2,18 +2,22 @@
 
 {% block content %}
 
-
 <div class="gallery-container">
-  <div class="gallery-item col-md-8">
-    {% for image in images %}
-    <img src="{{ image.image.url }}"
-    class="gallery" alt="Uploaded Image">
-    {% empty %}            
-      No images uploaded yet.
-    {% endfor %}
-  </div>
-  <div class="upload-img col-md-4">
-    <div class="card-gallery">
+ <div class="gallery-item col-md-8">
+     <div class="row">
+       {% for image in images %}
+         <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+           <img src="{{ image.image.url }}" class="gallery" alt="Uploaded Image">
+         </div>
+       {% empty %}
+         <div class="col-md-12">
+           No images uploaded yet.
+         </div>
+       {% endfor %}
+     </div>
+ </div>
+ <div class="upload-img col-md-3 position-relative">
+    <div class="card-gallery position-absolute">
       <div class="card-body">
         <h5 class="card-title">Upload Images</h5>
         <form method="post" enctype="multipart/form-data" class="text-center img-fluid">
@@ -24,6 +28,7 @@
         </form>
       </div>
     </div>
-  </div>
+ </div>
 </div>
+
 {% endblock %}
