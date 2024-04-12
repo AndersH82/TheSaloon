@@ -21,11 +21,13 @@ div.home {
   margin-top: 90px;
 }
 
+/* shout home */
 div.alert {
   background-color: #FFF3CD;
   box-shadow: 0 4px 6px 0 rgba(0,0,0,.2);
-  border-radius:  2rem;
+  border-radius:  10px;
 }
+/* alert message */
 
 div.head-alert {
   position: static;
@@ -34,22 +36,23 @@ div.head-alert {
   border-radius:  2rem;
   height: 40px;
   width: auto;
-  text-align: center; /* Horizontally center the text */
+  text-align: center;
   line-height: 40px;
-  font-weight: bold; /* Make the text bold */
+  font-weight: bold;
   font-size: 1.5em;
 }
  
 
 button.btn {
-  background-color:#B3874E;
+  background-color: #714b3c;
   border: none;
   box-shadow: 0 6px 8px 0 rgba(0,0,0,.2);
   border-radius:  2rem;
+  color: white;
 }
 
 button.btn:hover {
-  background-color: #A07445;
+  background-color: #5e372e;
   transition: background-color  0.4s ease;
 }
 
@@ -224,7 +227,7 @@ img.profile {
 }
 
 p.card-text {
-
+  color: #000000;
 }
 
 span.name {
@@ -481,9 +484,15 @@ button.btn-edit-shout:hover {
 #id_body.form-control {
   background-color: #FFF3CD;
   border: none;
-  border-radius: 2rem;
+  border-radius: 10px;
   box-shadow: 0 6px 8px 0 rgba(0,0,0,.2);
+  text-align: center;
+  padding-top: 20px;
 }
+
+label[for="id_body"] {
+  visibility: hidden;
+ }
 
 
 

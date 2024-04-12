@@ -137,7 +137,7 @@ def delete_shout(request, pk):
         shout = get_object_or_404(Shout, id=pk)
         if request.user.username == shout.user.username:
             shout.delete()
-            messages.success(request, ("the Shout has been deleted"))
+            messages.success(request, ("The Shout has been deleted"))
             return redirect(request.META.get("HTTP_REFERER"))
         else:
             messages.success(request, ("This is not your Shout"))
@@ -163,7 +163,7 @@ def edit_shout(request, pk):
                 return render(request, "edit_shout.html", {'form': form,
                                                            'shout': shout})
         else:
-            messages.success(request, ("This is not your SHout!"))
+            messages.success(request, ("This is not your Shout!"))
             return redirect('home')
     else:
         messages.success(request, ("Please log in to continue..."))

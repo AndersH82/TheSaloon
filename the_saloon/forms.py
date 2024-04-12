@@ -45,8 +45,9 @@ class ShoutForm(forms.ModelForm):
         model = Shout
         fields = ['body']
         widgets = {
-            'body': forms.Textarea(attrs={'placeholder': 'Enter your Shouts!',
-                                          'class': 'form-control'})
+            'body': forms.Textarea(attrs={
+                'placeholder': 'Write your Shout here!',
+                'class': 'form-control'})
         }
 
 
