@@ -17,6 +17,10 @@ h1.home {
   font-weight: bold;
 }
 
+div.row.home {
+  text-align: center;
+}
+
 div.home {
   margin-top: 90px;
 }
@@ -24,9 +28,27 @@ div.home {
 /* shout home */
 div.alert {
   background-color: #FFF3CD;
-  box-shadow: 0 4px 6px 0 rgba(0,0,0,.2);
+  filter: drop-shadow(20px 20px 3px rgba(0, 0, 0, 0.5));
   border-radius:  10px;
+  color: #000000;
 }
+.btn.btn-shout {
+  background-color:#714B3C;
+  border: none;
+  filter: drop-shadow(20px 20px 3px rgba(0, 0, 0, 0.5));
+  border-radius:  2rem;
+  color: white;
+  display: block;
+  margin: auto;
+  margin-top: 30px;
+}
+
+.btn.btn-shout:hover {
+  background-color: #5e372e;
+  transition: background-color  0.4s ease;
+  color: #000000;
+}
+
 /* alert message */
 
 div.head-alert {
@@ -65,6 +87,8 @@ a.navbar-brand {
 }
 
 nav.navbar {
+  width: 100%;
+  box-sizing: border-box;
   background-color: #714B3C;
   box-shadow: 0 10px 15px 0 rgba(0,0,0,.2);
   font-weight: bold;
@@ -236,13 +260,13 @@ div.profile-col {
 div.alerted {
   display: flex;
   background-color: #FFF3CD;
-  box-shadow: 0 4px 6px 0 rgba(0,0,0,.2);
   border-radius: 10px;
   width: 500px;
   height: 200px;
   margin-bottom: 20px;
   padding-top: 20px;
   flex-direction: column;
+  filter: drop-shadow(20px 20px 3px rgba(0, 0, 0, 0.5));
 }
 
 div.profile-bio {
@@ -253,8 +277,8 @@ div.profile-bio {
   width: 250px;
   height: 750px;
   background-color: #FFF3CD;
-  box-shadow: 0 6px 8px 0 rgba(0,0,0,.2);
-  border-radius:  2rem;
+  filter: drop-shadow(20px 20px 3px rgba(0, 0, 0, 0.5));
+  border-radius:  10px;
 }
 
 .row {
@@ -282,6 +306,8 @@ span.name {
 
 small.text-muted {
   margin-top: 20px;
+  color: #000000;
+  font-display: bold;
 }
 
 h5.follow {
@@ -455,23 +481,24 @@ input.form-control {
   display: block;
   margin: auto;
   color: black;
-  box-shadow: 0 6px 8px 0 rgba(0,0,0,.2);
+  filter: drop-shadow(20px 20px 3px rgba(0, 0, 0, 0.5));
 }
 
 button.btn-login {
-  background-color:#B3874E;
+  background-color:#714B3C;
   border: none;
-  box-shadow: 0 6px 8px 0 rgba(0,0,0,.2);
+  filter: drop-shadow(20px 20px 3px rgba(0, 0, 0, 0.5));
   border-radius:  2rem;
-  color: black;
+  color: white;
   display: block;
   margin: auto;
   margin-top: 30px;
 }
 
 button.btn-login:hover {
-  background-color: #A07445;
+  background-color: #5e372e;
   transition: background-color  0.4s ease;
+  color: #000000;
 }
 
 div.card-login {
@@ -513,7 +540,7 @@ div.text-edit {
 button.btn-edit-shout {
   background-color:#B3874E;
   border: none;
-  box-shadow: 0 6px 8px 0 rgba(0,0,0,.2);
+  filter: drop-shadow(20px 20px 3px rgba(0, 0, 0, 0.5));
   border-radius:  2rem;
   color: black;
   display: block;
@@ -530,9 +557,10 @@ button.btn-edit-shout:hover {
   background-color: #FFF3CD;
   border: none;
   border-radius: 10px;
-  box-shadow: 0 6px 8px 0 rgba(0,0,0,.2);
+  filter: drop-shadow(20px 20px 3px rgba(0, 0, 0, 0.5));
   text-align: center;
   padding-top: 20px;
+  margin-top: 4px;
 }
 
 label[for="id_body"] {
@@ -585,3 +613,39 @@ label[for="id_body"] {
 .head-alert {
  animation: fadeOut 4s linear forwards;
 }
+
+@media (max-width: 768px) {
+  div.row.home {
+    text-align: center;
+  }
+  div.row.gallery {
+    text-align: center;
+  }
+ }
+ @media screen and (max-width: 768px) {
+  .card-gallery {
+     /* Adjust the positioning as needed for smaller screens */
+     top: 40%; /* Example adjustment */
+     left: 50%;
+     transform: translate(-50%, -50%);
+  }
+ }
+
+/* profile page */
+
+/* CSS for screens smaller than 576px */
+@media (max-width: 575.98px) {
+  .profile-bio {
+     order: -1; /* This will place the profile bio at the top */
+  }
+ }
+ 
+ /* CSS for screens between 576px and 768px */
+ @media (min-width: 576px) and (max-width: 767.98px) {
+  /* Adjust the layout as needed for this screen size */
+ }
+ 
+ /* CSS for screens larger than 768px */
+ @media (min-width: 768px) {
+  /* Adjust the layout as needed for this screen size */
+ }
