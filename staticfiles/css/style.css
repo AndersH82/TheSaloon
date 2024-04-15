@@ -239,6 +239,12 @@ input[type="file"]::-ms-browse:hover {
 
 /* profile */
 
+
+.profile {
+  width: 100%;
+  position: relative;
+ }
+
 div.col-md-8 {
  display:grid;
  align-items: center;
@@ -257,7 +263,7 @@ div.profile-col {
   display: flex;
 }
 
-div.alerted {
+div.col-md-8.shout {
   display: flex;
   background-color: #FFF3CD;
   border-radius: 10px;
@@ -269,7 +275,39 @@ div.alerted {
   filter: drop-shadow(20px 20px 3px rgba(0, 0, 0, 0.5));
 }
 
-div.profile-bio {
+.container1 {
+  background-color: #f8f9fa;
+  padding: 20px;
+}
+.profile {
+  border: 2px solid #6c757d;
+}
+.name {
+  font-size: 24px;
+  font-weight: bold;
+}
+.bio {
+  font-size: 18px;
+  color: #6c757d;
+}
+.follow {
+  font-size: 20px;
+  color: #007bff;
+}
+.btn-profile {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+div#profile-bio.col-md-6.order-md-2 {
   text-align: center;
   background-repeat: no-repeat;
   background-position:  50%  50%;
@@ -648,4 +686,11 @@ label[for="id_body"] {
  /* CSS for screens larger than 768px */
  @media (min-width: 768px) {
   /* Adjust the layout as needed for this screen size */
+ }
+
+ @media screen and (max-width: 600px) {
+  .container {
+     width: 100%; /* Ensures the container takes full width on small screens */
+     position: relative; /* Keeps the container at the top */
+  }
  }
