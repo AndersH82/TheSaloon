@@ -6,11 +6,11 @@
 {% if profile %}
 
 
-<h1 class="profile text-center">{{ profile.user.username }}'s Profile</h1>
+<h1 class="profil text-center">{{ profile.user.username }}'s Profile</h1>
 <div class="container-fluid">
- <div class="row">
+  <div class="row">
       <!-- Container 1 -->
-      <div id="profile-bio" class="col-xs-12 col-sm-12 col-md-4 order-md-2 text-center">
+    <div id="profile-bio" class="col-xs-12 col-sm-12 col-md-3 order-md-3 text-center px-3 px-md-0">
           <div class="container1 mx-auto">
             <div class="image d-flex flex-column justify-content-center align-items-center">
       {% if profile.profile_image %}
@@ -119,8 +119,8 @@
             {% endfor %}
             {% endif %}
           </div>
-        </div>
- </div>
+      </div>
+  </div>
 </div>
 
 

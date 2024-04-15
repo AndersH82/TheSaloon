@@ -239,72 +239,49 @@ input[type="file"]::-ms-browse:hover {
 
 /* profile */
 
-
-.profile {
-  width: 100%;
-  position: relative;
- }
-
-div.col-md-8 {
- display:grid;
- align-items: center;
- justify-content: center;
+#profile-bio {
+  display: flex;
+  overflow: auto;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 10px;
+  filter: drop-shadow(20px 20px 3px rgba(0, 0, 0, 0.5));
+  height: 100%;
+  padding: 30px;
+  font-size: 1rem;
 }
 
-h1.profile {
+.profile {
+  border: 2px solid #000000;
+}
+
+.name {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.bio {
+  font-size: 1em;
+  color: #000000;
+}
+
+.icons a {
+  margin-right: 10px;
+}
+
+.follow {
+  font-size: 1.2em;
+  color: #333;
+}
+
+h1.profil {
   color: black;
   margin-bottom: 20px; 
   margin-top: 70px;
   font-weight: bold;
-}
-
-div.profile-col {
-  text-align: center;
-  display: flex;
-}
-
-div.col-md-8.shout {
-  display: flex;
-  background-color: #FFF3CD;
-  border-radius: 10px;
-  width: 500px;
-  height: 200px;
-  margin-bottom: 20px;
-  padding-top: 20px;
-  flex-direction: column;
-  filter: drop-shadow(20px 20px 3px rgba(0, 0, 0, 0.5));
-}
-
-div#profile-bio.col-md-6.order-md-2 {
-  text-align: center;
-  background-repeat: no-repeat;
-  background-position:  50%  50%;
-  background-size: cover;
-  width: 250px;
-  height: 750px;
-  background-color: #FFF3CD;
-  filter: drop-shadow(20px 20px 3px rgba(0, 0, 0, 0.5));
-  border-radius:  10px;
-}
-
-
-div.bio {
-  text-align: center;
-  padding: 10px;
-}
-
-img.profile {
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
-
-p.card-text {
-  color: #000000;
-}
-
-span.name {
-  color: black;
-  text-decoration: underline;
 }
 
 small.text-muted {
@@ -313,21 +290,17 @@ small.text-muted {
   font-display: bold;
 }
 
-h5.follow {
-  color: black;
-  text-decoration: underline;
-}
-
 button.btn-profile {
-  background-color:#B3874E;
+  background-color: #5e372e;
   border: none;
-  box-shadow: 0 6px 8px 0 rgba(0,0,0,.2);
   border-radius:  2rem;
-  color: black;
+  color: white;
+  filter: drop-shadow(20px 20px 3px rgba(0, 0, 0, 0.5));
 }
 
 button.btn-profile:hover {
-  background-color: #A07445;
+  background-color: #714B3C;
+  color: #000000;
   transition: background-color  0.4s ease;
 }
 
@@ -338,26 +311,49 @@ a.edit {
 i.face:hover {
   color: #1877F2;
   transition: background-color  0.4s ease;
+  filter: drop-shadow(20px 20px 3px rgba(0, 0, 0, 0.5));
 }
 
 i.inst:hover {
   color: #833AB4;
   transition: background-color  0.4s ease;
+  filter: drop-shadow(20px 20px 3px rgba(0, 0, 0, 0.5));
 }
 
 i.link:hover {
   color: #0077B5;
   transition: background-color  0.4s ease;
+  filter: drop-shadow(20px 20px 3px rgba(0, 0, 0, 0.5));
 }
 
 i.you:hover {
   color: #FF0000;
   transition: background-color  0.4s ease;
+  filter: drop-shadow(20px 20px 3px rgba(0, 0, 0, 0.5));
 }
 
 i.x:hover {
   color: #000000;
   transition: background-color  0.4s ease;
+  filter: drop-shadow(20px 20px 3px rgba(0, 0, 0, 0.5));
+}
+
+#profile-bio {
+  flex: 1;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+.container2 {
+  max-width: 100%;
+  width: 600px;
+  margin: o auto;
+}
+.container1 {
+  max-width: 100%;
+  margin: 0 auto;
 }
 
 /* profile list */
@@ -627,12 +623,25 @@ label[for="id_body"] {
  }
  @media screen and (max-width: 768px) {
   .card-gallery {
-     /* Adjust the positioning as needed for smaller screens */
-     top: 40%; /* Example adjustment */
+     top: 40%;
      left: 50%;
      transform: translate(-50%, -50%);
   }
  }
 
-/* profile page */
-
+ @media (max-width: 768px) {
+  #profile-bio {
+     font-size: 0.8rem;
+  }
+ 
+  .container1 {
+     padding: 0 15px;
+  }
+ }
+ 
+ @media (max-width: 480px) {
+  #profile-bio {
+    margin-left: 20px;
+     font-size: 0.7rem;
+  }
+ }
