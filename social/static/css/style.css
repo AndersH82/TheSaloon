@@ -13,8 +13,9 @@ div.container {
 
 h1.home {
   color: black;
-  margin-top: 70px;
+  margin-bottom: 20px;
   font-weight: bold;
+  filter: drop-shadow(20px 20px 3px rgba(0, 0, 0, 0.5));
 }
 
 div.row.home {
@@ -22,7 +23,7 @@ div.row.home {
 }
 
 div.home {
-  margin-top: 90px;
+  margin-top: 20px;
 }
 
 /* shout home */
@@ -245,7 +246,7 @@ input[type="file"]::-ms-browse:hover {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: #f9f9f9;
+  background-color: #FFF3CD;
   padding: 20px;
   border-radius: 10px;
   filter: drop-shadow(20px 20px 3px rgba(0, 0, 0, 0.5));
@@ -273,15 +274,20 @@ input[type="file"]::-ms-browse:hover {
 }
 
 .follow {
-  font-size: 1.2em;
+  font-size: 1.5em;
   color: #333;
+}
+
+p.card-text {
+  color: #000000;
 }
 
 h1.profil {
   color: black;
   margin-bottom: 20px; 
-  margin-top: 70px;
+  margin-top: 20px;
   font-weight: bold;
+  filter: drop-shadow(20px 20px 2px rgba(0, 0, 0, 0.5));
 }
 
 small.text-muted {
@@ -378,6 +384,7 @@ div.list-container {
   display: flex;
   align-items: center;
   justify-content: center;
+  filter: drop-shadow(20px 20px 3px rgba(0, 0, 0, 0.5));
 }
 
 div.list-card {
@@ -559,7 +566,7 @@ button.btn-edit-shout:hover {
   filter: drop-shadow(20px 20px 3px rgba(0, 0, 0, 0.5));
   text-align: center;
   padding-top: 20px;
-  margin-top: 4px;
+  margin-top: 24px;
 }
 
 label[for="id_body"] {
@@ -620,6 +627,19 @@ label[for="id_body"] {
   div.row.gallery {
     text-align: center;
   }
+  #profile-bio {
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    font-size: 0.8rem;
+  }
+  .container1 {
+    padding: 0 15px;
+ }
+  h1.profil {
+    display: none;
+  }
  }
  @media screen and (max-width: 768px) {
   .card-gallery {
@@ -629,19 +649,4 @@ label[for="id_body"] {
   }
  }
 
- @media (max-width: 768px) {
-  #profile-bio {
-     font-size: 0.8rem;
-  }
- 
-  .container1 {
-     padding: 0 15px;
-  }
- }
- 
- @media (max-width: 480px) {
-  #profile-bio {
-    margin-left: 20px;
-     font-size: 0.7rem;
-  }
- }
+

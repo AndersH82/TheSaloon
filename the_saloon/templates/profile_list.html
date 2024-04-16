@@ -3,23 +3,20 @@
 
 {% block content %}
 
+<h1 class="list">Profile's</h1>
 
-
-
-  <h1 class="list">Profile's</h1>
-  
-    {% if profiles %}
-    {% for profile in profiles %}
-<div class="list-container col-md-12 col-md-6">
-  <div class="cont">
+{% if profiles %}
+{% for profile in profiles %}
+<div class="list-container col-12 col-md-6 col-lg-3 mx-auto">
+ <div class="cont">
     <div class="container">
       <div class="list-card">
-        <h5 class="card-title"><a href="{% url 'profile' profile.user.id  %}">
+        <h5 class="card-title"><a href="{% url 'profile' profile.user.id %}">
           {{ profile.user.username }}</a>'s Profile</h5>
                 {% if profile.profile_image %}
-                  <img class="list img rounded-circle" src="{{ profile.profile_image.url }}" 
-                  width=150 height=150
-                  alt="{{ profile.user.username}}">
+                 <img class="list img rounded-circle" src="{{ profile.profile_image.url }}" 
+                 width=150 height=150
+                 alt="{{ profile.user.username}}">
                 {% else %}
                 <img class="list profile rounded-circle" src="{% static 'images/cowboy.png' %}" height="150"
                 width="150" alt="profile_image">
@@ -28,12 +25,12 @@
               Last Updated: {{ profile.date_modified }}</small></p>
       </div>
     </div>
-  </div>  
+ </div>  
 </div>
 
 {% endfor %}
 
 {% endif %}
 
-
 {% endblock %}
+
