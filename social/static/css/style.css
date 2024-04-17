@@ -441,11 +441,12 @@ button.btn-update:hover, button.btn-register:hover {
 
 /* update,register form */
 
-h1.update, h1.register {
+h1.update.text-center, h1.register {
   color: black;
   margin-top: 70px;
   text-align:center;
   font-weight: bold;
+  filter: drop-shadow(20px 20px 2px rgba(0, 0, 0, 0.5));
 }
 
 #id_username.form-control {
