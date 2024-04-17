@@ -391,14 +391,6 @@ h1.list {
   border-radius:  2rem;
 }
 
-.list-card {
-  display: flex;
-  flex-direction: column; 
-  justify-content: center; 
-  align-items: center;
-  text-align: center;
-}
-
 .list-container {
   display: flex;
   justify-content: center;
@@ -415,7 +407,6 @@ h1.list {
   align-items: center;
   justify-content: center;
   height: 100%;
-  flex-grow: 1;
 }
 
 img.list {
@@ -546,8 +537,14 @@ div.card-login {
 h1.edit-shout {
   color: black;
   text-align: center;
-  margin-top: 70px;
+  margin-top: 50px;
+  margin-bottom: 50px;
   font-weight: bold;
+  filter: drop-shadow(20px 20px 3px rgba(0, 0, 0, 0.5));
+}
+
+.text-edit {
+  filter: drop-shadow(20px 20px 3px rgba(0, 0, 0, 0.5));
 }
 
 div.cont-edit-shout {
