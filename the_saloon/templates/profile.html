@@ -71,18 +71,20 @@
         {% endfor %}
         </p>
 
-      <form method=POST>
-        {% csrf_token %}
-        {% if profile in user.profile.follows.all %}
-        <button class="btn-profile btn-outline" name="follow" value="unfollow" type="submit">
-          Unfollow {{ profile.user.username|lower}}
-        </button>
-
-        {% else %}
-        <button class="btn-profile btn-outline" name="follow" value="follow" type="submit">
-          Follow {{ profile.user.username|lower}}
-        </button>
-        {% endif %}
+        <form method="POST">
+          {% csrf_token %}
+          {% if profile.user != request.user %}
+              {% if profile in user.profile.follows.all %}
+              <button class="btn-profile btn-outline" name="follow" value="unfollow" type="submit">
+                Unfollow {{ profile.user.username|lower }}
+              </button>
+              {% else %}
+              <button class="btn-profile btn-outline" name="follow" value="follow" type="submit">
+                Follow {{ profile.user.username|lower }}
+              </button>
+              {% endif %}
+          {% endif %}
+        </form>
         <br/><br/>
         {% if request.user.id == profile.user.id %}
         <button class="btn-profile btn-outline">
