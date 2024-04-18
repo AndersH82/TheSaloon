@@ -14,15 +14,19 @@
       <div class="list-card d-flex flex-column justify-content-center align-items-center">
         <h5 class="card-title"><a href="{% url 'profile' profile.user.id %}">
           {{ profile.user.username }}</a>'s Profile</h5>
-                {% if profile.profile_image %}
-                <img class="list img rounded-circle" src="{{ profile.profile_image.url }}" 
-                alt="{{ profile.user.username}}">
-                {% else %}
-                <img class="list profile rounded-circle" src="{% static 'images/cowboy.png' %}"
-                alt="profile_image">
-                {% endif %}
-              <p class="list card-text"><small class="text-muted">
-              Last Updated: {{ profile.date_modified }}</small></p>
+          {% if profile.profile_image %}
+          <a href="{% url 'profile' profile.user.id %}">
+              <img class="list img rounded-circle" src="{{ profile.profile_image.url }}" 
+              alt="{{ profile.user.username}}">
+          </a>
+          {% else %}
+          <a href="{% url 'profile' profile.user.id %}">
+              <img class="list profile rounded-circle" src="{% static 'images/cowboy.png' %}"
+              alt="profile_image">
+          </a>
+          {% endif %}
+          <p class="list card-text"><small class="text-muted">
+          Last Updated: {{ profile.date_modified }}</small></p>
       </div>
     </div>
  </div>  
