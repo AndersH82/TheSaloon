@@ -141,6 +141,22 @@ h1.gallery {
   font-weight: bold;
 }
 
+.btn.btn-danger {
+  background-color: #714b3c;
+  color: white;
+  border: none;
+  margin-top: 5px;
+  border-radius:  10px;
+  filter: drop-shadow(20px 20px 3px rgba(0, 0, 0, 0.5));
+}
+
+.btn.btn-danger:hover {
+  background-color: #5e372e;
+  transition: background-color  0.4s ease;
+  color: #000000;
+}
+
+
 .gallery-container {
   display: flex;
   flex-wrap: wrap;
@@ -176,7 +192,7 @@ button.upload {
   background-color: #714b3c;
   color: white;
   border: none;
-  border-radius:  2rem;
+  border-radius:  10px;
   filter: drop-shadow(20px 20px 3px rgba(0, 0, 0, 0.5));
 }
 
@@ -187,9 +203,10 @@ button.upload:hover {
 }
 
 #id_image {
-  background-color: #FFF3CD;
+  background-color: #714B3C;
   border: none;
   width: 90px;
+  border-radius: 10px;
   filter: drop-shadow(20px 20px 3px rgba(0, 0, 0, 0.5));
 }
 
