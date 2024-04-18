@@ -54,14 +54,22 @@
         <a href="{{ profile.x_link }}" target="new"><i class="x fa-2x fa-brands fa-x-twitter"></i></a>
         {% endif %}
       </div>
-      <h5 class="follow"> Follows </h5>
-      <p class="card-text">{% for following in profile.follows.all %}
-        <a href="{% url 'profile' following.user.id %}">{{ following }}</a><br/>
+      <h5 class="follow">Follows</h5>
+        <p class="card-text">
+        {% for following in profile.follows.all %}
+            {% if following.user.id != user.id %}
+                <a href="{% url 'profile' following.user.id %}">{{ following }}</a><br/>
+            {% endif %}
         {% endfor %}
-      <h5 class="follow"> Followers </h5>
-      <p class="card-text">{% for following in profile.followed_by.all %}
-        <a href="{% url 'profile' following.user.id %}">{{ following }}</a><br/>
+        </p>
+        <h5 class="follow">Followers</h5>
+        <p class="card-text">
+        {% for following in profile.followed_by.all %}
+            {% if following.user.id != user.id %}
+                <a href="{% url 'profile' following.user.id %}">{{ following }}</a><br/>
+            {% endif %}
         {% endfor %}
+        </p>
 
       <form method=POST>
         {% csrf_token %}

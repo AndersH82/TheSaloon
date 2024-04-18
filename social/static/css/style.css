@@ -37,7 +37,7 @@ div.alert {
   background-color:#714B3C;
   border: none;
   filter: drop-shadow(20px 20px 3px rgba(0, 0, 0, 0.5));
-  border-radius:  2rem;
+  border-radius:  10px;
   color: white;
   display: block;
   margin: auto;
@@ -132,6 +132,60 @@ footer.footer {
   height: auto; 
   margin: auto; 
 }
+
+
+h1.login {
+  color: black;
+  margin-top: 70px;
+  text-align: center;
+  font-weight: bold;
+}
+
+input.form-control {
+  background-color: #FFF3CD;
+  border: none;
+  border-radius: 10px;
+  max-width: 400px;
+  display: block;
+  margin: auto;
+  color: black;
+  filter: drop-shadow(20px 20px 3px rgba(0, 0, 0, 0.5));
+}
+
+button.btn-login {
+  background-color:#714B3C;
+  border: none;
+  filter: drop-shadow(20px 20px 3px rgba(0, 0, 0, 0.5));
+  border-radius: 10px;
+  color: white;
+  display: block;
+  margin: auto;
+  margin-top: 30px;
+}
+
+button.btn-login:hover {
+  background-color: #5e372e;
+  transition: background-color  0.4s ease;
+  color: #000000;
+}
+
+div.card-login {
+  width: 500px;
+  display: block;
+  margin: auto;
+  margin-top: 100px;
+  background-color: #FFF3CD;
+  color: black;
+  box-shadow: 0 6px 8px 0 rgba(0,0,0,.2);
+  border-radius:  2rem;
+}
+
+.col-md-6 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+ }
 
 /* gallery */
 h1.gallery {
@@ -551,52 +605,6 @@ label[for="id_linkedin_link"] {
   width: 90px;
   border-radius: 10px;
   filter: drop-shadow(20px 20px 3px rgba(0, 0, 0, 0.5));
-}
-
-h1.login {
-  color: black;
-  margin-top: 70px;
-  text-align: center;
-  font-weight: bold;
-}
-
-input.form-control {
-  background-color: #FFF3CD;
-  border: none;
-  border-radius: 2rem;
-  max-width: 400px;
-  display: block;
-  margin: auto;
-  color: black;
-  filter: drop-shadow(20px 20px 3px rgba(0, 0, 0, 0.5));
-}
-
-button.btn-login {
-  background-color:#714B3C;
-  border: none;
-  filter: drop-shadow(20px 20px 3px rgba(0, 0, 0, 0.5));
-  border-radius: 10px;
-  color: white;
-  display: block;
-  margin: auto;
-  margin-top: 30px;
-}
-
-button.btn-login:hover {
-  background-color: #5e372e;
-  transition: background-color  0.4s ease;
-  color: #000000;
-}
-
-div.card-login {
-  width: 500px;
-  display: block;
-  margin: auto;
-  margin-top: 100px;
-  background-color: #FFF3CD;
-  color: black;
-  box-shadow: 0 6px 8px 0 rgba(0,0,0,.2);
-  border-radius:  2rem;
 }
 
 /* edit shout */
