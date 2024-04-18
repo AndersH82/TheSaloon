@@ -176,8 +176,8 @@ button.upload {
   background-color: #714b3c;
   color: white;
   border: none;
-  box-shadow: 0 6px 8px 0 rgba(0,0,0,.2);
   border-radius:  2rem;
+  filter: drop-shadow(20px 20px 3px rgba(0, 0, 0, 0.5));
 }
 
 button.upload:hover {
@@ -190,6 +190,7 @@ button.upload:hover {
   background-color: #FFF3CD;
   border: none;
   width: 90px;
+  filter: drop-shadow(20px 20px 3px rgba(0, 0, 0, 0.5));
 }
 
 label[for="id_image"] {
@@ -425,17 +426,20 @@ p.list {
 /*edit profile */
 
 button.btn-update, button.btn-register {
-  background-color:#B3874E;
+  background-color:#714B3C;
   border: none;
-  box-shadow: 0 6px 8px 0 rgba(0,0,0,.2);
-  border-radius:  2rem;
-  color: black;
+  border-radius:  10px;
+  color: rgb(255, 255, 255);
   display: block;
   margin: auto;
+  filter: drop-shadow(20px 20px 2px rgba(0, 0, 0, 0.5));
+  margin-bottom: 30px;
+  margin-top: 30px;
 }
 
 button.btn-update:hover, button.btn-register:hover {
-  background-color: #A07445;
+  background-color: #5e372e;
+  color: #000000;
   transition: background-color  0.4s ease;
 }
 
@@ -443,16 +447,20 @@ button.btn-update:hover, button.btn-register:hover {
 
 h1.update.text-center, h1.register {
   color: black;
-  margin-top: 70px;
+  margin-top: 30px;
   text-align:center;
   font-weight: bold;
   filter: drop-shadow(20px 20px 2px rgba(0, 0, 0, 0.5));
 }
 
+label[for="id_profile_bio"] {
+  font-weight: bold;
+}
+ 
 #id_username.form-control {
   background-color: #FFF3CD;
   border: none;
-  border-radius: 2rem;
+  border-radius: 10px;
   max-width: 400px;
   display: block;
   margin: auto;
@@ -466,7 +474,7 @@ h1.update.text-center, h1.register {
 #id_profile_bio.form-control {
   background-color: #FFF3CD;
   border: none;
-  border-radius: 2rem;
+  border-radius: 10px;
   max-width: 400px;
   display: block;
   margin: auto;
@@ -479,12 +487,26 @@ h1.update.text-center, h1.register {
 #id_x_link.form-control {
   background-color: #FFF3CD;
   border: none;
-  border-radius: 2rem;
+  border-radius: 10px;
   max-width: 400px;
   display: block;
   margin: auto;
   color: black;
   box-shadow: 0 6px 8px 0 rgba(0,0,0,.2);
+}
+
+label[for="id_facebook_link"], label[for="id_youtube_link"],
+label[for="id_instagram_link"], label[for="id_x_link"],
+label[for="id_linkedin_link"] {
+  font-weight: bold;
+}
+
+#id_profile_image {
+  background-color: #714B3C;
+  border: none;
+  width: 90px;
+  border-radius: 10px;
+  filter: drop-shadow(20px 20px 3px rgba(0, 0, 0, 0.5));
 }
 
 h1.login {
@@ -509,7 +531,7 @@ button.btn-login {
   background-color:#714B3C;
   border: none;
   filter: drop-shadow(20px 20px 3px rgba(0, 0, 0, 0.5));
-  border-radius:  2rem;
+  border-radius: 10px;
   color: white;
   display: block;
   margin: auto;
