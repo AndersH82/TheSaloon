@@ -100,20 +100,24 @@
           <div class="container2 mx-auto">
             {% if shouts%}
             {% for shout in shouts %}
-            <div class="alert" role="alert">
-      
-              {{ shout.body }}<br/><br/>
-              <small class="text-muted" style="font-family: Lato, serif;">
-      
-                {{ shout.created_at }}
-                <br/>
-                {{ shout.number_of_likes }} Likes
-                &nbsp;&nbsp;
-                {% if user in shout.likes.all %}
-                <a href="{% url 'shout_like' shout.id %}"><i class="fa-lg fa-solid fa-heart" style="color:black"></i></a>
-                {% else %}
-                <a href="{% url 'shout_like' shout.id %}"><i class="fa-lg fa-solid fa-heart" style="color:red"></i></a>
-                {% endif %}
+              <div class="alert" role="alert">
+                  {{ shout.body }}<br/><br/>
+                  <small class="text-muted">
+                      {{ shout.created_at }}
+                      <br/>
+                      By {{ shout.user.username }}
+                      <br/>
+                      {{ shout.number_of_likes }} Likes
+                      &nbsp;&nbsp;
+                      {% if user != shout.user %}
+                          {% if user in shout.likes.all %}
+                              <a href="{% url 'shout_like' shout.id %}">
+                                  <i class="fa-lg fa-solid fa-heart" style="color: black;"></i></a>
+                          {% else %}
+                              <a href="{% url 'shout_like' shout.id %}">
+                                  <i class="fa-lg fa-solid fa-heart" style="color: red;"></i></a>
+                          {% endif %}
+                      {% endif %}
       
                 {% if request.user.username == profile.user.username %}
                 &nbsp;&nbsp;
