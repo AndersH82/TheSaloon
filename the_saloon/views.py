@@ -4,6 +4,7 @@ from .models import Profile, Shout, UploadedImage
 from .forms import ShoutForm, SignUpForm, ProfilePicForm, UploadImageForm
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
+from django.contrib.auth.decorators import login_required
 
 
 def home(request):
@@ -191,3 +192,15 @@ def delete_image(request, pk):
         return redirect('upload_image')
     else:
         return redirect('upload_image')
+
+
+@login_required
+def delete_profile(request):
+    if request.method == 'POST':
+        user = request.user
+        user.profile.delete()
+        user.delete()
+        messages.success(request, 'Your account has been deleted.')
+        return redirect('login')
+    else:
+        return redirect('profile')

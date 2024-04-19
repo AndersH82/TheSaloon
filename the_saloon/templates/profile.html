@@ -92,6 +92,10 @@
         </button>
         {% endif %}
       </form>
+      <form action="{% url 'delete_profile' %}" method="post">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-danger">Delete Profile</button>
+      </form>
     </div>
           </div>
       </div>
