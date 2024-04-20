@@ -5,6 +5,7 @@ from .forms import ShoutForm, SignUpForm, ProfilePicForm, UploadImageForm
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
+from django.core.exceptions import ObjectDoesNotExist
 
 
 def home(request):
@@ -36,22 +37,30 @@ def profile_list(request):
 
 def profile(request, pk):
     if request.user.is_authenticated:
-        profile = Profile.objects.get(user_id=pk)
+        try:
+            profile = Profile.objects.get(user_id=pk)
+        except ObjectDoesNotExist:
+            messages.error(request, "Profile not found.")
+            return redirect('home')
+
         shouts = Shout.objects.filter(user_id=pk).order_by("-created_at")
 
         if request.method == "POST":
+            if not hasattr(request.user, 'profile'):
+                missing_profile = Profile(user=request.user)
+                missing_profile.save()
+
             current_user_profile = request.user.profile
-            action = request.POST['follow']
+            action = request.POST.get('follow', '')
             if action == "unfollow":
                 current_user_profile.follows.remove(profile)
             elif action == "follow":
                 current_user_profile.follows.add(profile)
             current_user_profile.save()
 
-        return render(request, "profile.html", {"profile": profile,
-                                                "shouts": shouts})
+        return render(request, "profile.html", {"profile": profile, "shouts": shouts})
     else:
-        messages.success(request, ("You must login to see this page..."))
+        messages.success(request, "You must login to see this page...")
         return redirect('home')
 
 

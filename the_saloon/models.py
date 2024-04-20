@@ -8,7 +8,7 @@ from django.dispatch import receiver
 class Shout(models.Model):
     user = models.ForeignKey(
         User, related_name="shouts",
-        on_delete=models.DO_NOTHING
+        on_delete=models.CASCADE
     )
     body = models.CharField(max_length=200)
     created_at = models.DateTimeField(auto_now_add=True)
@@ -23,6 +23,7 @@ class Shout(models.Model):
             f"({self.created_at:%Y-%m-%d %H:%M}): "
             f"{self.body}..."
         )
+
 
 
 # Profile model

@@ -92,10 +92,12 @@
         </button>
         {% endif %}
       </form>
+      {% if request.user.id == profile.user.id %}
       <form action="{% url 'delete_profile' %}" method="post">
         {% csrf_token %}
         <button type="submit" class="btn btn-danger">Delete Profile</button>
       </form>
+      {% endif %}
     </div>
           </div>
       </div>
