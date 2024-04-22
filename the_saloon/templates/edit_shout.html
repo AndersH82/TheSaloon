@@ -2,45 +2,43 @@
 {% load static %}
 {% block content %}
 
+<div class="d-flex justify-content-center align-items-center" style="min-height: 100vh;">
+    <div class="cont-edit-shout">
+        <div class="col-md-8">
+            <h1 class="edit-shout">Edit your Shout!</h1>
+            <div class="text-box" role="alert">
+                <div class="text-edit" role="alert">
+                    <div class="row edit justify-content-center">
+                        <div class="col-11">
+                            {{ shout.body }}
+                            <small class="text-muted">
+                                {{ shout.created_at }}
+                                
+                                {{ shout.number_of_likes }} Likes
+                                &nbsp;&nbsp;
+                                {% if user in shout.likes.all %}
+                                <a href="{% url 'shout_like' shout.id %}"><i class="fa-lg fa-regular fa-thumbs-down"
+                                        style="color:black"></i></a>
+                                {% else %}
+                                <a href="{% url 'shout_like' shout.id %}"><i class="fa-lg fa-regular fa-thumbs-up"
+                                        style="color:black"></i></a>
+                                {% endif %}
+                            </small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                        
+            {% if form %}
+            <form method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
 
-<div class="cont-edit-shout">
-	<div class="col-md-8">
-		<h1 class="edit-shout">Edit your Shout!</h1>
-		<div class="text-box" role="alert">
-			<div class="text-edit" role="alert">
-				<div class="row edit">
-					<div class="col-11">
-						{{ shout.body }}
-						<small class="text-muted">
-							{{ shout.created_at }}
-							
-							{{ shout.number_of_likes }} Likes
-							&nbsp;&nbsp;
-							{% if user in shout.likes.all %}
-							<a href="{% url 'shout_like' shout.id %}"><i class="fa-lg fa-regular fa-thumbs-down"
-									style="color:black"></i></a>
-							{% else %}
-							<a href="{% url 'shout_like' shout.id %}"><i class="fa-lg fa-regular fa-thumbs-up"
-									style="color:black"></i></a>
-							{% endif %}
-						</small>
-					</div>
-
-				</div>
-			</div>
-		</div>
-
-					
-					{% if form %}
-					<form method=POST>
-					{% csrf_token %}
-					{{ form.as_p }}
-
-
-			<button type="submit" class="btn-edit-shout">Update Your Shout!</button>
-		</form>
-
-		{% endif %}
-	</div>
+            <button type="submit" class="btn-edit-shout">Update Your Shout!</button>
+            </form>
+            {% endif %}
+        </div>
+    </div>
 </div>
-	{% endblock %}
+
+{% endblock %}

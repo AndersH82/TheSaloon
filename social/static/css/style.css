@@ -398,7 +398,7 @@ small.text-muted {
   filter: drop-shadow(20px 20px 3px rgba(0, 0, 0, 0.5));
 }
 
- .btn-profile.btn-outline.edit {
+.btn-profile.btn-outline.edit {
   background-color: #714B3C;
   color: #000000;
   transition: background-color  0.4s ease;
@@ -439,15 +439,15 @@ button.btn.btn-dp:hover {
   overflow: auto;
   background-color: rgba(0,0,0,0.4);
   display: none;
- }
+}
  
- .popup-content {
+.popup-content {
   background-color: white;
   margin: 15% auto;
   padding: 20px;
   border: 1px solid #888;
   width: 30%;
- }
+}
 
 i.face:hover {
   color: #1877F2;
@@ -667,26 +667,30 @@ div.text-edit {
   background-color:#FFF3CD;
   color: black;
   background-color: #FFF3CD;
-  box-shadow: 0 4px 6px 0 rgba(0,0,0,.2);
-  border-radius:  2rem;
+  filter: drop-shadow(20px 20px 3px rgba(0, 0, 0, 0.5));
+  border-radius:  10px;
   margin-top: 20px;
   margin-bottom: 30px;
   text-align: center;
+  width: 100%;
+  height: auto;
+  padding: 10px;
 }
 
 button.btn-edit-shout {
-  background-color:#B3874E;
+  background-color:#714B3C;
   border: none;
   filter: drop-shadow(20px 20px 3px rgba(0, 0, 0, 0.5));
-  border-radius:  2rem;
-  color: black;
+  border-radius:  10px;
+  color: white;
   display: block;
   margin: auto;
   margin-top: 30px;
 }
 
 button.btn-edit-shout:hover {
-  background-color: #A07445;
+  background-color: #5e372e;
+  color:black;
   transition: background-color  0.4s ease;
 }
 
