@@ -37,17 +37,13 @@
 
       {% if request.user.is_authenticated %}
         <ul class="navbar-nav ml-auto">
-          <li class="nav-link navbar-brand">
-            {% if profile.profile_image %}
-              <a href="{% url 'profile' request.user.id %}">
-              <img src="{{ user.profile.profile_image.url }}" class="rounded-circle"
-              width="40" height="40" alt="profile_image"></a>
-              {% else %}
-              <a href="{% url 'profile' request.user.id %}">
-              <img src="{% static 'images/cowboy.png' %}" height="40" width="40" class="rounded-circle"
-              alt="profile_image"></a>
-            {% endif %}
-          </li>
+            <li class="nav-link navbar-brand">
+                {% with user.profile.profile_image.url as profile_image_url %}
+                    <a href="{% url 'profile' request.user.id %}">
+                        <img src="{{ profile_image_url|default:'images/cowboy.png' }}" class="rounded-circle" width="40" height="40" alt="profile_image">
+                    </a>
+                {% endwith %}
+            </li>
         </ul>
       {% endif %}
       

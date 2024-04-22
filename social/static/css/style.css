@@ -388,7 +388,7 @@ small.text-muted {
   transition: background-color  0.4s ease;
 }
 
-.btn-profile.btn-outline.edit {
+.btn-profile.btn-outline {
   background-color: #714b3c;
   border: none;
   box-shadow: 0 6px 8px 0 rgba(0,0,0,.2);
@@ -414,8 +414,19 @@ a.edit:hover {
 }
 
 button.btn.btn-dp {
-  background-color: #388E3C;
-  padding-top: 200px;
+  background-color: #714b3c;
+  border: none;
+  margin-top: 10px;
+  box-shadow: 0 6px 8px 0 rgba(0,0,0,.2);
+  border-radius: 10px;
+  color: white;
+  filter: drop-shadow(20px 20px 3px rgba(0, 0, 0, 0.5));
+}
+
+button.btn.btn-dp:hover {
+  background-color: #714B3C;
+  color: #000000;
+  transition: background-color  0.4s ease;
 }
 
 .popup {
