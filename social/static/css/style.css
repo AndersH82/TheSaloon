@@ -96,6 +96,11 @@ nav.navbar {
   color: #000000;
 }
 
+.rounded-circle {
+  border-radius: 50%; /* This makes the image circular */
+  border: 2px solid #000; /* Adds a 2px solid black border around the image */
+ }
+
 
 
 /* footer */
