@@ -112,20 +112,26 @@ def update_user(request):
                                request.FILES or None, instance=current_user)
         profile_form = ProfilePicForm(
             request.POST or None, request.FILES or None, instance=profile_user)
-        if user_form.is_valid() and profile_form.is_valid():
-            user_form.save()
-            profile_form.save()
 
-            login(request, current_user)
-            messages.success(request, ("Your information is now updated!"))
+        # Check if the request method is POST to determine if the form has been submitted
+        if request.method == 'POST':
+            if user_form.is_valid():
+                user_form.save()
+                messages.success(request, "User information updated!")
+            if profile_form.is_valid():
+                profile_form.save()
+                messages.success(request, "Profile picture updated!")
+
+            # Redirect to the home page after updating
             return redirect('home')
 
         return render(request, "update_user.html",
                                {'user_form': user_form,
                                 'profile_form': profile_form})
     else:
-        messages.success(request, ("You must be logged in!"))
+        messages.success(request, "You must be logged in!")
         return redirect('login')
+
 
 
 def shout_like(request, pk):

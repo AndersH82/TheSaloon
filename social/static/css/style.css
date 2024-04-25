@@ -516,30 +516,37 @@ h1.list {
 .row.container-fluid {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 30px;
   filter: drop-shadow(20px 20px 2px rgba(0, 0, 0, 0.5));
+  align-items: flex-start;
  }
-
-.cont {
+ 
+ .cont {
   background-color: #FFF3CD;
   flex: 1;
+  flex-grow: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100%;
-  border-radius:  2rem;
-}
-
-.list-container {
+  border-radius: 2rem;
+ }
+ 
+ .list-container {
   display: flex;
   justify-content: center;
   align-items: center;
   max-height: 100%;
   flex: 1;
-  min-width: 250px;
+  flex-basis: auto;
+  margin: 10px;
+  min-width: 200px;
   max-width: 100%;
-}
+  align-items: flex-start;
+ }
+ 
 
 .list-card {
   display: flex;

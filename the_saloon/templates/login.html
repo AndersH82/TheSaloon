@@ -16,26 +16,26 @@
       <img src="{% static 'images/logo.png' %}" class="login img" alt="Login Image" style="width: 100%; height: auto; object-fit: cover;">
     </div>
  </div>
- <div class="col-md-6 center-content">
-    <!-- Login Form -->
-    <div class="login-md-6 offset-md-3">
-      <h1 class="login">Login</h1>
-      <br/>
-      <form method="POST" action="{% url 'login' %}">
-        {% csrf_token %}
+ <div class="col-md-6 d-flex justify-content-center align-items-center">
+ <!-- Login Form -->
+ <div class="login-md-6 offset-md-3">
+    <h1 class="login">Login</h1>
+    <br>
+    <form method="POST" action="/login/">
+      {% csrf_token %}
 
-        <div class="form-group">
-          <input type="text" class="form-control" name="username" placeholder="Enter your username">
-        </div>
-        <br/>
-        <div class="form-group">
-          <input type="password" class="form-control" name="password" placeholder="Enter your password">
-        </div>
+      <div class="form-group">
+        <input type="text" class="form-control" name="username" placeholder="Enter your username">
+      </div>
+      <br>
+      <div class="form-group">
+        <input type="password" class="form-control" name="password" placeholder="Enter your password">
+      </div>
 
-        <button type="submit" class="btn-login">Submit</button>
-      </form>
-    </div>
+      <button type="submit" class="btn-login">Submit</button>
+    </form>
  </div>
+</div>
 </div>
 
 {% endif %}

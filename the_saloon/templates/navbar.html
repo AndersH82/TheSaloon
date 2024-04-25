@@ -44,7 +44,7 @@
                     </a>
                 {% else %}
                     <a href="{% url 'profile' request.user.id %}">
-                        <img src="images/cowboy.png" class="rounded-circle" width="40" height="40" alt="profile_image">
+                        <img src="{% static 'images/cowboy.png' %}" class="rounded-circle" width="40" height="40" alt="profile_image">
                     </a>
                 {% endif %}
             </li>
