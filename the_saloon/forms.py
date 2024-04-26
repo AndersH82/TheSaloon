@@ -9,25 +9,25 @@ from .models import UploadedImage
 
 
 class ProfilePicForm(forms.ModelForm):
-    profile_image = forms.ImageField(label="Profile Picture")
+    profile_image = forms.ImageField(label="Profile Picture", required=False)
     profile_bio = forms.CharField(
         label="Profile Info", widget=forms.Textarea(
-            attrs={'class': 'form-control', 'placeholder': 'Profile Info'}))
+            attrs={'class': 'form-control', 'placeholder': 'Profile Info'}), required=False)
     facebook_link = forms.CharField(
         label="Facebook Link", widget=forms.TextInput(
-            attrs={'class': 'form-control', 'placeholder': 'Facebook Link'}))
+            attrs={'class': 'form-control', 'placeholder': 'Facebook Link'}), required=False)
     instagram_link = forms.CharField(
         label="Instagram Link", widget=forms.TextInput(
-            attrs={'class': 'form-control', 'placeholder': 'Instagram Link'}))
+            attrs={'class': 'form-control', 'placeholder': 'Instagram Link'}), required=False)
     linkedin_link = forms.CharField(
         label="Linkedin Link", widget=forms.TextInput(
-            attrs={'class': 'form-control', 'placeholder': 'Linkedin Link'}))
+            attrs={'class': 'form-control', 'placeholder': 'Linkedin Link'}), required=False)
     youtube_link = forms.CharField(
         label="Youtube Link", widget=forms.TextInput(
-            attrs={'class': 'form-control', 'placeholder': 'Youtube Link'}))
+            attrs={'class': 'form-control', 'placeholder': 'Youtube Link'}), required=False)
     x_link = forms.CharField(
         label="X Link", widget=forms.TextInput(
-            attrs={'class': 'form-control', 'placeholder': 'X Link'}))
+            attrs={'class': 'form-control', 'placeholder': 'X Link'}), required=False)
 
     class Meta:
         model = Profile

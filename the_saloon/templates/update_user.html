@@ -8,7 +8,6 @@
             <form method="POST" class="edit" enctype="multipart/form-data">
                 {% csrf_token %}
                 {{ user_form.as_p }}
-                <br/>
                 {{ profile_form.as_p }}
                 <button type="submit" class="btn-update">Update Profile</button>
             </form>
