@@ -10,7 +10,7 @@
 {% for profile in profiles %}
 <div class="list-container col-12 col-sm-12 col-md-6 col-lg-3 d-flex justify-content-center align-items-center">
  <div class="cont">
-    <div class="container">
+    <div class="container list">
       <div class="list-card d-flex flex-column justify-content-center align-items-center">
         <h5 class="card-title"><a href="{% url 'profile' profile.user.id %}">
           {{ profile.user.username }}</a>'s Profile</h5>

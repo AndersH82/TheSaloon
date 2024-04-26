@@ -520,9 +520,9 @@ h1.list {
   gap: 30px;
   filter: drop-shadow(20px 20px 2px rgba(0, 0, 0, 0.5));
   align-items: flex-start;
-}
+ }
  
-.cont {
+ .cont {
   background-color: #FFF3CD;
   flex: 1;
   flex-grow: 1;
@@ -532,16 +532,18 @@ h1.list {
   align-items: center;
   height: 100%;
   border-radius: 2rem;
-}
+ }
  
-.list-container {
+ .list-container {
   display: flex;
   justify-content: center;
   align-items: center;
   max-height: 100%;
   flex: 1;
   min-width: 200px;
-}
+  max-width: 100%;
+  align-items: flex-start;
+ }
  
 
 .list-card {
