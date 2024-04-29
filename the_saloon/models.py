@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.db.models.signals import post_save
 from django.dispatch import receiver
+from django.core.exceptions import ObjectDoesNotExist
 
 
 # Shout Model
@@ -28,23 +29,24 @@ class Shout(models.Model):
 # Profile model
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    follows = models.ManyToManyField("self",
-                                     related_name="followed_by",
-                                     symmetrical=False, blank=True)
-
-    date_modified = models.DateTimeField(User, auto_now=True)
-    profile_image = models.ImageField(
-        null=True, blank=True, upload_to="media/image")
+    follows = models.ManyToManyField("self", related_name="followed_by", symmetrical=False, blank=True)
+    date_modified = models.DateTimeField(auto_now=True)
+    profile_image = models.ImageField(upload_to="media/image", null=True, blank=True)
     profile_bio = models.CharField(null=True, blank=True, max_length=500)
     facebook_link = models.CharField(null=True, blank=True, max_length=100)
-    instagram_link = models.CharField(
-        null=True, blank=True, max_length=100)
+    instagram_link = models.CharField(null=True, blank=True, max_length=100)
     linkedin_link = models.CharField(null=True, blank=True, max_length=100)
     youtube_link = models.CharField(null=True, blank=True, max_length=100)
     x_link = models.CharField(null=True, blank=True, max_length=100)
 
     def __str__(self):
         return self.user.username
+
+    @classmethod
+    def get_or_create_profile(cls, username):
+        user, created = User.objects.get_or_create(username=username)
+        profile, created = cls.objects.get_or_create(user=user)
+        return profile, created
 
 # Creat profile new user sign up
 

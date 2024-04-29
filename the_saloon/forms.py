@@ -50,6 +50,10 @@ class ShoutForm(forms.ModelForm):
                 'class': 'form-control'})
         }
 
+    def __init__(self, *args, user=None, **kwargs):
+        super(ShoutForm, self).__init__(*args, **kwargs)
+        self.user = user
+
 
 class Meta:
     model = Shout

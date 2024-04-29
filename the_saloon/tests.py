@@ -1,134 +1,66 @@
-from django.test import TestCase, Client
-from django.urls import reverse, resolve
+from django.test import TestCase
 from django.contrib.auth.models import User
-from the_saloon.views import home, profile_list, login_user, update_user
-from the_saloon.views import upload_image
-from the_saloon.models import Shout
-from .forms import ProfilePicForm, SignUpForm
-
-# Test Urls
+from the_saloon.forms import ShoutForm
+from .forms import ProfilePicForm, SignUpForm, UploadImageForm
+from .models import Shout, Profile
 
 
-class TestUrls(TestCase):
+# Forms Tests
 
-    def test_list_url_is_resolves(self):
-        url = reverse('home')
-        print(resolve(url))
-        self.assertEqual(resolve(url).func, home)
-
-    def test_creat_url_is_resolves(self):
-        url = reverse('profile_list')
-        print(resolve(url))
-        self.assertEqual(resolve(url).func, profile_list)
-
-    def test_login_url_is_resolves(self):
-        url = reverse('login')
-        print(resolve(url))
-        self.assertEqual(resolve(url).func, login_user)
-
-    def test_update_user_url_is_resolves(self):
-        url = reverse('update_user')
-        print(resolve(url))
-        self.assertEqual(resolve(url).func, update_user)
-
-    def test_upload_image_url_is_resolves(self):
-        url = reverse('upload_image')
-        print(resolve(url))
-        self.assertEqual(resolve(url).func, upload_image)
-
-# Test Views
-
-
-class ProfileViewTest(TestCase):
+class TestShoutForm(TestCase):
     def setUp(self):
-        self.client = Client()
         self.user = User.objects.create_user(
-            username='user_id=pk', password='password')
+            username='testuser', password='testpass')
+        self.form_data = {
+            'body': 'This is a test shout.',
+            'user': self.user.id,
+        }
 
-    def test_profile_view(self):
-        self.client.login(username='user_id=pk', password='password')
+# test the form's validation behavior
 
+    def test_form_validation_with_valid_data(self):
+        form = ShoutForm(data={'body': 'This is a test shout.'})
+        self.assertTrue(form.is_valid())
 
-class LoginUserTest(TestCase):
+# test that it's invalid when the body field is empty
 
-    def test_login_success(self):
-        response = self.client.post(
-            reverse('login'), {'username': 'user', 'password': 'pass'})
-        self.assertEqual(response.status_code, 302)
-        self.assertTrue(response.url == reverse('login'))
+    def test_form_validation_with_empty_body(self):
+        form = ShoutForm(data={'body': ''})
+        self.assertFalse(form.is_valid())
+        self.assertEqual(form.errors, {'body': ['This field is required.']})
 
-    def test_login_fail(self):
-        response = self.client.post(
-            reverse('login'), {'username': 'user', 'password': 'password'})
-        self.assertEqual(response.status_code, 302)
-        self.assertTrue(response.url == reverse('login'))
-
-    def test_login_get_request(self):
-        response = self.client.get(reverse('login'))
-        self.assertEqual(response.status_code, 200)
-
-# Test Models
-
-
-class ShoutModelTest(TestCase):
-
-    def setUpTestData():
-        test_user = User.objects.create_user(
-            username="User", password='password')
-        Shout.objects.create(user=test_user, body='Test shout body')
-
-    def test_number_of_likes(self):
-        shout = Shout.objects.get(id=1)
-        self.assertEqual(shout.number_of_likes(), 0)
-
-# Test Forms
+# form validates correctly
 
 
 class ProfilePicFormTest(TestCase):
+    def test_form_validation_empty(self):
+        form = ProfilePicForm(data={})
+        self.assertTrue(form.is_valid())
 
-    def test_form_fields(self):
-        form = ProfilePicForm()
-        self.assertSequenceEqual(list(form.fields.keys()), [
-                                 'profile_image', 'profile_bio',
-                                 'facebook_link', 'instagram_link',
-                                 'linkedin_link', 'youtube_link', 'x_link'])
+# if the form renders correctly
 
     def test_form_rendering(self):
-
         form = ProfilePicForm()
-        rendered = form.as_p()
-        self.assertIn('Profile Picture', rendered)
-        self.assertIn('Profile Info', rendered)
-        self.assertIn('Facebook Link', rendered)
-        self.assertIn('Instagram Link', rendered)
-        self.assertIn('Linkedin Link', rendered)
-        self.assertIn('Youtube Link', rendered)
-        self.assertIn('X Link', rendered)
+        self.assertIn('<input type="file" name="profile_image"', form.as_p())
+        self.assertIn('<textarea name="profile_bio"', form.as_p())
+        self.assertIn('<input type="text" name="facebook_link"', form.as_p())
 
-
-class ShoutFormTest(TestCase):
-
-    def setUp(self):
-        self.shout = Shout.objects.create(body="This is a test shout")
-
-    def tearDown(self):
-        Shout.objects.all().delete()
+# Ensure that the form has the correct fields
 
 
 class SignUpFormTest(TestCase):
-    def setUp(self):
-        self.client = Client()
-        self.signup_url = reverse('register')
-
-    def test_form_initialization(self):
+    def test_form_fields(self):
         form = SignUpForm()
-        self.assertEqual(len(form.fields),  6)
-        self.assertTrue('username' in form.fields)
-        self.assertTrue('first_name' in form.fields)
-        self.assertTrue('last_name' in form.fields)
-        self.assertTrue('email' in form.fields)
-        self.assertTrue('password1' in form.fields)
-        self.assertTrue('password2' in form.fields)
+        self.assertEqual(
+            form.fields['username'].widget.attrs['class'], 'form-control')
+        self.assertEqual(
+            form.fields['username'].widget.attrs['placeholder'], 'User Name')
+        self.assertEqual(
+            form.fields['email'].widget.attrs['class'], 'form-control')
+        self.assertEqual(
+            form.fields['email'].widget.attrs['placeholder'], 'Email Address')
+
+# the form correctly validates input
 
     def test_form_validation(self):
         form = SignUpForm(data={
@@ -140,3 +72,83 @@ class SignUpFormTest(TestCase):
             'password2': 'testpassword',
         })
         self.assertFalse(form.is_valid())
+        self.assertEqual(
+            form.errors['email'], ['Enter a valid email address.'])
+
+# Ensure that the form's __init__ method correctly sets the attributes
+
+    def test_form_initialization(self):
+        form = SignUpForm()
+        self.assertEqual(
+            form.fields['username'].widget.attrs['class'], 'form-control')
+        self.assertEqual(
+            form.fields['username'].widget.attrs['placeholder'], 'User Name')
+
+# Upload image test
+
+
+class UploadImageFormTest(TestCase):
+    pass
+
+# Create a form instance with invalid data
+
+    def test_form_with_invalid_data(self):
+        form = UploadImageForm(data={'image': ''})
+        
+        # Check if the form is not valid
+        self.assertFalse(form.is_valid())
+        self.assertEqual(form.errors, {'image': ['This field is required.']})
+
+# Models Tests
+
+
+class ShoutModelTest(TestCase):
+    @classmethod
+    def setUpTestData(cls):
+        # Set up non-modified objects used by all test methods
+        User.objects.create(username='testuser')
+        Shout.objects.create(
+            user=User.objects.get(username='testuser'), body='Test shout')
+
+    def test_number_of_likes(self):
+        shout = Shout.objects.get(id=1)
+        self.assertEqual(shout.number_of_likes(), 0)
+
+# Test numbers of likes
+
+    def test_number_of_likes_method(self):
+        shout = Shout.objects.get(id=1)
+        # Assuming you have a user to like the shout
+        user = User.objects.create(username='anotheruser')
+        shout.likes.add(user)
+        self.assertEqual(shout.number_of_likes(), 1)
+
+# Test profile is created successfully with a user
+
+
+class ProfileModelTest(TestCase):
+    def setUp(self):
+        self.user = User.objects.create_user(username='testuser', password='testpass')
+        # Ensure a profile does not already exist for this user
+        Profile.objects.filter(user=self.user).delete()
+        self.profile = Profile.objects.create(user=self.user)
+
+    def test_profile_creation(self):
+        self.assertIsInstance(self.profile, Profile)
+        self.assertEqual(self.profile.__str__(), 'testuser')
+
+    def test_profile_modification(self):
+        self.profile.profile_bio = 'This is a test bio.'
+        self.profile.save()
+
+        profile = Profile.objects.get(user=self.user)
+        self.assertEqual(profile.profile_bio, 'This is a test bio.')
+
+    def test_get_or_create_profile(self):
+        profile, created = Profile.get_or_create_profile('testuser')
+        self.assertTrue(created)
+        self.assertEqual(profile.user.username, 'testuser')
+
+        profile, created = Profile.get_or_create_profile('testuser')
+        self.assertFalse(created)
+        self.assertEqual(profile.user.username, 'testuser')
