@@ -58,7 +58,8 @@ def profile(request, pk):
                 current_user_profile.follows.add(profile)
             current_user_profile.save()
 
-        return render(request, "profile.html", {"profile": profile, "shouts": shouts})
+        return render(
+            request, "profile.html", {"profile": profile, "shouts": shouts})
     else:
         messages.success(request, "You must login to see this page...")
         return redirect('home')

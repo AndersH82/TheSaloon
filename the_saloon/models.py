@@ -2,7 +2,6 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.db.models.signals import post_save
 from django.dispatch import receiver
-from django.core.exceptions import ObjectDoesNotExist
 
 
 # Shout Model
@@ -29,9 +28,11 @@ class Shout(models.Model):
 # Profile model
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    follows = models.ManyToManyField("self", related_name="followed_by", symmetrical=False, blank=True)
+    follows = models.ManyToManyField(
+        "self", related_name="followed_by", symmetrical=False, blank=True)
     date_modified = models.DateTimeField(auto_now=True)
-    profile_image = models.ImageField(upload_to="media/image", null=True, blank=True)
+    profile_image = models.ImageField(
+        upload_to="media/image", null=True, blank=True)
     profile_bio = models.CharField(null=True, blank=True, max_length=500)
     facebook_link = models.CharField(null=True, blank=True, max_length=100)
     instagram_link = models.CharField(null=True, blank=True, max_length=100)
