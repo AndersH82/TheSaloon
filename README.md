@@ -101,7 +101,7 @@ Here you can see the navigation bar when you are logged in.
 
     - On the Landing page, the user will be able to log in or sign up via navbar.
 
-![Landing Page](readme_media/login.png)
+![Landing Page](readme_media/landing.png)
 
  
 - __Registration page__
