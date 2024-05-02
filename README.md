@@ -346,7 +346,7 @@ The `SignUpForm` extends `UserCreationForm` to include additional fields for use
 
 ### Usage
 
-Instantiate `SignUpForm` in your view and pass it to your template. Include `{% csrf_token %}` for CSRF protection.
+Instantiate `SignUpForm` in your view and pass it to your template. Include `csrf_token` for CSRF protection.
 
 
 ## UploadImageForm
