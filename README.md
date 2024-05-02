@@ -317,7 +317,7 @@ The `ProfilePicForm` is a `ModelForm` that allows users to upload a profile pict
 
 ### Usage
 
-To use `ProfilePicForm`, instantiate it in your view and pass it to your template. Ensure to include `{% csrf_token %}` in your form to protect against cross-site request forgery attacks.
+To use `ProfilePicForm`, instantiate it in your view and pass it to your template. Ensure to include `csrf_token` in your form to protect against cross-site request forgery attacks.
 
 
 
@@ -331,7 +331,7 @@ The `ShoutForm` is a `ModelForm` for creating shouts. It includes a textarea for
 
 ### Usage
 
-Similar to `ProfilePicForm`, instantiate `ShoutForm` in your view and pass it to your template. Include `{% csrf_token %}` for CSRF protection.
+Similar to `ProfilePicForm`, instantiate `ShoutForm` in your view and pass it to your template. Include `csrf_token` for CSRF protection.
 
 
 ## SignUpForm
@@ -359,7 +359,7 @@ The `UploadImageForm` is a `ModelForm` for uploading images.
 
 ### Usage
 
-Instantiate `UploadImageForm` in your view and pass it to your template. Include `{% csrf_token %}` for CSRF protection.
+Instantiate `UploadImageForm` in your view and pass it to your template. Include `csrf_token` for CSRF protection.
 
 ## Additional Notes
 
