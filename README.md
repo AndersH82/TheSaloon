@@ -65,11 +65,11 @@ This project is a Django-based social media platform where users can create prof
 
 
 Here you can see the navigation bar when you log in or register.
-![Nav Bar](readme_media/navbarout.png)
+![Nav Bar](readme_media/navbarlogin.png)
     
 
 Here you can see the navigation bar when you are logged in.
-![Nav Bar](readme_media/navbarin.png)
+![Nav Bar](readme_media/navbarloggedin.png)
 
 
 - Under the navigation bar, a text appears when you:
@@ -99,9 +99,9 @@ Here you can see the navigation bar when you are logged in.
 ![Update](readme_media/navupdate.png)
 - __The landing page image__
 
-    - Here you can see what has been written before you log in or register.
+    - On the Landing page, the user will be able to log in or sign up via navbar.
 
-![Landing Page](readme_media/landingimg.png)
+![Landing Page](readme_media/login.png)
 
  
 - __Registration page__
@@ -109,26 +109,25 @@ Here you can see the navigation bar when you are logged in.
   - Here you can enter username, first name, last name, e-mail, password and 
    then confirm with the same password.
 
-![Register](readme_media/register.png)
+![Register](readme_media/signup.png)
 
-- __Login page__
+- __Shout page__
 
-  - Here is the login page where you enter your username and password to enter the 
-  website.
+  - Here the user can read other people's shouts and also write their own shouts. The user can also like or unlike shouts.
 
-![Login](readme_media/login.png)
+![Login](readme_media/home.png)
 
 - __Profile page__
 
-  - On your profile page, you can see your profile bio, which includes a profile picture where you can write a brief bio about yourself. You can also add links to your social media, view your followers and the profiles you follow, and use the follow/unfollow button. Additionally, there's an edit profile button.
+  - On your profile page, you can see your profile bio, which includes a profile picture where you can write a brief bio about yourself. You can also add links to your social media, view your followers and the profiles you follow, and use the follow/unfollow button. Additionally, there's an edit profile button and a delete button.
 
 ![Profile](readme_media/profile.png)
 
 - __Gallery__
 
-  - This page allows the user to upload images for all to see 
+  - This page allows the user to upload images.
 
-![Gallery](readme_media/gallery.png)
+![Gallery](readme_media/pictures.png)
 
 - __Profile list__
 
@@ -139,22 +138,25 @@ Here you can see the navigation bar when you are logged in.
 - __Other pages__
 
   - Then there is the edit page that you access via profile.
+![edit](readme_media/editprofile.png)
 
   - A page where you get to edit Shouts via the profile if you press edit.
+![edit shouts](readme_media/editshouts.png)
 
 - __Social media links__
 
 
-![Social](readme_media/socialmedialinks.png)
+![Social](readme_media/linksinput.png)
 
 When the user enters a link in one of the fields, an icon of it appears in the profile, which then sends the user to that page and when hovering over it changes color.
 
-![Social](readme_media/socialmedia.png)
+![Social](readme_media/links.png)
 
+![Hover](readme_media/linkshover.png)
 ### Some other features ideas for the page
 
 - The user should be able to like or dislike profiles.
-- The user must be able to have their own galleries for their images.
+- All users should be able to upload images for all to see.
 - The user could write messages to other users.
 
 ## User Stories
