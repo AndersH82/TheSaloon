@@ -319,13 +319,8 @@ The `ProfilePicForm` is a `ModelForm` that allows users to upload a profile pict
 
 To use `ProfilePicForm`, instantiate it in your view and pass it to your template. Ensure to include `{% csrf_token %}` in your form to protect against cross-site request forgery attacks.
 
-Example usage in a template:
 
-```
-html
 
-<form method="post" enctype="multipart/form-data"> {% csrf_token %} {{ form.as_p }} <button type="submit">Update Profile</button> </form>
-```
 ## ShoutForm
 
 The `ShoutForm` is a `ModelForm` for creating shouts. It includes a textarea for the shout content.
@@ -338,13 +333,6 @@ The `ShoutForm` is a `ModelForm` for creating shouts. It includes a textarea for
 
 Similar to `ProfilePicForm`, instantiate `ShoutForm` in your view and pass it to your template. Include `{% csrf_token %}` for CSRF protection.
 
-Example usage in a template:
-
-```
-html
-
-<form method="post"> {% csrf_token %} {{ form.as_p }} <button type="submit">Post Shout</button> </form>
-```
 
 ## SignUpForm
 
@@ -360,12 +348,6 @@ The `SignUpForm` extends `UserCreationForm` to include additional fields for use
 
 Instantiate `SignUpForm` in your view and pass it to your template. Include `{% csrf_token %}` for CSRF protection.
 
-Example usage in a template:
-```
-html
-
-<form method="post"> {% csrf_token %} {{ form.as_p }} <button type="submit">Sign Up</button> </form>
-```
 
 ## UploadImageForm
 
@@ -378,14 +360,6 @@ The `UploadImageForm` is a `ModelForm` for uploading images.
 ### Usage
 
 Instantiate `UploadImageForm` in your view and pass it to your template. Include `{% csrf_token %}` for CSRF protection.
-
-Example usage in a template:
-```
-html
-
-<form method="post" enctype="multipart/form-data"> {% csrf_token %} {{ form.as_p }} <button type="submit">Upload Image</button> </form>
-```
-
 
 ## Additional Notes
 
