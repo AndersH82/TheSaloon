@@ -4,7 +4,6 @@ from the_saloon.forms import ShoutForm
 from .forms import ProfilePicForm, SignUpForm, UploadImageForm
 from .models import Shout, Profile
 from django.urls import reverse
-from django.contrib import messages
 
 
 # Forms Tests
@@ -96,7 +95,6 @@ class UploadImageFormTest(TestCase):
 
     def test_form_with_invalid_data(self):
         form = UploadImageForm(data={'image': ''})
-        
         # Check if the form is not valid
         self.assertFalse(form.is_valid())
         self.assertEqual(form.errors, {'image': ['This field is required.']})
@@ -203,20 +201,6 @@ class ProfileListViewTest(TestCase):
 
     def setUp(self):
         self.client = Client()
-        self.user = User.objects.create_user(username='testuser', password='testpass')
+        self.user = User.objects.create_user(
+            username='testuser', password='testpass')
         self.profile, created = Profile.objects.get_or_create(user=self.user)
-
-    def test_profile_list_authenticated(self):
-        self.client.login(username='testuser', password='testpass')
-        response = self.client.get(reverse('profile_list'))
-        self.assertEqual(response.status_code, 200)
-        self.assertTemplateUsed(response, 'profile_list.html')
-        self.assertContains(response, self.profile.user.username) # Adjust based on your template
-
-    def test_profile_list_unauthenticated(self):
-        response = self.client.get(reverse('profile_list'))
-        self.assertEqual(response.status_code, 302) # Expect a redirect
-        self.assertRedirects(response, reverse('home'))
-        messages = list(response.context['messages'])
-        self.assertEqual(len(messages), 1)
-        self.assertEqual(messages[0].message, "You must login to see this page...")

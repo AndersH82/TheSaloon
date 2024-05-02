@@ -191,7 +191,8 @@ def upload_image(request):
     else:
         form = UploadImageForm()
     images = UploadedImage.objects.filter(user=request.user)
-    return render(request, 'upload_image.html', {'form': form, 'images': images})
+    return render(
+        request, 'upload_image.html', {'form': form, 'images': images})
 
 
 def delete_image(request, pk):
