@@ -617,7 +617,7 @@ Document checking completed. No errors or warnings to show.
 
  https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fthesaloon-08255dd425ce.herokuapp.com%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=sv
 
-    - It passed the test but received 707 warnings that the website contains Bootstrap.
+    - It passed the test but received 711 warnings that the website contains Bootstrap.
 
 
 ## Tested everything manually
