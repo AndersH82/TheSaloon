@@ -9,33 +9,46 @@ This project is a Django-based social media platform where users can create prof
 
 # Table of Contents
 
-- [Welcome to The Saloon](#welcome-to-the-saloon)
-- [Features](#features)
-- [User Stories](#user-stories)
-- [UX Design](#ux-design)
-- [Flowchart](#flowchart)
-- [Setup](#setup)
-  - [Prerequisites](#prerequisites)
-  - [Installation](#installation)
-- [Usage](#usage)
-- [URLs](#urls)
-- [Forms Overview](#forms-overview)
-  - [ProfilePicForm](#profilepicform)
-  - [ShoutForm](#shoutform)
-  - [SignUpForm](#signupform)
-  - [UploadImageForm](#uploadimageform)
-- [Additional Notes](#additional-notes)
-- [Models Overview](#models-overview)
-  - [Shout Model](#shout-model)
-  - [Profile Model](#profile-model)
-  - [UploadedImage Model](#uploadedimage-model)
-- [Signals](#signals)
-- [Usage](#usage)
-- [Django Project URL Configuration](#django-project-url-configuration)
-- [Django Application Testing Documentation](#django-application-testing-documentation)
-- [Contributing](#contributing)
-- [Authors and Acknowledgments](#authors-and-acknowledgments)
-- [License](#license)
+1. [Welcome to The Saloon](#welcome-to-the-saloon)
+2. [Features](#features)
+    1. [Existing Features](#existing-features)
+    2. [Some Other Features Ideas for the Page](#some-other-features-ideas-for-the-page)
+3. [User Stories](#user-stories)
+4. [UX Design](#ux-design)
+5. [Flowchart](#flowchart)
+    1. [Detailed Steps](#detailed-steps)
+6. [Setup](#setup)
+    1. [Prerequisites](#prerequisites)
+    2. [Installation](#installation)
+7. [Forking](#forking)
+8. [Usage](#usage)
+9. [URLs](#urls)
+10. [Forms Overview](#forms-overview)
+    1. [ProfilePicForm](#profilepicform)
+    2. [ShoutForm](#shoutform)
+    3. [SignUpForm](#signupform)
+    4. [UploadImageForm](#uploadimageform)
+11. [Additional Notes](#additional-notes)
+12. [Models Overview](#models-overview)
+13. [Signals](#signals)
+14. [Usage](#usage)
+15. [Django Project URL Configuration](#django-project-url-configuration)
+16. [Typography](#typography)
+17. [Languages Used](#languages-used)
+18. [Color Scheme](#color-scheme)
+19. [Wireframe](#wireframe)
+20. [Django Application Testing Documentation](#django-application-testing-documentation)
+    1. [Testing Forms](#testing-forms)
+    2. [Testing Models](#testing-models)
+    3. [Testing Views](#testing-views)
+    4. [Lighthouse Testing](#lighthouse-testing)
+    5. [Validator Testing](#validator-testing)
+    6. [Tested Everything Manually](#tested-everything-manually)
+21. [Deployment](#deployment)
+22. [Contributing](#contributing)
+23. [Authors and Acknowledgments](#authors-and-acknowledgments)
+24. [Credits](#credits)
+25. [Other Notes](#other-notes)
 
 
 ## Features
@@ -447,61 +460,6 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 ```
 - DEBUG: This setting must be True during development to serve static and media files. It should be set to False in production environments.
 
-# Django Application Testing Documentation
-
-This document outlines the necessary information extracted from the provided code, focusing on Django application testing practices, specifically for forms, models, and views.
-
-## Overview
-
-Django provides a robust testing framework that allows developers to write unit tests for their applications. This framework is built on top of Python's `unittest` module and offers additional functionalities tailored for Django applications. The primary goal of these tests is to ensure that the application behaves as expected under various conditions, thereby improving code quality and reliability.
-
-## Testing Forms
-
-### ShoutForm
-
-- **Validation with Valid Data**: Tests whether the form validates correctly with valid data.
-- **Validation with Empty Body**: Ensures the form is invalid when the body field is empty and checks the error message.
-
-### ProfilePicForm
-
-- **Validation with Empty Data**: Verifies that the form is valid even when submitted with no data.
-- **Rendering**: Checks if the form renders correctly, including the presence of specific input fields.
-
-### SignUpForm
-
-- **Field Attributes**: Tests the attributes of the form fields, such as class and placeholder.
-- **Validation**: Validates the form with invalid data, specifically checking the email field.
-- **Initialization**: Ensures that the form's initialization sets the correct attributes for the fields.
-
-### UploadImageForm
-
-- **Validation with Invalid Data**: Tests the form's validation behavior with invalid data, ensuring it correctly identifies required fields.
-
-## Testing Models
-
-### Shout Model
-
-- **Number of Likes**: Tests the `number_of_likes` method, initially expecting zero likes.
-- **Likes Method**: Verifies that the `number_of_likes` method correctly increments when a user likes a shout.
-
-### Profile Model
-
-- **Profile Creation**: Tests the creation of a profile for a user.
-- **Profile Modification**: Checks if a profile can be modified and saved correctly.
-- **Get or Create Profile**: Ensures that the `get_or_create_profile` method works as expected.
-
-### Unfixed Bugs
-
-- Found the error at the last second before submitting the project 
-    - You must fill in the entire form and add a picture, otherwise you will not progress.
-    - Link label, text when uploading image and the button are not styled with css.
-    
-### Fixed Bugs
-
-- Now I've got the edit profile form in order. Have centered the entire form and the text. Can also delete an image when editing.
-
-- I have fixed it so that you don't have to fill in the entire form to save an update. What you have to do now is that the user has to change their name and enter a password.
-
 ## Typography
 I've integrated [Google Fonts](https://fonts.google.com/) to find a typeface that compliments the website's aesthetic. For the main text, I've chosen Roboto due to its optimization for readability on screens across a wide variety of devices and reading environments.
 
@@ -555,6 +513,59 @@ Login page          |  Registration page
 :-------------------------:|:-------------------------:
 ![Profile](readme_media/loginframe.png)  |  ![Register](readme_media/registerframe.png)
 
+# Django Application Testing Documentation
+
+This document outlines the necessary information extracted from the provided code, focusing on Django application testing practices, specifically for forms, models, and views.
+
+## Overview
+
+Django provides a robust testing framework that allows developers to write unit tests for their applications. This framework is built on top of Python's `unittest` module and offers additional functionalities tailored for Django applications. The primary goal of these tests is to ensure that the application behaves as expected under various conditions, thereby improving code quality and reliability.
+
+## Testing Forms
+
+### ShoutForm
+
+- **Validation with Valid Data**: Tests whether the form validates correctly with valid data.
+- **Validation with Empty Body**: Ensures the form is invalid when the body field is empty and checks the error message.
+
+### ProfilePicForm
+
+- **Validation with Empty Data**: Verifies that the form is valid even when submitted with no data.
+- **Rendering**: Checks if the form renders correctly, including the presence of specific input fields.
+
+### SignUpForm
+
+- **Field Attributes**: Tests the attributes of the form fields, such as class and placeholder.
+- **Validation**: Validates the form with invalid data, specifically checking the email field.
+- **Initialization**: Ensures that the form's initialization sets the correct attributes for the fields.
+
+### UploadImageForm
+
+- **Validation with Invalid Data**: Tests the form's validation behavior with invalid data, ensuring it correctly identifies required fields.
+
+## Testing Models
+
+### Shout Model
+
+- **Number of Likes**: Tests the `number_of_likes` method, initially expecting zero likes.
+- **Likes Method**: Verifies that the `number_of_likes` method correctly increments when a user likes a shout.
+
+### Profile Model
+
+- **Profile Creation**: Tests the creation of a profile for a user.
+- **Profile Modification**: Checks if a profile can be modified and saved correctly.
+- **Get or Create Profile**: Ensures that the `get_or_create_profile` method works as expected.
+
+### Unfixed Bugs
+
+- What you have to do now is that the user has to change their name and enter a password when update the profile.
+    
+### Fixed Bugs
+
+- Now I've got the edit profile form in order. Have centered the entire form and the text. Can also delete an image when editing.
+
+- I have fixed it so that you don't have to fill in the entire form to save an update.
+
 ## Testing Views
 
 ### Login User View
@@ -573,23 +584,23 @@ Login page          |  Registration page
 
 - **Profile List View Setup**: Sets up a client and user for testing the profile list view.
 
-### Lighthouse Testing
+## Lighthouse Testing
 
 Update profile page          |  Gallery page
 :-------------------------:|:-------------------------:
-![Update](readme_media/lighthouseedit.png)  |  ![Gallery](readme_media/lighthousegallery.png)
+![Update](readme_media/testeditprofile.png)  |  ![Gallery](readme_media/testpicture.png)
 
 Home page          |  Login page
 :-------------------------:|:-------------------------:
-![Home](readme_media/lighthousehome.png)  |  ![Login](readme_media/lighthouselogin.png)
+![Home](readme_media/testhome.png)  |  ![Login](readme_media/testlogin.png)
 
 Profile page          |  Profile list page
 :-------------------------:|:-------------------------:
-![Profile](readme_media/lighthouseprofile.png)  |  ![Login](readme_media/lighthouseprofilelist.png)
+![Profile](readme_media/testprofile.png)  |  ![Login](readme_media/testprofilelist.png)
 
 Registration page          |  Edit shout page
 :-------------------------:|:-------------------------:
-![Register](readme_media/lighthouseregister.png)  |  ![Shout](readme_media/lighthouseshout.png)
+![Register](readme_media/testregister.png)  |  ![Shout](readme_media/testeditshout.png)
 
 ### Validator Testing 
 
@@ -597,8 +608,10 @@ Registration page          |  Edit shout page
   - __W3C Validation__
 
 https://validator.w3.org/nu/?doc=https%3A%2F%2Fthesaloon-08255dd425ce.herokuapp.com%2F
+```
+Document checking completed. No errors or warnings to show.
+```
 
-    - The page receives 51 Info notes because it contains linebreaks in the html code. 
 - CSS
   - __W3C Validation__
 
@@ -606,9 +619,41 @@ https://validator.w3.org/nu/?doc=https%3A%2F%2Fthesaloon-08255dd425ce.herokuapp.
 
     - It passed the test but received 707 warnings that the website contains Bootstrap.
 
-## Conclusion
 
-This documentation provides a comprehensive overview of the testing strategies employed in the provided Django application code. By leveraging Django's testing framework, developers can ensure that their applications are robust, reliable, and adhere to best practices.
+## Tested everything manually
+
+- Log in:  Is logged in and comes to the home page
+
+- Sign out: Signs out and returns to the Login page
+
+- Alert messages: Come when you log in, write shouts, edit shouts, update profile, log out
+
+- Write shout: a shout is posted. Information is created about who posted, time and date
+
+- Edit shout: Shouts will be changed and posted
+
+- Edit profile: Everything in the form can be changed, but when you save you unfortunately have to change your name and enter a password before you can update.
+
+- Upload images: select a file and upload and the image will appear. A delete button will appear, click on it to delete the image
+
+- Delete profile: If a pop-up appears asking if you are sure you want to delete the profile, click OK and the profile will be deleted, click CANCEL and the pop-up box will close and you will remain.
+
+- Social media links: When you click on them, you get to the page it links to. When you enter links in the update profile, the specified links icon appears on the profile.
+
+- Follows/Followers: Visible in the profile, when you click on them you get to the specified profile.
+
+- Follow/Unfollow button: If you click on it, the profile is added or removed from the list.
+
+- Navbar: Clicking on The Saloon, Profile List, Profile, Pictures, Sign Out, Sign Up, Profile picture will take you to the specified pages.
+
+- Register: When the user registers, a profile is created for the specified user.
+
+- Like/Unlike a Shout: If you click on like/unlike, the color of the icon changes and the counter adds or removes counts.
+
+- Buttons: All buttons do what they are supposed to do.
+
+- Profile List: When a profile is created, a card for that profile appears in the profile list. If you click on the name or picture, you will be taken to the user's profile.
+
 
 ## Deployment
 

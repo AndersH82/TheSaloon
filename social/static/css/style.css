@@ -375,7 +375,6 @@ h1.profil {
 small.text-muted {
   margin-top: 20px;
   color: #000000;
-  font-display: bold;
 }
 
 .btn-profile {
@@ -495,7 +494,7 @@ i.x:hover {
 .container2 {
   max-width: 100%;
   width: 600px;
-  margin: o auto;
+  margin: auto;
 }
 .container1 {
   max-width: 100%;
