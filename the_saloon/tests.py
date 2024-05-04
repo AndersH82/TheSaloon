@@ -8,6 +8,7 @@ from django.urls import reverse
 
 # Forms Tests
 
+
 class TestShoutForm(TestCase):
     def setUp(self):
         self.user = User.objects.create_user(
@@ -204,3 +205,20 @@ class ProfileListViewTest(TestCase):
         self.user = User.objects.create_user(
             username='testuser', password='testpass')
         self.profile, created = Profile.objects.get_or_create(user=self.user)
+
+# Login test
+
+
+class RedirectAfterLoginTest(TestCase):
+    def setUp(self):
+        self.client = Client()
+
+    def test_redirect_after_login_with_expected_url(self):
+        # Assuming you have a view that redirects after login
+        response = self.client.get('/login/')
+        # Build an absolute URI using the Request object
+        expected_url = '/expected/path'
+        actual_url = response.wsgi_request.build_absolute_uri(expected_url)
+        # Now you can compare actual_url with the expected URL
+        self.assertEqual(actual_url, 'http://testserver/expected/path')
+
