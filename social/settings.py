@@ -15,7 +15,7 @@ SECRET_KEY = 'django-insecure-++6#2knt_e-c3^ju8(1v=x=t$%*vk9_6^b-#$0jo)@!+$#gm#y
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    '8000-andersh82-thesaloon-uyyy0l5ib4u.ws-eu111.gitpod.io',
+    '8000-andersh82-thesaloon-35bxhwaxkl8.ws-eu111.gitpod.io',
     '.herokuapp.com']
 
 LOGIN_REDIRECT_URL = '/profile/'
@@ -126,5 +126,5 @@ MEDIA_URL = '/media/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CSRF_TRUSTED_ORIGINS = [
-    'https://8000-andersh82-thesaloon-uyyy0l5ib4u.ws-eu111.gitpod.io'
+    'https://8000-andersh82-thesaloon-35bxhwaxkl8.ws-eu111.gitpod.io'
 ]

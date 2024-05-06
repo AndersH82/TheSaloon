@@ -99,6 +99,10 @@ class SignUpForm(UserCreationForm):
         self.fields['password2'].help_text = '<span class="form-text \
                                     text-muted"><small></small></span>'
 
+    def clean_username(self):
+        # Allow the same username to be used
+        return self.cleaned_data.get('username')
+
 
 class UploadImageForm(forms.ModelForm):
     class Meta:
