@@ -189,9 +189,32 @@ div.card-login {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%;
  }
 
+div.login_text {
+  color: black;
+  font-weight: bold;
+  margin-top: 20px;
+  justify-content: center;
+  text-align: center;
+}
+
+.btn-signup {
+  background-color:#714B3C;
+  border: none;
+  filter: drop-shadow(20px 20px 3px rgba(0, 0, 0, 0.5));
+  border-radius: 10px;
+  color: white;
+  display: block;
+  margin: auto;
+  margin-top: 20px;
+}
+
+.btn-signup:hover {
+  background-color: #5e372e;
+  transition: background-color  0.4s ease;
+  color: #000000;
+}
 /* gallery */
 h1.gallery {
   color: black;
