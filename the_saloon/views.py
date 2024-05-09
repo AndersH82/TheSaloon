@@ -116,7 +116,7 @@ def update_user(request):
         if user_form.is_valid() and profile_form.is_valid():
             user_form.save()
             profile_form.save()
-
+        
             login(request, current_user)
             messages.success(request, ("Your information is now updated!"))
             return redirect('home')
