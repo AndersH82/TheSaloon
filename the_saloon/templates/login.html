@@ -6,24 +6,19 @@
 
 {% if user.is_authenticated %}
 <h1 style="font-family: Lato, serif;">You are already logged in!</h1>
-
 {% else %}
-
 <div class="row mx-auto">
  <div class="col-md-6">
-    <!-- Image Container -->
     <div class="image-container">
       <img src="{% static 'images/logo.png' %}" class="login img" alt="Login Image" style="width: 100%; height: auto; object-fit: cover;">
     </div>
  </div>
  <div class="col-md-6 d-flex justify-content-center align-items-center">
- <!-- Login Form -->
  <div class="login-md-6 offset-md-3">
     <h1 class="login">Login</h1>
     <br>
     <form method="POST" action="/login/">
       {% csrf_token %}
-
       <div class="form-group">
         <input type="text" class="form-control" name="username" placeholder="Enter your username">
       </div>
@@ -31,15 +26,8 @@
       <div class="form-group">
         <input type="password" class="form-control" name="password" placeholder="Enter your password">
       </div>
-
       <button type="submit" class="btn-login">Submit</button>
-      <div class="login_text"> 
-        Or
-      </div>
     </form>
-      <a href="{% url 'register' %}">
-        <button type="submit" class="btn-signup">Sign Up</button>
-      </a>
  </div>
 </div>
 </div>
