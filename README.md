@@ -71,14 +71,11 @@ This project is a Django-based social media platform where users can create prof
     On the start page, there is a profile list visible only to logged-in users. Additionally, there are registration and login buttons for users who are not yet logged in.
 
     - Once logged in, users gain access to additional navigation options, including 
-    buttons for the profile list, profile, gallery, and log-out. The navigation bar also features a profile picture on the right side, which links to the user's profile. This design is consistent across all pages to facilitate easy navigation, regardless of the device being used.
+    buttons for the profile list, profile, pictures, and sign out. The navigation bar also features a profile picture on the right side, which links to the user's profile. This design is consistent across all pages to facilitate easy navigation, regardless of the device being used.
 
     - This approach ensures that users can smoothly navigate from page to page
     without needing to rely on the browser's back button, enhancing the overall user experience across all devices.
 
-
-Here you can see the navigation bar when you log in or register.
-![Nav Bar](readme_media/navbarlogin.png)
     
 
 Here you can see the navigation bar when you are logged in.
@@ -114,7 +111,7 @@ Here you can see the navigation bar when you are logged in.
 
     - On the Landing page, the user will be able to log in or sign up via navbar.
 
-![Landing Page](readme_media/landing.png)
+![Landing Page](readme_media/login.png)
 
  
 - __Registration page__

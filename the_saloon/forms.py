@@ -92,15 +92,13 @@ class SignUpForm(UserCreationForm):
         self.fields['password1'].label = ''
         self.fields['password1'].help_text = '<span class="form-text \
                                 text-muted"><small></small></span>'
-        self.fields['password1'].required = False  # Make password1 optional
-
+        
         self.fields['password2'].widget.attrs['class'] = 'form-control'
         self.fields['password2'].widget.attrs['placeholder'] = 'Confirm'
         self.fields['password2'].label = ''
         self.fields['password2'].help_text = '<span class="form-text \
                                     text-muted"><small></small></span>'
-        self.fields['password2'].required = False  # Make password2 optional
-
+        
     def clean_username(self):
         # Allow the same username to be used
         return self.cleaned_data.get('username')

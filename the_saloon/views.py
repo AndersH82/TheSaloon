@@ -71,10 +71,12 @@ def login_user(request):
         password = request.POST['password']
         user = authenticate(request, username=username, password=password)
         if user is not None:
+            print("User is authenticated")
             login(request, user)
             messages.success(request, ("You are now logged in!"))
             return redirect('home')
         else:
+            print("Authentication failed")
             messages.success(request, ("WROOOONG! Try again!"))
             return redirect('login')
     else:
@@ -116,7 +118,7 @@ def update_user(request):
         if user_form.is_valid() and profile_form.is_valid():
             user_form.save()
             profile_form.save()
-        
+
             login(request, current_user)
             messages.success(request, ("Your information is now updated!"))
             return redirect('home')

@@ -1,5 +1,5 @@
  /* base */
-* {
+ * {
   color: #000000;
 }
 body {
@@ -375,7 +375,6 @@ h1.profil {
 small.text-muted {
   margin-top: 20px;
   color: #000000;
-  font-display: bold;
 }
 
 .btn-profile {
@@ -495,7 +494,7 @@ i.x:hover {
 .container2 {
   max-width: 100%;
   width: 600px;
-  margin: o auto;
+  margin: auto;
 }
 .container1 {
   max-width: 100%;
@@ -520,9 +519,17 @@ h1.list {
   gap: 30px;
   filter: drop-shadow(20px 20px 2px rgba(0, 0, 0, 0.5));
   align-items: flex-start;
- }
+}
  
- .cont {
+div.container.list {  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  height: 300px;
+}
+
+.cont {
   background-color: #FFF3CD;
   flex: 1;
   flex-grow: 1;
@@ -532,9 +539,9 @@ h1.list {
   align-items: center;
   height: 100%;
   border-radius: 2rem;
- }
+}
  
- .list-container {
+.list-container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -543,7 +550,7 @@ h1.list {
   min-width: 200px;
   max-width: 100%;
   align-items: flex-start;
- }
+}
  
 
 .list-card {
@@ -803,7 +810,4 @@ label[for="id_body"] {
      align-items: center;
      justify-content: center;
   }
- }
- 
-
-  
+ } 
