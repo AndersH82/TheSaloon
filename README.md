@@ -707,6 +707,10 @@ For the Saloon project, the GitHub repository is located at https://github.com/A
  - Django
 
 ## Other Notes
+- When user is update user you need to enter password and confirm. 
+  Tried to solve it but didn't come up with a solution but know it's a user experience that isn't very good
+
+- Moved the sign up button from navbar to login page for better experience for the users.
 
 - Argil: I am a beginner at argil, and this is my first time. I'm looking forward to becoming better at argil in the future.
 
