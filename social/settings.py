@@ -13,9 +13,16 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 load_dotenv()
 
 # Access environment variables
-secret_key = os.environ.get('SECRET_KEY', 'default_value_if_not_found')
-debug_mode = os.environ.get("DEBUG", "False")
-allowed_hosts = os.environ.get("ALLOWED_HOSTS", "localhost,127.0.0.1").split(',')
+SECRET_KEY = os.environ.get('SECRET_KEY', 'default_value_if_not_found')
+DEBUG = False  
+
+if os.getenv('ENVIRONMENT') == 'production':
+    DEBUG = False
+elif os.getenv('ENVIRONMENT') == 'development' or os.getenv('ENVIRONMENT') == 'test':
+    DEBUG = True
+
+
+ALLOWED_HOSTS=['8000-andersh82-thesaloon-srerj6qmuit.ws.codeinstitute-ide.net','.herokuapp.com']
 
 
 LOGIN_REDIRECT_URL = '/profile/'
@@ -126,5 +133,5 @@ MEDIA_URL = '/media/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CSRF_TRUSTED_ORIGINS = [
-    '8000-andersh82-thesaloon-srerj6qmuit.ws.codeinstitute-ide.net'
+    'https://8000-andersh82-thesaloon-srerj6qmuit.ws.codeinstitute-ide.net'
 ]
