@@ -14,7 +14,7 @@ load_dotenv()
 
 # Access environment variables
 SECRET_KEY = os.environ.get('SECRET_KEY', 'default_value_if_not_found')
-DEBUG = False  
+DEBUG = False 
 
 if os.getenv('ENVIRONMENT') == 'production':
     DEBUG = False
